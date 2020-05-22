@@ -2,6 +2,7 @@
 node_modules
 dist/
 # local env files
+*.cache
 .env.local
 .env.*.local
 
