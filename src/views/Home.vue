@@ -1,5 +1,6 @@
 <template lang="pug">
-  div(class="home")
+  //-v-container(fluid fill-height)
+  div
     //-img(alt='Vue logo' src='../assets/logo.png')
     Infos
     History

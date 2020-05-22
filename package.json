@@ -1,9 +1,10 @@
 {
-  "name": "app",
+  "name": "victor_aurelio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "dev": "yarn serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "deploy": "yarn build && firebase deploy --only hosting"
@@ -36,13 +37,12 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/strongly-recommended",
       "eslint:recommended"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
-    },
-    "rules": {}
+    }
   },
   "browserslist": [
     "> 1%",
