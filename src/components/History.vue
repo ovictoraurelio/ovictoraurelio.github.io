@@ -3,7 +3,7 @@
     v-card(outlined)      
       v-container
         v-row          
-          v-col.display-2.font-weight-thin professional history and experiences
+          v-col.display-2.font-weight-thin in my life
         v-row(align="start" justify="start")
           v-col(v-for="(history, index) of histories" :key="index" cols="auto")
             v-card.mx-auto(max-width='344' outlined)

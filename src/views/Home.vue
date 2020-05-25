@@ -5,6 +5,7 @@
     Infos
     History
     Courses
+    
 </template>
 
 <script>

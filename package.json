@@ -10,7 +10,7 @@
     "deploy": "yarn build && firebase deploy --only hosting"
   },
   "dependencies": {
-    "@mdi/font": "^3.6.95",
+    "@mdi/font": "^5.3.45",
     "core-js": "^3.6.4",
     "lodash": "^4.17.15",
     "roboto-fontface": "*",
