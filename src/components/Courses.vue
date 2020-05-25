@@ -1,38 +1,56 @@
 <template lang="pug">
-  v-container
-    v-row
-      v-col(v-for="(course, index) of courses" :key="index" md=3)
-        v-card.mx-auto(max-width='344' outlined='')
-          v-list-item(three-line='')
-            v-list-item-content
-              .overline.mb-4 {{course.type}}
-              v-list-item-title.headline.mb-1 {{course.text}}
-              v-list-item-subtitle ...
-            v-list-item-avatar(tile='' size='80' color='grey')
-          v-card-actions
-            v-btn(text='') Button
-            v-btn(text='') Button
+  v-container.mt-12(fluid fill-height)
+    v-card(outlined)      
+      v-container
+        v-row          
+          v-col.display-2.font-weight-thin skills and expertises        
+        v-row.no-gutters(align="start" justify="start" v-for="(group, index) in groups")        
+          v-col.no-gutters(xs=12 md=12)
+            v-row.no-gutters.title.font-weight-thin {{group[0].type}}s
+          v-col.no-gutters(xs=12 md=12)
+            v-row.mt-0
+              v-col(v-for="(course, index) of group" :key="index" cols="auto")
+                v-card(max-width='344' outlined)
+                  v-list-item
+                    v-list-item-content
+                      v-list-item-title.headline.mb-1 {{course.text}}                          
+                      v-list-item-actions
+                        .overline.mb-4 {{course.type}}
 </template>
 
 <script>
+import _ from 'lodash'
 export default {
   data: () => ({
+    groups: [],
     courses: [
       { type: 'Language', text: "Linguagem C" },
-      { type: 'Language', text: "Java" },
-      { type: 'Language', text: "C" },
-      { type: 'Language', text: "Android" },
-      { type: 'Language', text: "HTML 5" },
+      { type: 'Language',  text: "Java" },
+      { type: 'Language', text: "Kotlin Android" },      
+      { type: 'Language', text: "C++" },
+      { type: 'Language', text: "Assembly Mips" },
+      { type: 'Language', text: "Assembly x86" },
       { type: 'Language', text: "Javascript" },
-      { type: 'Language', text: "CSS" },
-      { type: 'Language', text: "Sass" },
+      { type: 'Language', text: "WebAssembly" },      
       { type: 'Language', text: "Php" },
+      { type: 'Language', text: "Sass" },
       { type: 'Framework', text: "Laravel" },
+      { type: 'Framework', text: "Express.JS" },
+      { type: 'Framework', text: "Sequelize" },
+      { type: 'Framework', text: "Firebase" },
+      { type: 'Framework', text: "Docker" },
       { type: 'Database', text: "My SQL" },
       { type: 'Database', text: "PostgreSQL" },
-      { type: 'Database', text: "Mongo DB  " }
+      { type: 'Database', text: "MariaDB" },
+      { type: 'Database', text: "Firestore" },
+      { type: 'Database', text: "Mongo DB" },
+      { type: 'Database', text: "SQL Lite" }
     ]
-  })
+  }),
+  created () {
+    this.groups = _.groupBy(this.courses, 'type')
+    console.log(this.groups)
+  }
 };
 </script>
 

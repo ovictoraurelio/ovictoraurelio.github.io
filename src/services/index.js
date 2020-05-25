@@ -2,6 +2,16 @@ export default {
   history: [
     {
       locate: {
+        name: "Beyond Cloud",
+        link: "http://quoti.com.br",
+      },
+      color: "bg-yellow-olsen",
+      date: "Ago de 2018 - atualmente",
+      img: "globe",
+      office: "CTO & Co-fundador",
+    },
+    {
+      locate: {
         name: "Plataforma Quoti",
         link: "http://quoti.com.br",
       },

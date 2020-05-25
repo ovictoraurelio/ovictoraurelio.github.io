@@ -1,10 +1,11 @@
 <template lang="pug">  
 v-container(fluid fill-height)
   v-row(justify='center' align="center")    
-    v-col.mb-0.pb-0(md=10 xs=12)
+    v-col.mb-0.pb-0(xs=12)
       v-avatar(:size='120')
         v-img(src='https://firebasestorage.googleapis.com/v0/b/ovictoraurelio.appspot.com/o/victor.jpeg?alt=media&token=237cc365-5fda-4c21-964f-83d24e01bb8f' alt='Victor Aurélio')
-    v-col.mt-0(md=10 xs=12)
+  v-row 
+    v-col.mt-0(xs=12)
       v-card.col-xs-6.px-2.pb-2.pt-5(outlined)
         v-card-text.display-1.font-weight-bold
           | Victor Aurélio
@@ -12,7 +13,7 @@ v-container(fluid fill-height)
           | Desenvolvedor e Empreendedor
         v-card-text.caption.pt-2
           | Recife, Brasil
-        v-card-text.body-1
+        v-card-text.body-1 
           | CTO and Co-founder at Beyond Cloud.
           | I'm a Cloud Developer and Google Cloud Architect.
           | 
