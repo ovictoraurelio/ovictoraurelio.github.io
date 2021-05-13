@@ -8,6 +8,10 @@ import '@mdi/font/css/materialdesignicons.css'
 
 Vue.config.productionTip = false
 
+Vue.prototype.$isMobile = function() {
+  return this.$vuetify.breakpoint.smAndDown
+}
+
 new Vue({
   router,
   store,

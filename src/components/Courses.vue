@@ -1,18 +1,16 @@
 <template lang="pug">
-  v-container.mt-12(fluid fill-height)
-    v-card(outlined)      
-      v-container
-        v-row          
-          v-col.display-2.font-weight-thin skills and expertises        
-        v-row.no-gutters(align="start" justify="start" v-for="(group, index) in groups")        
-          v-col.no-gutters(cols=12)
-            v-row.no-gutters.title.font-weight-thin {{group[0].type}}s
-          v-col.no-gutters(cols=12)
-            v-row.mt-0
-              v-col(v-for="(course, index) of group" :key="index" cols="auto")
-                v-card(max-width='344' outlined)
-                  v-card-title.headline {{course.text}}                          
-                  v-card-subtitle.overline {{course.type}}
+  v-card.pa-8(outlined)
+    v-card-title.display-2.font-weight-thin skills and expertises
+    v-card-text.mt-8
+      v-row.no-gutters(align="start" justify="start" v-for="(group, index) in groups")
+        v-col.mt-8.no-gutters(cols=12)
+          v-row.no-gutters.title.font-weight-thin {{group[0].type}}s
+        v-col.no-gutters(cols=12)
+          v-row.mt-0
+            v-col(v-for="(course, index) of group" :key="index" cols="auto")
+              v-card(max-width='344' outlined)
+                v-card-title.headline {{course.text}}
+                v-card-subtitle.overline {{course.type}}
 </template>
 
 <script>

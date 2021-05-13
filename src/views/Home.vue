@@ -1,11 +1,14 @@
 <template lang="pug">
-  //-v-container(fluid fill-height)
-  div
-    //-img(alt='Vue logo' src='../assets/logo.png')
-    Infos
-    History
-    Courses
-    
+  v-container(fluid fill-height)
+    v-row(justify='center')
+      v-col(md=8 sm=10 xs=12)
+        Infos
+    v-row(justify='center')
+      v-col(md=8 sm=10 xs=12)
+        History
+    v-row(justify='center')
+      v-col(md=8 sm=10 xs=12)
+        Courses
 </template>
 
 <script>
