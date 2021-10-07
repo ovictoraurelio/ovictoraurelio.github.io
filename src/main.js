@@ -5,9 +5,11 @@ import store from './store'
 import vuetify from './plugins/vuetify';
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
+import { Icon } from '@iconify/vue2';
 
 Vue.config.productionTip = false
 
+Vue.component('iconify', Icon)
 Vue.prototype.$isMobile = function() {
   return this.$vuetify.breakpoint.smAndDown
 }
