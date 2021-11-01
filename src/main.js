@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify';
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
 import { Icon } from '@iconify/vue2';
+import './plugins/firebase'
 
 Vue.config.productionTip = false
 
