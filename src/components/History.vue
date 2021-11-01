@@ -1,8 +1,25 @@
 <template lang="pug">  
-  v-card.pa-8(outlined)
+  v-card.pa-8(flat)
     v-card-title.display-2.font-weight-thin in my life
     v-card-text.mt-8
-      v-row(align="start" justify="start")
+      v-timeline(align-top dense)
+        v-timeline-item(
+          v-for="(history, index) of histories"
+          :key="index"
+          color="grey"
+          fill-dot
+        )
+          //- :small="!item.moduleItem"
+          //- :color="item.color"
+          //- :icon="item.icon"
+          v-row.pt-1
+            v-col(cols="3")
+              .caption {{ history.date }}
+            v-col
+              strong {{ history.locate.name }}
+              .text-caption
+                | {{ history.office }}
+      //-v-row(align="start" justify="start")
         v-col(v-for="(history, index) of histories" :key="index" cols="auto")
           v-card.mx-auto(max-width='344' outlined)
             v-list-item(three-line)
