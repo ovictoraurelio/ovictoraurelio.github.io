@@ -1,23 +1,24 @@
 <template lang="pug">
-  v-card.pa-0(flat)
-    v-card-title.display-2.font-weight-thin skills and expertises
-    v-card-text.mt-8.pa-0
-      v-row.no-gutters(align="start" justify="start" v-for="(group, index) in groups")
-        v-col.mt-8.no-gutters(cols=12)
-          v-row.no-gutters.title.font-weight-thin {{group[0].type}}s
-        v-col.no-gutters.pa-0(cols=12)
-          v-row.mt-0(justify="center")
-            v-col(v-for="(course, index) of group" :key="index" cols="auto" align="center")
-              v-card.text-center(width='400' height='250' outlined)
-                v-row.mt-8(no-gutters)
-                  v-col
-                    iconify(style="font-size: 50px;" :icon='course.icon')
-                v-row(no-gutters)
-                  v-col
-                    .headline {{course.text}}
-                v-row(no-gutters)
-                  v-col
-                    .overline {{course.type}}
+  v-container
+    v-row(justify="start" align="center")
+      v-col(cols="auto")
+        .display-2.font-weight-thin skills and expertises
+    v-row.no-gutters(align="start" justify="start" v-for="(group, index) in groups")
+      v-col.mt-8.no-gutters(cols=12)
+        .mt-8.no-gutters.title.font-weight-light {{group[0].type}}s
+      v-col.no-gutters.pa-0(cols=12)
+        v-row.mt-0(justify="center")
+          v-col(v-for="(course, index) of group" :key="index" cols="auto" align="center")
+            v-card.text-center(width='250' height='120' flat)
+              v-row.mt-8(no-gutters)
+                v-col
+                  iconify(style="font-size: 50px;" :icon='course.icon')
+              v-row(no-gutters)
+                v-col
+                  .headline {{course.text}}
+              v-row(no-gutters)
+                v-col
+                  .overline {{course.type}}
 </template>
 
 <script>
