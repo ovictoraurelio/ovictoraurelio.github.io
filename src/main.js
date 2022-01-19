@@ -1,23 +1,20 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
-import vuetify from './plugins/vuetify';
+import vuetify from './plugins/vuetify'
+import { loadFonts } from './plugins/webfontloader'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
-import { Icon } from '@iconify/vue2';
-import './plugins/firebase'
+import { Icon } from '@iconify/vue';
 
-Vue.config.productionTip = false
+loadFonts()
 
-Vue.component('iconify', Icon)
-Vue.prototype.$isMobile = function() {
-  return this.$vuetify.breakpoint.smAndDown
+const app = createApp(App)
+  .use(vuetify)
+
+app.config.globalProperties.$isMobile = () => {
+  return false
 }
 
-new Vue({
-  router,
-  store,
-  vuetify,
-  render: h => h(App)
-}).$mount('#app')
+app
+  .component('iconify', Icon)
+  .mount('#app')
