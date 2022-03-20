@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import _ from 'lodash'
+import groupBy from 'lodash.groupby'
 export default {
   data: () => ({
     groups: [],
@@ -62,7 +62,7 @@ export default {
     ]
   }),
   created () {
-    this.groups = _.groupBy(this.courses, 'type')
+    this.groups = groupBy(this.courses, 'type')
   }
 };
 </script>
