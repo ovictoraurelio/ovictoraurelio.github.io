@@ -4,7 +4,7 @@ v-container
     v-col(cols="auto")
       v-avatar(:size='$isMobile() ? 80 : 120')
         v-img(
-          src='https://firebasestorage.googleapis.com/v0/b/ovictoraurelio.appspot.com/o/victor.jpeg?alt=media&token=237cc365-5fda-4c21-964f-83d24e01bb8f'
+          src='https://firebasestorage.googleapis.com/v0/b/ovictoraurelio.appspot.com/o/Pi7compressedIMG_6435-small-minified.webp?alt=media&token=582014d5-5a59-47ae-8e85-b2e037fb1e74'
           alt='Victor Aurélio'
         )
     v-col(cols='auto')
