@@ -1,23 +1,22 @@
 <template lang="pug">
-v-container
-  v-row(justify="start" align="center")
-    v-col(cols="auto")
-      .h2.font-weight-thin skills and expertises
-  v-row.no-gutters(align="start" justify="start" v-for="(group, index) in groups")
-    v-col.mt-8.no-gutters(cols=12)
-      .mt-8.no-gutters.title.font-weight-light {{group[0].type}}s
-    v-col.no-gutters.pa-0(cols=12)
-      v-row.mt-0(justify="center")
-        v-col(v-for="(course, index) of group" :key="index" cols="auto" align="center")
-          v-row.mt-8(no-gutters)
-            v-col
-              iconify(style="font-size: 50px;" :icon='course.icon')
-          v-row(no-gutters)
-            v-col
+.container
+  .flex
+    .col-span
+      .text-2xl.font-bold Skills and expertises
+  .grid.grid-cols-12(v-for="(group, index) in groups")
+    .col-span-12.text-left
+      .mt-8.text-left.text-lg.font-light.font-sen {{group[0].type}}s
+    .col-span-12.mt-8.pa-0
+      .container
+        .grid.grid-cols-2.sm_grid-cols-4.md_grid-cols-6
+          .mt-4.col-auto.text-center(v-for="(course, index) of group" :key="index")
+            .text-center
+              iconify(style="font-size: 35px;" :icon='course.icon')
+            .text-center
               .headline {{course.text}}
-          //- v-row
-            v-col
-              .overline {{course.type}}
+            //- .flex
+              .col-span
+                .overline {{course.type}}
 </template>
 
 <script>

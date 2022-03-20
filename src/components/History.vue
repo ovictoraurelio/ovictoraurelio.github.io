@@ -1,16 +1,16 @@
 <template lang="pug">
-v-container
-  v-row(justify="start" align="center")
-    v-col(cols="auto")
-      .h3.font-weight-thin in my life
-  v-row(justify="start" align="center" v-for="(history, index) of histories" :key="index")
-    v-col(cols=1)
-      v-icon.h6(color="grey") mdi-circle-small
-    v-col(cols=3 md=2)
-      .text-caption {{ history.date }}
-    v-col(cols=8 md=9 style="text-align: start")
+.container
+  .flex
+    .flex-col
+      .text-2xl.font-bold In my life
+  .grid.grid-cols-12(v-for="(history, index) of histories" :key="index")
+    .col-span-1
+      h1(style="font-size: 40px") ·
+    .col-span-3.md_col-span-2
+      .text-sm {{ history.date }}
+    .col-span-8.md_col-span-9(style="text-align: start")
       .font-weight-bold {{ history.locate.name }}
-      .text-caption {{ history.office }}
+      .text-sm {{ history.office }}
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style>
-.v-card {
+..card {
   min-height: 8em
 }
 </style>

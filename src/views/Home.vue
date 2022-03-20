@@ -1,17 +1,13 @@
 <template lang="pug">
-v-container(fluid fill-height)
-  v-row(justify='center')
-    v-col(md=8 sm=10 xs=12)
-      Infos
-  v-row(justify='center')
-    v-col(md=8 sm=10 xs=12)
-      History
-  v-row(justify='center')
-    v-col(md=8 sm=10 xs=12)
-      Skills
-  v-row(justify="center")
-    v-col(md=8 sm=10 xs=12)
-      Footer
+.grid.grid-cols-12.gap-10
+  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
+    Infos
+  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
+    History
+  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
+    Skills
+  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
+    Footer
 </template>
 
 <script>
