@@ -64,7 +64,6 @@ export default {
   }),
   created () {
     this.groups = _.groupBy(this.courses, 'type')
-    console.log(this.groups)
   }
 };
 </script>
