@@ -1,5 +1,6 @@
 {
   "vite/modulepreload-polyfill": [],
+  "index.html?html-proxy&index=0.css": [],
   "src/components/Infos.vue?vue&type=template&lang.js": [],
   "src/components/Infos.vue?vue&type=style&index=0&scoped=true&lang.css": [],
   "plugin-vue:export-helper": [],
@@ -20,42 +21,42 @@
   "src/main.js": [],
   "index.html": [],
   "node_modules/@vue/shared/dist/shared.esm-bundler.js": [
-    "/assets/vendor.16a778a0.js"
+    "/assets/vendor.8c892b1f.js"
   ],
   "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
-    "/assets/vendor.16a778a0.js"
+    "/assets/vendor.8c892b1f.js"
   ],
   "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [
-    "/assets/vendor.16a778a0.js"
+    "/assets/vendor.8c892b1f.js"
   ],
   "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [
-    "/assets/vendor.16a778a0.js"
+    "/assets/vendor.8c892b1f.js"
   ],
   "node_modules/vue/dist/vue.runtime.esm-bundler.js": [
-    "/assets/vendor.16a778a0.js"
-  ],
-  "node_modules/@vuetify/vite-ssg/dist/chunk-OOHBVVVU.mjs": [
-    "/assets/vendor.16a778a0.js"
-  ],
-  "node_modules/@vuetify/vite-ssg/dist/chunk-SOEV5HRE.mjs": [
-    "/assets/vendor.16a778a0.js"
+    "/assets/vendor.8c892b1f.js"
   ],
   "node_modules/@vueuse/head/dist/index.mjs": [
-    "/assets/vendor.16a778a0.js"
+    "/assets/vendor.8c892b1f.js"
   ],
-  "node_modules/@vuetify/vite-ssg/dist/client/single-page.mjs": [
-    "/assets/vendor.16a778a0.js"
+  "node_modules/vite-ssg/dist/chunks/state.mjs": [
+    "/assets/vendor.8c892b1f.js"
+  ],
+  "node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [
+    "/assets/vendor.8c892b1f.js"
+  ],
+  "node_modules/vite-ssg/dist/client/single-page.mjs": [
+    "/assets/vendor.8c892b1f.js"
   ],
   "\u0000commonjsHelpers.js": [
-    "/assets/vendor.16a778a0.js"
+    "/assets/vendor.8c892b1f.js"
   ],
-  "\u0000/home/victor/projects/ovictoraurelio/ovictoraurelio.github.io/node_modules/lodash/lodash.js?commonjs-module": [
-    "/assets/vendor.16a778a0.js"
+  "\u0000/home/victor/projects/ovictoraurelio/ovictoraurelio.github.io/node_modules/lodash.groupby/index.js?commonjs-module": [
+    "/assets/vendor.8c892b1f.js"
   ],
-  "node_modules/lodash/lodash.js": [
-    "/assets/vendor.16a778a0.js"
+  "node_modules/lodash.groupby/index.js": [
+    "/assets/vendor.8c892b1f.js"
   ],
   "node_modules/@iconify/vue/dist/iconify.mjs": [
-    "/assets/vendor.16a778a0.js"
+    "/assets/vendor.8c892b1f.js"
   ]
 }
