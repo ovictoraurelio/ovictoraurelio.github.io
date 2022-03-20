@@ -3,20 +3,20 @@ export default {
     {
       locate: {
         name: "Beyond Cloud",
-        link: "http://quoti.com.br",
+        link: "https://beyondcompany.com.br",
       },
       color: "bg-yellow-olsen",
       date: "Ago de 2018 - atualmente",
       img: "globe",
       office: "CTO & Co-fundador",
-    },
+    },    
     {
       locate: {
-        name: "Plataforma Quoti",
+        name: "Plataforma Educacional Quoti",
         link: "http://quoti.com.br",
       },
       color: "bg-yellow-olsen",
-      date: "Outubro 2017 - atualmente",
+      date: "Outubro 2017 - Ago de 2018",
       img: "globe",
       office: "Desenvolvedor web full-stack",
     },
