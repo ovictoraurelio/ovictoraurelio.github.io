@@ -14,6 +14,9 @@ git worktree add $directory $branch
 echo -e "\033[0;32mGenerating site...\033[0m"
 build_command
 
+echo -e "\033[0;32mCreating CNAME configs...\033[0m"
+cp ./CNAME $directory/
+
 echo -e "\033[0;32mDeploying $branch branch...\033[0m"
 cd $directory &&
   git add --all &&
