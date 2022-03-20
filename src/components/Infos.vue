@@ -7,22 +7,22 @@
         src='https://firebasestorage.googleapis.com/v0/b/ovictoraurelio.appspot.com/o/Pi7compressedIMG_6435-small-minified.webp?alt=media&token=582014d5-5a59-47ae-8e85-b2e037fb1e74'
         alt='Victor Aurélio'
       )
+    .flex-col.ml-2
+      .flex
+        .flex-col
+          span.text-2xl.font-bold Victor Aurélio
+      .flex
+        .flex-col
+          span.text-xl.pt-0.pb-0.font-medium CTO at Beyond Co
+      .flex
+        .flex-col
+          span.text-sm.py-0 10 years digital solutions expertises
+      .flex
+        .flex-col
+          span.text-sm.pt-2 Recife, Brasil
+  .flex.mt-2
     .flex-col
-      .flex
-        .flex-col
-          span.display-1.font-weight-bold Victor Aurélio
-      .flex
-        .flex-col
-          span.subheading.pt-0.pb-0.font-weight-medium CTO at Beyond Co
-      .flex
-        .flex-col
-          span.caption.py-0 10 years digital solutions expertises
-      .flex
-        .flex-col
-          span.caption.pt-2 Recife, Brasil
-  .flex
-    .flex-col
-      .body-1.text-justify
+      .text-base.text-justify
         | CTO and Co-founder at Beyond Cloud.
         | I'm a Cloud Developer and Google Cloud Architect.
         | 
