@@ -15,7 +15,7 @@ v-container
           v-row(no-gutters)
             v-col
               .headline {{course.text}}
-          v-row
+          //- v-row
             v-col
               .overline {{course.type}}
 </template>
