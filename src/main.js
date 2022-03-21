@@ -11,16 +11,20 @@ import {
   Icon
 } from '@iconify/vue'
 import en from './locales/en.json'
+import pt from './locales/pt.json'
 
 
 export const createApp = ViteSSG(App, ({
   app,
 }) => {
+  const locale = navigator ? navigator.language.slice(0,2) : 'en'
+  
   const i18n = createI18n({
-    locale: 'en',
+    locale,
     globalInjection: true,
     messages: {
-      en
+      en,
+      pt
     }
   })
   app

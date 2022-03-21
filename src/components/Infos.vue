@@ -7,10 +7,13 @@
         src='https://firebasestorage.googleapis.com/v0/b/ovictoraurelio.appspot.com/o/Pi7compressedIMG_6435-small-minified.webp?alt=media&token=582014d5-5a59-47ae-8e85-b2e037fb1e74'
         alt='Victor Aurélio'
       )
-    .flex-col.ml-2
+    .basis-full.flex-col.ml-2
       .flex
         .flex-col
           span.text-2xl.font-bold Victor Aurélio
+        .flex-grow.text-right
+          button(size="sm" class="my-2 my-sm-0 btn-info" type="submit" @click="alternateLanguage")
+            iconify(icon="cil:language")
       .flex
         .flex-col
           span.text-xl.pt-0.pb-0.font-medium {{ $t("infos.title") }}
@@ -32,6 +35,12 @@
       imgStyle () {
         const length = this.$isMobile() ? 80 : 120
         return `width: ${length}px;height: ${length}px;`
+      }
+    },
+    methods: {
+      alternateLanguage () {
+        const languages = ['pt', 'en']
+        this.$i18n.locale = languages.filter(lang => lang !== this.$i18n.locale)[0]
       }
     }
   }

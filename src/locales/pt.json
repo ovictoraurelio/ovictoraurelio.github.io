@@ -1,0 +1,15 @@
+{
+  "language": "linguagem",
+  "infos": {
+    "title": "CTO na Beyond Co",
+    "subtitle": "10 anos de experiência em soluções digitais",
+    "location": "Recife, Brasil",
+    "description": "CTO e co-fundador da Beyond Co. Sou arquiteto de nuvem certificado pelo Google. Empreendedor desde criança, amo trabalhar com coisas que trazem comodidade a vida das pessoas. Sou programador desde os 14 anos de idade, desde então busco desenvolver, construir e entregar software ou ferramentas alinhados com essa proposta. Eu amo desafios! Trabalhar um tópico inovador de desenvolvimento de software ou hardware principalmente em problemas do mundo real que podem ser resolvidos com tecnologia. - Estudante de Engenharia da Computação na UFPE. - Técnico em Informática pelo IFAL, 2015."
+  },
+  "life": {
+    "sectionTitle": "Em minha vida"
+  },
+  "skills": {
+    "sectionTitle": "Habilidades e conhecimentos"
+  }
+}
