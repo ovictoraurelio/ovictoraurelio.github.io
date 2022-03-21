@@ -2,7 +2,7 @@
 .container
   .flex
     .flex-col
-      .text-2xl.font-bold In my life
+      .text-2xl.font-bold {{$t("life.sectionTitle")}}
   .grid.grid-cols-12(v-for="(history, index) of histories" :key="index")
     .col-span-1
       h1(style="font-size: 40px") ·
@@ -22,9 +22,3 @@ export default {
   })
 };
 </script>
-
-<style>
-..card {
-  min-height: 8em
-}
-</style>
