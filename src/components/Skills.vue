@@ -2,7 +2,7 @@
 .container
   .flex
     .col-span
-      .text-2xl.font-bold Skills and expertises
+      .text-2xl.font-bold {{ $t("skills.sectionTitle") }}
   .grid.grid-cols-12(v-for="(group, index) in groups")
     .col-span-12.text-left
       .mt-8.text-left.text-lg.font-light.font-sen {{group[0].type}}s

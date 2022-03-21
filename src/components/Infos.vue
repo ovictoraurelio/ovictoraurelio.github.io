@@ -13,25 +13,16 @@
           span.text-2xl.font-bold Victor Aurélio
       .flex
         .flex-col
-          span.text-xl.pt-0.pb-0.font-medium CTO at Beyond Co
+          span.text-xl.pt-0.pb-0.font-medium {{ $t("infos.title") }}
       .flex
         .flex-col
-          span.text-sm.py-0 10 years digital solutions expertises
+          span.text-sm.py-0 {{ $t("infos.subtitle") }}
       .flex
         .flex-col
-          span.text-sm.pt-2 Recife, Brasil
+          span.text-sm.pt-2 {{ $t("infos.location") }}
   .flex.mt-2
     .flex-col
-      .text-base.text-justify
-        | CTO and Co-founder at Beyond Cloud.
-        | I'm a Cloud Developer and Google Cloud Architect.
-        | 
-        | Entrepreneur since kid, I love work with things that make people's life easy, so I had become a programmer (since I have 14y) to develop, build and deploy software or tools with this purpose.
-        | 
-        | So I love challenges! Works on a innovative or hard topic of software or hardware development and mainly the challenges of real world that we can solve with technology.
-        | 
-        | - Undergraduate Computer Engineering at Federal University Of Pernambuco.
-        | - Former Computer Technician by Federal Institute of Alagoas, 2015. 
+      .text-base.text-justify {{ $t("infos.description") }}
 </template>
 
 <script>
