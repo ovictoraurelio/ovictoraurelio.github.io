@@ -29,28 +29,30 @@
 </template>
 
 <script>
-  export default {
-    name: 'Home',
-    computed: {
-      imgStyle () {
-        const length = this.$isMobile() ? 80 : 120
-        return `width: ${length}px;height: ${length}px;`
-      }
-    },
-    methods: {
-      alternateLanguage () {
-        const languages = ['pt', 'en']
-        this.$i18n.locale = languages.filter(lang => lang !== this.$i18n.locale)[0]
-      }
+export default {
+  name: 'Home',
+  computed: {
+    imgStyle() {
+      const length = this.$isMobile() ? 80 : 120
+      return `width: ${length}px;height: ${length}px;`
+    }
+  },
+  methods: {
+    alternateLanguage() {
+      const languages = ['pt', 'en']
+      this.$i18n.locale = languages.filter(
+        (lang) => lang !== this.$i18n.locale
+      )[0]
     }
   }
+}
 </script>
 
 <style scoped>
-  img {
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover; /* or object-fit: contain; */
-  }
+img {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* or object-fit: contain; */
+}
 </style>

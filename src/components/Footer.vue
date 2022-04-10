@@ -15,20 +15,23 @@ footer(padless)
 
 <script>
 export default {
-   methods: {
-    openUrl (media) {
-      window.open(media.link, "_blank")
+  data() {
+    return {
+      medias: [
+        { icon: 'mdi-github', link: 'https://github.com/ovictoraurelio' },
+        { icon: 'mdi-twitter', link: 'https://twitter.com/ovictoraurelio' },
+        {
+          icon: 'mdi-linkedin',
+          link: 'https://www.linkedin.com/in/ovictoraurelio/'
+        },
+        { icon: 'mdi-facebook', link: 'https://facebook.com/ovictoraurelio' },
+        { icon: 'mdi-instagram', link: 'https://instagram.com/ovictoraurelio' }
+      ]
     }
   },
-  data () {
-    return {
-    medias: [
-        { icon: 'mdi-github', link: 'https://github.com/ovictoraurelio'} ,
-        { icon: 'mdi-twitter', link: 'https://twitter.com/ovictoraurelio'} ,
-        { icon: 'mdi-linkedin', link: 'https://www.linkedin.com/in/ovictoraurelio/'} ,
-        { icon: 'mdi-facebook', link: 'https://facebook.com/ovictoraurelio'} ,
-        { icon: 'mdi-instagram', link: 'https://instagram.com/ovictoraurelio'} ,
-      ]
+  methods: {
+    openUrl(media) {
+      window.open(media.link, '_blank')
     }
   }
 }

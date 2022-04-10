@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import data from "@/services";
+import data from '@/services'
 
 export default {
   data: () => ({
     histories: data.history
   })
-};
+}
 </script>
