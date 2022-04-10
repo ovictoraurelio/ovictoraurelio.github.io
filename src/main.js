@@ -10,8 +10,8 @@ import 'virtual:windi.css'
 import {
   Icon
 } from '@iconify/vue'
-import en from './locales/en.json'
-import pt from './locales/pt.json'
+import en from './locales/en'
+import pt from './locales/pt'
 
 
 export const createApp = ViteSSG(App, ({

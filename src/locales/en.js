@@ -1,4 +1,4 @@
-{
+export default {
   "language": "language",
   "infos": {
     "title": "CTO at Beyond Co",
