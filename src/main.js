@@ -9,10 +9,8 @@ import en from './locales/en'
 import pt from './locales/pt'
 
 export const createApp = ViteSSG(App, ({ app }) => {
-  const locale = navigator ? navigator.language.slice(0, 2) : 'en'
-
   const i18n = createI18n({
-    locale,
+    locale: 'en',
     globalInjection: true,
     messages: {
       en,
