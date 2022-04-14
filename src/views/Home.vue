@@ -5,6 +5,8 @@
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     History
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
+    Projects
+  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     Skills
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     Footer
@@ -13,6 +15,7 @@
 <script>
 import Infos from '@/components/Infos.vue'
 import History from '@/components/History.vue'
+import Projects from '@/components/Projects.vue'
 import Skills from '@/components/Skills.vue'
 import Footer from '@/components/Footer.vue'
 
@@ -21,6 +24,7 @@ export default {
   components: {
     Infos,
     History,
+    Projects,
     Skills,
     Footer
   }
