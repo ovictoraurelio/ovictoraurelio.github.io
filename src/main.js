@@ -1,20 +1,24 @@
-import { createApp } from 'vue'
+import { ViteSSG } from 'vite-ssg/single-page'
+import { createI18n } from 'vue-i18n'
+
 import App from './App.vue'
-import vuetify from './plugins/vuetify'
-import { loadFonts } from './plugins/webfontloader'
-import 'roboto-fontface/css/roboto/roboto-fontface.css'
-import '@mdi/font/css/materialdesignicons.css'
-import { Icon } from '@iconify/vue';
+import 'virtual:windi.css'
 
-loadFonts()
+import { Icon } from '@iconify/vue'
+import en from './locales/en'
+import pt from './locales/pt'
 
-const app = createApp(App)
-  .use(vuetify)
-
-app.config.globalProperties.$isMobile = () => {
-  return false
-}
-
-app
-  .component('iconify', Icon)
-  .mount('#app')
+export const createApp = ViteSSG(App, ({ app }) => {
+  const i18n = createI18n({
+    locale: 'en',
+    globalInjection: true,
+    messages: {
+      en,
+      pt
+    }
+  })
+  app.use(i18n).component('iconify', Icon).config.globalProperties.$isMobile =
+    () => {
+      return false
+    }
+})

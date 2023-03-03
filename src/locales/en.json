@@ -1,0 +1,15 @@
+{
+  "language": "language",
+  "infos": {
+    "title": "CTO at Beyond Co",
+    "subtitle": "10 years digital solutions expertises",
+    "location": "Recife, Brazil",
+    "description": "I am the CTO and co-founder of Beyond Co., where I lead the development of innovative solutions for clients across various industries. As a Google Cloud certified cloud architect, I have experience in designing and implementing scalable, secure, and efficient architectures using technologies such as Google Cloud Platform, Amazon Web Services, and Microsoft Azure.<br><br>My passion for entrepreneurship began at an early age, and since then, I have worked on projects that aim to bring convenience and efficiency to people's daily lives. As a programmer since the age of 14, I am constantly striving to develop and deliver software and tools aligned with this goal.<br><br>I love challenges! I always seek to be involved in innovative topics related to software and hardware development, especially in real-world problems that can be solved with technology. I believe that technology has the power to transform society and aim to contribute to this transformation.<br><br>In addition to my role as CTO, I am a student of Computer Engineering at UFPE and hold a technical degree in Informatics from IFAL, completed in 2015. I believe in the importance of continuous learning and knowledge updating, which is why I regularly participate in courses, events, and discussion forums in the technology field."
+  },
+  "life": {
+    "sectionTitle": "In my life"
+  },
+  "skills": {
+    "sectionTitle": "Skills and expertises"
+  }
+}
