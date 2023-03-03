@@ -1,6 +1,6 @@
 <template lang="pug">
 .container
-  .flex
+  .flex.mb-4
     .flex-col
       .text-2xl.font-bold {{$t("life.sectionTitle")}}
   .grid.grid-cols-12(v-for="(history, index) of histories" :key="index")

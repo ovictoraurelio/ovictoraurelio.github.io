@@ -4,8 +4,10 @@ export default {
     title: 'CTO e Co-fundador da Beyond Co',
     subtitle: '10 anos de experiência em soluções digitais',
     location: 'Recife, Brasil',
-    description: `Sou arquiteto de nuvem certificado pelo Google Cloud. Sou empreendedor desde adolescente,
-     amo trabalhar em soluções que promovem comodidade a vida das pessoas! Tenho a visão de que a vida das pessoas pode ser positivamente impactada através da educação e da tecnologia e que um futuro melhor será construído no passo em que humanizamos os processos e que construímos soluções que promovem qualidade de vida para as pessoas. Me tornei programador aos 14 anos de idade, comecei trabalhando com Java, PostgresSQL e Adobe Flex em 2012 em uma empresa de tecnologia. Aos 16 anos fundei a Septo Mobile desde então busco desenvolver, construir e entregar software ou ferramentas alinhados com minha visão e propósito. Eu amo desafios! Trabalhar um tópico inovador de desenvolvimento de software ou hardware principalmente em problemas do mundo real que podem ser resolvidos com tecnologia. - Estudante de Engenharia da Computação na UFPE. - Técnico em Informática pelo IFAL, 2015.`
+    description: `Sou CTO e co-fundador da Beyond Co., empresa na qual tenho liderado o desenvolvimento de soluções inovadoras para clientes em diversos segmentos de mercado. Como arquiteto de nuvem certificado pelo Google, tenho experiência em projetar e implementar arquiteturas escaláveis, seguras e eficientes, utilizando tecnologias como Google Cloud Platform, Amazon Web Services e Microsoft Azure.<br><br>Minha paixão por empreendedorismo começou desde cedo, e desde então tenho trabalhado em projetos que buscam trazer comodidade e eficiência para o dia a dia das pessoas. Como programador desde os 14 anos, busco constantemente desenvolver e entregar software e ferramentas alinhados com essa proposta.<br><br>Adoro desafios! Sempre busco estar envolvido em tópicos inovadores de desenvolvimento de software e hardware, principalmente em problemas do mundo real que podem ser resolvidos com tecnologia. Acredito que a tecnologia tem o poder de transformar a sociedade e tenho como objetivo contribuir para essa transformação.<br><br>Além de minha atuação como CTO, sou estudante de Engenharia da Computação na UFPE e possuo formação técnica em Informática pelo IFAL, concluída em 2015. Acredito na importância de estar sempre aprendendo e atualizando conhecimentos, e por isso busco participar constantemente de cursos, eventos e fóruns de discussão na área de tecnologia.`
+  },
+  actions: {
+    open: 'abrir'
   },
   life: {
     sectionTitle: 'Em minha vida'
@@ -17,11 +19,6 @@ export default {
     sectionTitle: 'Projetos recentes',
     items: [
       {},
-      {
-        title: 'Google Drive Extension Menu',
-        subtitle: 'A extension for google drive menu',
-        content: '<p> Google Drive Extension Plugin.  </p>'
-      },
       {
         title: 'Nutrição Total',
         url: 'http://septomobile.com.br/nutricaototal/',
@@ -56,11 +53,11 @@ export default {
         title: '+Sangue',
         url: 'https://play.google.com/store/apps/details?id=maissangue.ifal.edu.br',
         subtitle:
-          'Aplicativo que possibilita agendar doações nos Hemocentros de Alagoas (Hemoal em Maceió e Hemoar Arapiraca) através do aplicativo, ser notificado de novas campanhas, campanhas de baixa no estoque de sangue e compartilhar nas mídias sociais.',
+          'Aplicativo que possibilita agendar doações nos Hemocentros de Alagoas (Hemoal em Maceió e Hemoar Arapiraca)',
         img: 'maissangue.png',
         date: '',
         content:
-          'Aplicativo android desenvolvido em linguagem nativa (java) com web service ruby on rails, disponível na google play. Equipe: Nywton, Ernande e Victor.'
+          'Aplicativo android desenvolvido em linguagem nativa (java) com web service ruby on rails, disponível na Google Play. Através do aplicativo o cidadão pode ser notificado de novas campanhas, campanhas de baixa no estoque de sangue e compartilhar nas mídias sociais. Equipe: Nywton, Ernande e Victor.'
       },
       {
         title: 'Neural Network JS',
@@ -93,7 +90,7 @@ export default {
           '<p>Em breve mais informações estarão disponíveis sobre este projeto, atualmente ele está aguardando definições quanto ao seu modelo.</p>'
       },
       {
-        title: 'Boletim Ifal Unnoficial',
+        title: 'Boletim Ifal - Paralelo',
         url: 'http://victoraurelio.com/boletim',
         subtitle:
           'Versão não oficial do boletim do IFAL, para melhor visualizar as informações do mesmo',
