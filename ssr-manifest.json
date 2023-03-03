@@ -1,6 +1,18 @@
 {
   "vite/modulepreload-polyfill": [],
-  "index.html?html-proxy&index=0.css": [],
+  "node_modules/@vue/shared/dist/shared.esm-bundler.js": [],
+  "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
+  "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
+  "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
+  "node_modules/@vueuse/head/dist/index.mjs": [],
+  "node_modules/vite-ssg/dist/chunks/state.mjs": [],
+  "node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [],
+  "node_modules/vite-ssg/dist/client/single-page.mjs": [],
+  "node_modules/@intlify/shared/dist/shared.esm-bundler.js": [],
+  "node_modules/@intlify/message-compiler/dist/message-compiler.esm-bundler.js": [],
+  "node_modules/@intlify/devtools-if/dist/devtools-if.esm-bundler.js": [],
+  "node_modules/@intlify/core-base/dist/core-base.esm-bundler.js": [],
+  "node_modules/vue-i18n/dist/vue-i18n.runtime.esm-bundler.js": [],
   "src/components/Infos.vue?vue&type=template&lang.js": [],
   "src/components/Infos.vue?vue&type=style&index=0&scoped=true&lang.css": [],
   "plugin-vue:export-helper": [],
@@ -8,125 +20,25 @@
   "src/services/index.js": [],
   "src/components/History.vue?vue&type=template&lang.js": [],
   "src/components/History.vue": [],
+  "src/components/Projects.vue?vue&type=template&lang.js": [],
+  "src/components/Projects.vue?vue&type=style&index=0&lang.css": [],
+  "src/components/Projects.vue": [],
+  "\u0000commonjsHelpers.js": [],
+  "\u0000/Users/wozniak/projects/ovictoraurelio/ovictoraurelio.github.io/node_modules/lodash.groupby/index.js?commonjs-module": [],
+  "node_modules/lodash.groupby/index.js": [],
   "src/components/Skills.vue?vue&type=template&lang.js": [],
   "src/components/Skills.vue": [],
   "src/components/Footer.vue?vue&type=template&lang.js": [],
   "src/components/Footer.vue": [],
   "src/views/Home.vue?vue&type=template&lang.js": [],
   "src/views/Home.vue": [],
+  "src/App.vue?vue&type=template&lang.js": [],
   "src/App.vue?vue&type=style&index=0&lang.css": [],
   "src/App.vue": [],
   "../../../../../@windicss/windi.css": [],
-  "src/locales/en.json": [],
-  "src/locales/pt.json": [],
+  "node_modules/@iconify/vue/dist/iconify.mjs": [],
+  "src/locales/en.js": [],
+  "src/locales/pt.js": [],
   "src/main.js": [],
-  "index.html": [],
-  "node_modules/@vue/shared/dist/shared.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/vue/dist/vue.runtime.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vueuse/head/dist/index.mjs": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/vite-ssg/dist/chunks/state.mjs": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/vite-ssg/dist/client/single-page.mjs": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/vue-i18n/node_modules/@intlify/shared/dist/shared.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@intlify/core-base/node_modules/@intlify/shared/dist/shared.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@intlify/message-resolver/dist/message-resolver.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@intlify/runtime/node_modules/@intlify/shared/dist/shared.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@intlify/runtime/dist/runtime.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@intlify/core-base/node_modules/@intlify/message-compiler/dist/message-compiler.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@intlify/devtools-if/dist/devtools-if.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@intlify/core-base/dist/core-base.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/env.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/const.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/time.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/proxy.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/api/api.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/api/app.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/api/component.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/api/context.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/api/hooks.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/api/util.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/api/index.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/plugin.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@vue/devtools-api/lib/esm/index.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@intlify/vue-devtools/dist/vue-devtools.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/vue-i18n/dist/vue-i18n.runtime.esm-bundler.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "\u0000commonjsHelpers.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "\u0000/home/victor/projects/ovictoraurelio/ovictoraurelio.github.io/node_modules/lodash.groupby/index.js?commonjs-module": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/lodash.groupby/index.js": [
-    "/assets/vendor.336fe2e4.js"
-  ],
-  "node_modules/@iconify/vue/dist/iconify.mjs": [
-    "/assets/vendor.336fe2e4.js"
-  ]
+  "index.html": []
 }
