@@ -25,7 +25,7 @@
           span.text-sm.pt-2 {{ $t("infos.location") }}
   .flex.mt-2
     .flex-col
-      .text-base.text-justify {{ $t("infos.description") }}
+      .text-base.text-justify(v-html='$t("infos.description")')
 </template>
 
 <script>
