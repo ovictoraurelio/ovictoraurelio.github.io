@@ -13,9 +13,10 @@
   "node_modules/@intlify/devtools-if/dist/devtools-if.esm-bundler.js": [],
   "node_modules/@intlify/core-base/dist/core-base.esm-bundler.js": [],
   "node_modules/vue-i18n/dist/vue-i18n.runtime.esm-bundler.js": [],
-  "src/components/Infos.vue?vue&type=template&lang.js": [],
-  "src/components/Infos.vue?vue&type=style&index=0&scoped=true&lang.css": [],
+  "src/components/ImageRounded.vue?vue&type=template&lang.js": [],
   "plugin-vue:export-helper": [],
+  "src/components/ImageRounded.vue": [],
+  "src/components/Infos.vue?vue&type=template&lang.js": [],
   "src/components/Infos.vue": [],
   "src/services/index.js": [],
   "src/components/History.vue?vue&type=template&lang.js": [],
@@ -39,6 +40,7 @@
   "node_modules/@iconify/vue/dist/iconify.mjs": [],
   "src/locales/en.js": [],
   "src/locales/pt.js": [],
+  "src/utils/index.js": [],
   "src/main.js": [],
   "index.html": []
 }
