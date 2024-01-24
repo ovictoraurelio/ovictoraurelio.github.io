@@ -1,8 +1,11 @@
+const firstDayWorkingAsDev = new Date(2012, 3, 1)
+const yearsFromFirstDayToNow = new Date().getFullYear() - firstDayWorkingAsDev.getFullYear()
+
 export default {
   language: 'linguagem',
   infos: {
     title: 'CTO e Co-fundador da Beyond Co',
-    subtitle: '10 anos de experiência em soluções digitais',
+    subtitle: `${yearsFromFirstDayToNow} anos de experiência em soluções digitais`,
     location: 'Recife, Brasil',
     description: `Sou CTO e co-fundador da Beyond Co., empresa na qual tenho liderado o desenvolvimento de soluções inovadoras para clientes em diversos segmentos de mercado. Como arquiteto de nuvem certificado pelo Google, tenho experiência em projetar e implementar arquiteturas escaláveis, seguras e eficientes, utilizando tecnologias como Google Cloud Platform, Amazon Web Services e Microsoft Azure.<br><br>Minha paixão por empreendedorismo começou desde cedo, e desde então tenho trabalhado em projetos que buscam trazer comodidade e eficiência para o dia a dia das pessoas. Como programador desde os 14 anos, busco constantemente desenvolver e entregar software e ferramentas alinhados com essa proposta.<br><br>Adoro desafios! Sempre busco estar envolvido em tópicos inovadores de desenvolvimento de software e hardware, principalmente em problemas do mundo real que podem ser resolvidos com tecnologia. Acredito que a tecnologia tem o poder de transformar a sociedade e tenho como objetivo contribuir para essa transformação.<br><br>Além de minha atuação como CTO, sou estudante de Engenharia da Computação na UFPE e possuo formação técnica em Informática pelo IFAL, concluída em 2015. Acredito na importância de estar sempre aprendendo e atualizando conhecimentos, e por isso busco participar constantemente de cursos, eventos e fóruns de discussão na área de tecnologia.`
   },
