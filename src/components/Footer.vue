@@ -4,7 +4,7 @@ footer(padless)
     .flex-grow
     .flex-grow
   div
-    button.border-gray-500.text-gray.font-bold.p-2.rounded-full.mx-4(v-for='media in medias' :key='media.link' icon @click="openUrl(media)")
+    button.border-gray-500.text-gray.font-bold.p-2.rounded-full.mx-4(v-for='media in medias' :key='media.link' icon @click="$openUrl(media)")
       iconify(style="font-size: 24px" :icon="media.icon")
   //- .font-light.pt-4
     | Site currículo minimalista desenvolvido no tempo livre.
@@ -27,11 +27,6 @@ export default {
         { icon: 'mdi-facebook', link: 'https://facebook.com/ovictoraurelio' },
         { icon: 'mdi-instagram', link: 'https://instagram.com/ovictoraurelio' }
       ]
-    }
-  },
-  methods: {
-    openUrl(media) {
-      window.open(media.link, '_blank')
     }
   }
 }
