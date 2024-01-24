@@ -16,7 +16,7 @@ export default {
         link: 'http://quoti.com.br'
       },
       color: 'bg-yellow-olsen',
-      date: 'Outubro 2017 - Ago de 2018',
+      date: 'Out 2017 - Ago de 2018',
       img: 'globe',
       office: 'Desenvolvedor web full-stack'
     },
@@ -26,7 +26,7 @@ export default {
         link: 'http://viitra.com'
       },
       color: 'bg-yellow-olsen',
-      date: '2 de Abril à Outubro de 2017 ',
+      date: '2 de Abril à Out de 2017 ',
       img: 'globe',
       office: 'Desenvolvedor web full-stack'
     },
@@ -35,7 +35,7 @@ export default {
         name: 'Monitoria | UFPE'
       },
       color: 'bg-yellow-olsen',
-      date: '2017.1',
+      date: '2017.1 e 2017.2',
       img: 'globe',
       office:
         'Monitor das disciplinas: Introdução à programação e Sistemas Digitais'
@@ -48,7 +48,7 @@ export default {
       color: 'bg-yellow-olsen',
       date: '7 de Março de 2016 - atualmente',
       img: 'book',
-      office: 'Estudante de engenharia da computação'
+      office: 'Estudante de Engenharia da Computação'
     },
     {
       locate: {

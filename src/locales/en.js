@@ -1,11 +1,15 @@
+const firstDayWorkingAsDev = new Date(2012, 3, 1)
+const yearsFromFirstDayToNow = new Date().getFullYear() - firstDayWorkingAsDev.getFullYear()
 export default {
   language: 'language',
   infos: {
     title: 'CTO and Co-founder at Beyond Co',
-    subtitle: '10 years digital solutions expertises',
+    subtitle: `${yearsFromFirstDayToNow} years digital solutions expertises`,
     location: 'Recife, Brazil',
-    description:
-      "I am a Google Cloud certified cloud architect. I've been an entrepreneur since I was a teenager. I love working on solutions that make people's lives more comfortable! I have the vision that people's lives can be positively impacted through education and technology and that a better future will be built as we humanize processes and build solutions that promote quality of life for people. I became a programmer at the age of 14, I started working with Java, PostgresSQL and Adobe Flex in 2012 at a technology company. At the age of 16 I founded Septo Mobile since then I seek to develop, build and deliver software or tools in line with my vision and purpose. I love challenges! Working an innovative software or hardware development topic primarily on real-world problems that can be solved with technology. - Computer Engineering Student at UFPE. - Computer Technician by IFAL, 2015."
+    description: "I am the CTO and co-founder of Beyond Co., where I lead the development of innovative solutions for clients across various industries. As a Google Cloud certified cloud architect, I have experience in designing and implementing scalable, secure, and efficient architectures using technologies such as Google Cloud Platform, Amazon Web Services, and Microsoft Azure.<br><br>My passion for entrepreneurship began at an early age, and since then, I have worked on projects that aim to bring convenience and efficiency to people's daily lives. As a programmer since the age of 14, I am constantly striving to develop and deliver software and tools aligned with this goal.<br><br>I love challenges! I always seek to be involved in innovative topics related to software and hardware development, especially in real-world problems that can be solved with technology. I believe that technology has the power to transform society and aim to contribute to this transformation. <br><br>In addition to my role as CTO, I am a student of Computer Engineering at UFPE and hold a technical degree in Informatics from IFAL, completed in 2015. I believe in the importance of continuous learning and knowledge updating, which is why I regularly participate in courses, events, and discussion forums in the technology field."
+  },
+  actions: {
+    open: 'open'
   },
   life: {
     sectionTitle: 'In my life'
@@ -51,11 +55,11 @@ export default {
         title: '+Sangue',
         url: 'https://play.google.com/store/apps/details?id=maissangue.ifal.edu.br',
         subtitle:
-          'Aplicativo que possibilita agendar doações nos Hemocentros de Alagoas (Hemoal em Maceió e Hemoar Arapiraca) através do aplicativo, ser notificado de novas campanhas, campanhas de baixa no estoque de sangue e compartilhar nas mídias sociais.',
+          'Aplicativo que possibilita agendar doações nos Hemocentros de Alagoas (Hemoal em Maceió e Hemoar Arapiraca)',
         img: 'maissangue.png',
         date: '',
         content:
-          'Aplicativo android desenvolvido em linguagem nativa (java) com web service ruby on rails, disponível na google play. Equipe: Nywton, Ernande e Victor.'
+          'Aplicativo android desenvolvido em linguagem nativa (java) com web service ruby on rails, disponível na Google Play. Através do aplicativo o cidadão pode ser notificado de novas campanhas, campanhas de baixa no estoque de sangue e compartilhar nas mídias sociais. Equipe: Nywton, Ernande e Victor.'
       },
       {
         title: 'Neural Network JS',
@@ -88,7 +92,7 @@ export default {
           '<p>Em breve mais informações estarão disponíveis sobre este projeto, atualmente ele está aguardando definições quanto ao seu modelo.</p>'
       },
       {
-        title: 'Boletim Ifal Unnoficial',
+        title: 'Boletim Ifal - Paralelo',
         url: 'http://victoraurelio.com/boletim',
         subtitle:
           'Versão não oficial do boletim do IFAL, para melhor visualizar as informações do mesmo',
@@ -100,11 +104,10 @@ export default {
       {
         title: 'ApiObject',
         url: 'https://github.com/ovictoraurelio/apiObject',
-        subtitle:
-          'A tiny javascript framework. Focused to make more simple work with javascript, json e ajax. I have developed this project before VueJS, Angular and React as we know.',
+        subtitle: 'A open-source project available on github.',
         img: 'github.png',
         date: '',
-        content: 'A open-source project available on github.'
+        content: 'A tiny javascript framework. Focused to make more simple work with javascript, json e ajax. I have developed this project before VueJS, Angular and React as we know.'
       },
       {
         title: 'Find my CEP',

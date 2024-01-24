@@ -5,9 +5,12 @@
       .text-2xl.font-bold.mb-8 {{$t("projects.sectionTitle")}}
   .grid.grid-cols-12(v-for="index in len" :key="index")
     .col-span-8.md_col-span-9.text-left.mt-6
-      h1.text-sm.text-left.my-2(style="font-size: 24px") {{ $t(`projects.items[${index}].title`) }}
-      .mt-2.font-weight-bold {{ $t(`projects.items[${index}].subtitle`) }}
-      button.btn(@click="openUrl($t(`projects.items[${index}].url`))") Abrir site
+      .text-sm.text-left.my-2(style="font-size: 22px") {{ $t(`projects.items[${index}].title`) }}
+      .flex.space-x-2
+        .flex-col.self-center
+          button.btn(v-show="$t(`projects.items[${index}].url`)" @click="openUrl($t(`projects.items[${index}].url`))") {{ $t(`actions.open`) }}
+        .flex-col
+          .mt-2.font-weight-medium {{ $t(`projects.items[${index}].subtitle`) }}
       .my-2.text-sm(v-html="$t(`projects.items[${index}].content`)")
 </template>
 
@@ -20,9 +23,6 @@ export default {
   },
   computed: {
     projects() {
-      console.log({
-        tt: this.$t
-      })
       return this.$t('projects.items', { returnObjects: true })
     }
   },
