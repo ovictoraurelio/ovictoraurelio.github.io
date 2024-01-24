@@ -3,6 +3,9 @@
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     Infos(hideDescription)
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
+    button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="openSite = true")
+      | Ver site
+  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="$openUrl(calendarUrl)")
       | Agendar uma reunião
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
@@ -14,7 +17,7 @@
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="$openUrl(githubUrl)")
       | Github
-.grid.grid-cols-12.gap-10(v-else)
+.grid.grid-cols-12.gap-y-5(v-else)
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     Infos
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
