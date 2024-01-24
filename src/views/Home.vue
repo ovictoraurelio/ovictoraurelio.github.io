@@ -49,7 +49,8 @@ export default {
   data() {
     return {
       openSite: false,
-      calendarUrl: 'https://calendar.google.com/calendar/u/0/appointments/AcZssZ17c0QXkjjkMQg8U6EkdtQeQXFN0Y1_LbmjKtY=',
+      calendarUrl:
+        'https://calendar.google.com/calendar/u/0/appointments/AcZssZ17c0QXkjjkMQg8U6EkdtQeQXFN0Y1_LbmjKtY=',
       linkedinUrl: 'https://www.linkedin.com/in/ovictoraurelio/',
       instagramUrl: 'https://instagram.com/ovictoraurelio',
       githubUrl: 'https://github.com/ovictoraurelio'

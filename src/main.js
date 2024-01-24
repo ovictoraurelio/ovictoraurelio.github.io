@@ -9,7 +9,6 @@ import en from './locales/en'
 import pt from './locales/pt'
 import { isMobile } from './utils'
 
-
 export const createApp = ViteSSG(App, ({ app }) => {
   const i18n = createI18n({
     locale: 'en',
@@ -23,6 +22,7 @@ export const createApp = ViteSSG(App, ({ app }) => {
     window.open(url, '_blank')
   }
 
-  app.config.globalProperties.$isMobile =  isMobile
-  app.use(i18n).component('iconify', Icon).config.globalProperties.$isMobile = isMobile
+  app.config.globalProperties.$isMobile = isMobile
+  app.use(i18n).component('iconify', Icon).config.globalProperties.$isMobile =
+    isMobile
 })
