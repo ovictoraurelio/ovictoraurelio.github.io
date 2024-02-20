@@ -11,8 +11,10 @@
         .flex-col
           span.text-2xl.font-bold Victor Aurélio
         .flex-grow.text-right
-          button.mr-4.px-2.h-8.bg-gray-700.font-medium.text-sm.text-white.rounded(@click="$router.push('/calendar')")
-            | Agendar uma reunião
+          button.mr-4.px-2.h-8.bg-gray-700.font-medium.text-sm.text-white.rounded(
+            v-if="!$isMobile()"
+            @click="$router.push('/calendar')"
+            ) Agendar uma reunião
           button(size="sm" class="my-2 my-sm-0 btn-info" type="submit" @click="alternateLanguage")
             iconify(icon="cil:language")
       .flex
