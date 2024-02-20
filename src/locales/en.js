@@ -14,7 +14,7 @@ export default {
     open: 'open'
   },
   life: {
-    sectionTitle: 'In my life'
+    sectionTitle: 'Timeline'
   },
   skills: {
     sectionTitle: 'Skills and expertises'
