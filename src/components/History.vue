@@ -9,7 +9,7 @@
     .col-span-3.md_col-span-2
       .text-sm.text-left {{ history.date }}
     .col-span-8.md_col-span-9.text-left
-      .font-weight-bold {{ history.locate.name }}
+      .font-weight-bold(style="cursor: pointer" @click="openLink(history)") {{ history.locate.name }}
       .text-sm {{ history.office }}
 </template>
 
@@ -17,8 +17,17 @@
 import data from '@/services'
 
 export default {
-  data: () => ({
-    histories: data.history
-  })
+  data () {
+      return {
+      histories: data.history
+    }
+  },
+  methods: {
+    openLink (history) {
+      if (history?.locate?.link) {
+        this.$openUrl(history.locate.link)
+      }
+    }
+  }
 }
 </script>
