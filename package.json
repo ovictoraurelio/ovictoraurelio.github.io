@@ -1,6 +1,6 @@
 {
   "name": "victor_aurelio",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "scripts": {
     "serve": "vite preview",
     "build": "vite-ssg build",
