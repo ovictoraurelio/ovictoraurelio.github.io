@@ -5,7 +5,7 @@
       | Voltar ao site
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     span --
-    iframe(src="https://calendar.google.com/calendar/u/0/appointments/AcZssZ17c0QXkjjkMQg8U6EkdtQeQXFN0Y1_LbmjKtY=" width="100%" height="600" frameborder="0" scrolling="no")
+    iframe(src="https://calendar.google.com/calendar/u/0/appointments/AcZssZ17c0QXkjjkMQg8U6EkdtQeQXFN0Y1_LbmjKtY=" width="100%" height="900" frameborder="0" scrolling="no")
 </template>
 
 <script>
