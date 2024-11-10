@@ -2,7 +2,7 @@ export default {
   history: [
     {
       locate: {
-        name: 'Beyond Cloud',
+        name: 'Beyond Co',
         link: 'https://beyondcompany.com.br'
       },
       color: 'bg-yellow-olsen',
