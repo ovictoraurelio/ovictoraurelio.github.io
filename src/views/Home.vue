@@ -26,8 +26,6 @@
     Projects
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     Skills
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    Footer
 </template>
 
 <script>

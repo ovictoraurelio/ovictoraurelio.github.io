@@ -3,6 +3,76 @@ const yearsFromFirstDayToNow =
   new Date().getFullYear() - firstDayWorkingAsDev.getFullYear()
 export default {
   language: 'language',
+  footer: {
+    about: {
+      title: 'About',
+      description: 'I am the COO and co-founder of Beyond Co., where I lead the development of innovative solutions for clients across various industries.'
+    },
+    links: {
+      title: 'Quick Links',
+      home: 'Home',
+      calendar: 'Schedule Meeting',
+      contact: 'Contact'
+    },
+    contact: {
+      title: 'Contact'
+    },
+    rights: 'All rights reserved.',
+    terms: 'Terms of Service',
+    privacy: 'Privacy Policy'
+  },
+  cookies: {
+    message: 'This website uses cookies to ensure you get the best experience on our website.',
+    accept: 'Accept',
+    learnMore: 'Learn more',
+    settings: 'Cookie Settings'
+  },
+  terms: {
+    title: 'Terms of Service',
+    content: 'These Terms of Service govern your use of the website operated by Victor Aurélio. By accessing or using our website, you agree to be bound by these Terms. We may update these Terms from time to time, and your continued use of the website constitutes acceptance of any changes.',
+    back: 'Back to Home',
+    sections: {
+      use: {
+        title: 'Acceptable Use',
+        content: 'You agree to use this website only for lawful purposes and in a way that does not infringe upon the rights of others or restrict their use of the website. Prohibited uses include any unlawful activity, distributing malicious code, or attempting to gain unauthorized access to systems or data.'
+      },
+      content: {
+        title: 'Intellectual Property',
+        content: 'All content on this website, including text, graphics, logos, and software, is the property of Victor Aurélio and is protected by copyright and other intellectual property laws. You may not reproduce, distribute, or create derivative works without explicit permission.'
+      },
+      liability: {
+        title: 'Limitation of Liability',
+        content: 'The website is provided on an "as is" basis. Victor Aurélio makes no warranties, expressed or implied, and shall not be liable for any damages, including but not limited to, direct, indirect, incidental, or consequential damages arising from the use of the website.'
+      },
+      changes: {
+        title: 'Changes to Terms',
+        content: 'Victor Aurélio reserves the right to modify these Terms at any time. Changes will be effective immediately upon posting on the website. Your continued use of the website after any changes indicates your acceptance of the modified Terms.'
+      }
+    }
+  },
+  privacy: {
+    title: 'Privacy Policy',
+    content: 'This Privacy Policy describes how we collect, use, and share information when you use our website. We collect information to provide, improve, and develop our services. We use cookies to enhance your experience and analyze website traffic. You can manage your cookie preferences through your browser settings.',
+    back: 'Back to Home',
+    sections: {
+      collection: {
+        title: 'Information Collection',
+        content: 'We collect information that you provide directly to us, such as when you contact us or fill out forms on our website. We may also automatically collect certain information about your device, including IP address, browser type, and operating system.'
+      },
+      cookies: {
+        title: 'Use of Cookies',
+        content: 'Cookies are small files stored on your device that help us improve website functionality and user experience. We use cookies to remember your preferences, analyze website traffic, and personalize content. You can control cookies through your browser settings.'
+      },
+      thirdParty: {
+        title: 'Third-Party Services',
+        content: 'Our website may use third-party services, such as analytics providers, that may collect information about your use of the website. These third parties have their own privacy policies addressing how they use such information.'
+      },
+      rights: {
+        title: 'Your Rights',
+        content: 'You have the right to access, correct, or delete your personal information that we hold. If you have any questions about how we handle your data or would like to exercise these rights, please contact us.'
+      }
+    }
+  },
   infos: {
     title: 'COO and Co-founder at Beyond Co',
     subtitle: `${yearsFromFirstDayToNow} years digital solutions expertises`,
