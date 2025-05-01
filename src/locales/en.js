@@ -22,6 +22,7 @@ export default {
     privacy: 'Privacy Policy'
   },
   cookies: {
+    title: 'Cookie Consent',
     message: 'This website uses cookies to ensure you get the best experience on our website.',
     accept: 'Accept',
     learnMore: 'Learn more',

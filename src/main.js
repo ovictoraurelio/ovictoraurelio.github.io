@@ -1,5 +1,6 @@
 import { ViteSSG } from 'vite-ssg'
 import { createI18n } from 'vue-i18n'
+import { reactive } from 'vue'
 
 import App from './App.vue'
 import 'virtual:windi.css'
@@ -9,6 +10,11 @@ import en from './locales/en'
 import pt from './locales/pt'
 import { isMobile } from './utils'
 import routes from './router/routes'
+
+// Estado global para a aplicação
+const globalState = reactive({
+  openSite: false
+})
 
 export const createApp = ViteSSG(
   // the root component
@@ -37,6 +43,7 @@ export const createApp = ViteSSG(
     }
 
     app.config.globalProperties.$isMobile = isMobile
+    app.config.globalProperties.$globalState = globalState
     app.use(i18n).component('iconify', Icon).config.globalProperties.$isMobile =
       isMobile
   }

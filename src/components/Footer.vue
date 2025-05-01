@@ -1,5 +1,5 @@
-<template lang="pug">
-footer.bg-gray-800.text-white.pt-10.pb-6.mt-12(v-if="!$isMobile() || currentRouteIsHome")
+<template lang="pug">   
+footer.bg-gray-800.text-white.pt-10.pb-6.mt-12(v-if="!$isMobile() || $globalState.openSite")
   .container.mx-auto.px-4
     .grid.grid-cols-1.md_grid-cols-3.gap-8.mb-8
       // Column 1: About
@@ -62,11 +62,6 @@ export default {
         { text: this.$t('footer.links.calendar'), url: '/calendar' },
         { text: this.$t('footer.links.contact'), url: '/contact' }
       ]
-    }
-  },
-  computed: {
-    currentRouteIsHome() {
-      return this.$route.path === '/'
     }
   }
 }

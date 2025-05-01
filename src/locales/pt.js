@@ -23,6 +23,7 @@ export default {
     privacy: 'Política de Privacidade'
   },
   cookies: {
+    title: 'Consentimento de Cookies',
     message: 'Este site usa cookies para garantir que você obtenha a melhor experiência em nosso site.',
     accept: 'Aceitar',
     learnMore: 'Saiba mais',

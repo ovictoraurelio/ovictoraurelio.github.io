@@ -1,12 +1,12 @@
 <template lang="pug">
-.grid.grid-cols-12.gap-y-5.mt-4(v-if="$isMobile() && !openSite")
+.grid.grid-cols-12.gap-y-5.mt-4(v-if="$isMobile() && !$globalState.openSite")
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     Infos(hideDescription)
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="$router.push('/calendar')")
       | {{ $t("scheduleMeeting") }}
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="openSite = true")
+    button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="showFullSite")
       | Ver site
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="$openUrl(linkedinUrl)")
@@ -46,12 +46,16 @@ export default {
   },
   data() {
     return {
-      openSite: false,
       calendarUrl:
         'https://calendar.google.com/calendar/u/0/appointments/AcZssZ17c0QXkjjkMQg8U6EkdtQeQXFN0Y1_LbmjKtY=',
       linkedinUrl: 'https://www.linkedin.com/in/ovictoraurelio/',
       instagramUrl: 'https://instagram.com/ovictoraurelio',
       githubUrl: 'https://github.com/ovictoraurelio'
+    }
+  },
+  methods: {
+    showFullSite() {
+      this.$globalState.openSite = true
     }
   }
 }
