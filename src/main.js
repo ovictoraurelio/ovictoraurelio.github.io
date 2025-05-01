@@ -23,8 +23,27 @@ export const createApp = ViteSSG(
   { routes },
   // function to have custom setups
   ({ app }) => {
+    // Detectar idioma do navegador ou usar pt-BR como padrão
+    const getBrowserLocale = () => {
+      const navigatorLocale = navigator.languages !== undefined
+        ? navigator.languages[0]
+        : navigator.language
+
+      if (!navigatorLocale) {
+        return 'pt' // Padrão para português
+      }
+
+      // Se o idioma contém pt (pt-BR, pt-PT, etc), usar pt
+      if (navigatorLocale.toLowerCase().includes('pt')) {
+        return 'pt'
+      }
+      
+      return 'en' // Fallback para inglês
+    }
+
     const i18n = createI18n({
-      locale: 'en',
+      locale: getBrowserLocale(),
+      fallbackLocale: 'pt', // Fallback para português
       globalInjection: true,
       messages: {
         en,

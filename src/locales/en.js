@@ -3,6 +3,23 @@ const yearsFromFirstDayToNow =
   new Date().getFullYear() - firstDayWorkingAsDev.getFullYear()
 export default {
   language: 'language',
+  contact: {
+    title: 'Contact Me',
+    form: {
+      name: 'Name',
+      namePlaceholder: 'Enter your name',
+      phone: 'Phone',
+      phonePlaceholder: 'Enter your phone number',
+      email: 'Email',
+      emailPlaceholder: 'Enter your email address',
+      message: 'Message',
+      messagePlaceholder: 'Enter your message here...',
+      submit: 'Send Message',
+      sending: 'Sending...',
+      successMessage: 'Your message has been sent successfully! I will get back to you soon.',
+      errorMessage: 'There was an error sending your message. Please try again later.'
+    }
+  },
   footer: {
     about: {
       title: 'About',
@@ -89,7 +106,8 @@ export default {
     sectionTitle: 'Timeline'
   },
   skills: {
-    sectionTitle: 'Skills and expertises'
+    sectionTitle: 'Skills and expertises',
+    subtitle: 'Some of the tools I have experience with in terms of Software Engineering'
   },
   projects: {
     sectionTitle: 'Recent projects (Not anymore)',

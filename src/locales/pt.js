@@ -4,6 +4,23 @@ const yearsFromFirstDayToNow =
 
 export default {
   language: 'idioma',
+  contact: {
+    title: 'Entre em Contato',
+    form: {
+      name: 'Nome',
+      namePlaceholder: 'Digite seu nome',
+      phone: 'Telefone',
+      phonePlaceholder: 'Digite seu número de telefone',
+      email: 'Email',
+      emailPlaceholder: 'Digite seu endereço de email',
+      message: 'Mensagem',
+      messagePlaceholder: 'Digite sua mensagem aqui...',
+      submit: 'Enviar Mensagem',
+      sending: 'Enviando...',
+      successMessage: 'Sua mensagem foi enviada com sucesso! Entrarei em contato em breve.',
+      errorMessage: 'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.'
+    }
+  },
   footer: {
     about: {
       title: 'Sobre',
@@ -89,7 +106,8 @@ export default {
     sectionTitle: 'Em minha vida'
   },
   skills: {
-    sectionTitle: 'Habilidades e conhecimentos'
+    sectionTitle: 'Habilidades e expertises',
+    subtitle: 'Algumas das ferramentas que possuo experiência em termos de Engenharia de Software'
   },
   projects: {
     sectionTitle: 'Projetos recentes (Não mais)',
