@@ -61,6 +61,8 @@
 </template>
 
 <script>
+import { detectBrowser, getDeviceInfo } from '../services/tracking'
+
 export default {
   name: 'Contact',
   data() {
@@ -76,19 +78,42 @@ export default {
     }
   },
   methods: {
+    // Método para obter informações do dispositivo
+    getDeviceInfo(...args) {
+      return getDeviceInfo.call(this, ...args)
+    },
+
+    // Método para detectar o navegador
+    detectBrowser(...args) {
+      return detectBrowser.call(this, ...args)
+    },
+
     async submitForm() {
       this.isSubmitting = true
       this.formStatus = null
-      
+
       try {
-        const response = await fetch('https://n8n.victoraurelio.com/webhooks/contact-message', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(this.formData)
-        })
-        
+        // Adicionar timestamp e informações adicionais ao envio
+        const deviceInfo = this.getDeviceInfo()
+        const payload = {
+          ...this.formData,
+          timestamp: new Date().toISOString(),
+          device: deviceInfo.device,
+          browser: deviceInfo.browser,
+          currentPage: this.$route.path
+        }
+
+        const response = await fetch(
+          'https://n8n.victoraurelio.com/webhook/webhooks/contact-message',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          }
+        )
+
         if (response.ok) {
           this.formStatus = {
             type: 'success',
@@ -126,7 +151,8 @@ export default {
   margin-bottom: 1.5rem;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border-color: #3b82f6;
   box-shadow: 0 0 0 1px #3b82f6;

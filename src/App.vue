@@ -8,11 +8,15 @@
 <script>
 import Footer from './components/Footer.vue'
 import CookieConsent from './components/CookieConsent.vue'
+import { trackPageView } from './services/tracking'
 
 export default {
   components: {
     Footer,
     CookieConsent
+  },
+  created() {
+    trackPageView(this.$route)
   }
 }
 </script>
