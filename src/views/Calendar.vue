@@ -2,23 +2,24 @@
 .container.mx-auto.px-4
   // Mobile View
   template(v-if="$isMobile()")
-    .grid.grid-cols-12.gap-4
-      .col-span-12
-        button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white(class="hover:bg-gray-900" @click="$router.push('/')")
-          | Voltar ao site
+    .flex.flex-col.h-screen.overflow-hidden
+      .py-2
+        button.h-10.w-full.bg-white.text-black.font-medium.text-sm.border.border-gray-300.rounded-lg.shadow-sm(class="hover:bg-gray-100" @click="selectedLink ? resetSelection() : $router.push('/')")
+          | {{ selectedLink ? 'Voltar' : 'Voltar ao site' }}
       
-      // Before Link Selection
-      template(v-if="!selectedLink")
-        .col-span-12(v-for="(link, index) in roamLinks" :key="index")
-          button.h-10.w-full.mb-2.bg-gray-800.font-medium.text-sm.text-white(class="hover:bg-gray-900" @click="selectLink(link)")
-            | {{ link.name }}
-      
-      // After Link Selection
-      template(v-else)
-        .col-span-12
-          button.h-10.w-full.mb-4.bg-gray-700.font-medium.text-sm.text-white(class="hover:bg-gray-800" @click="resetSelection")
-            | Voltar para seleção
-          div(:id="selectedLink.id" style="min-width: 320px; width: 100%;")
+      // Content Area
+      .flex-grow.overflow-hidden
+        // Before Link Selection
+        template(v-if="!selectedLink")
+          .h-full.flex.flex-col.justify-evenly.py-2
+            .flex-1.flex.items-center.justify-center.px-4.py-2(v-for="(link, index) in roamLinks" :key="index")
+              button.w-full.h-full.py-8.bg-white.text-black.font-bold.text-2xl.rounded-xl.shadow-lg.transition-all.transform(class="hover:scale-105 hover:shadow-xl" @click="selectLink(link)")
+                | {{ link.name }}
+        
+        // After Link Selection
+        template(v-else)
+          .h-full.overflow-auto
+            div(:id="selectedLink.id" style="width: 100%; height: 100%")
   
   // Desktop View
   template(v-else)
