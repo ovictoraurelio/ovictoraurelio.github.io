@@ -22,6 +22,8 @@ export default {
   },
   projects: {
     sectionTitle: 'Recent projects (Not anymore)',
+    showMore: 'Show more',
+    showLess: 'Show less',
     items: [
       {},
       {

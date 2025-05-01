@@ -30,6 +30,9 @@ export const createApp = ViteSSG(
       if (typeof url === 'object') {
         urlToBeOpened = url?.link ?? url?.url
       }
+      if (!urlToBeOpened) {
+        return
+      }
       window.open(urlToBeOpened, '_blank')
     }
 
