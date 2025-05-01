@@ -3,13 +3,102 @@ const yearsFromFirstDayToNow =
   new Date().getFullYear() - firstDayWorkingAsDev.getFullYear()
 
 export default {
-  language: 'linguagem',
+  language: 'idioma',
+  contact: {
+    title: 'Entre em Contato',
+    form: {
+      name: 'Nome',
+      namePlaceholder: 'Digite seu nome',
+      phone: 'Telefone',
+      phonePlaceholder: 'Digite seu número de telefone',
+      email: 'Email',
+      emailPlaceholder: 'Digite seu endereço de email',
+      message: 'Mensagem',
+      messagePlaceholder: 'Digite sua mensagem aqui...',
+      submit: 'Enviar Mensagem',
+      sending: 'Enviando...',
+      successMessage: 'Sua mensagem foi enviada com sucesso! Entrarei em contato em breve.',
+      errorMessage: 'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.'
+    }
+  },
+  footer: {
+    about: {
+      title: 'Sobre',
+      description: 'Sou COO e co-fundador da Beyond Co., empresa na qual tenho liderado o desenvolvimento de soluções inovadoras para clientes em diversos segmentos de mercado.'
+    },
+    links: {
+      title: 'Links Rápidos',
+      home: 'Início',
+      calendar: 'Agendar Reunião',
+      contact: 'Contato'
+    },
+    contact: {
+      title: 'Contato'
+    },
+    rights: 'Todos os direitos reservados.',
+    terms: 'Termos de Serviço',
+    privacy: 'Política de Privacidade'
+  },
+  cookies: {
+    title: 'Consentimento de Cookies',
+    message: 'Este site usa cookies para garantir que você obtenha a melhor experiência em nosso site.',
+    accept: 'Aceitar',
+    learnMore: 'Saiba mais',
+    settings: 'Configurações de Cookies'
+  },
+  terms: {
+    title: 'Termos de Serviço',
+    content: 'Estes Termos de Serviço regem o uso do site operado por Victor Aurélio. Ao acessar ou usar nosso site, você concorda em estar vinculado a estes Termos. Podemos atualizar estes Termos de tempos em tempos, e seu uso contínuo do site constitui aceitação de quaisquer alterações.',
+    back: 'Voltar para Início',
+    sections: {
+      use: {
+        title: 'Uso Aceitável',
+        content: 'Você concorda em usar este site apenas para fins legais e de uma maneira que não infrinja os direitos de outros ou restrinja seu uso do site. Usos proibidos incluem qualquer atividade ilegal, distribuição de código malicioso ou tentativa de obter acesso não autorizado a sistemas ou dados.'
+      },
+      content: {
+        title: 'Propriedade Intelectual',
+        content: 'Todo o conteúdo neste site, incluindo texto, gráficos, logotipos e software, é propriedade de Victor Aurélio e está protegido por direitos autorais e outras leis de propriedade intelectual. Você não pode reproduzir, distribuir ou criar trabalhos derivados sem permissão explícita.'
+      },
+      liability: {
+        title: 'Limitação de Responsabilidade',
+        content: 'O site é fornecido "como está". Victor Aurélio não oferece garantias, expressas ou implícitas, e não será responsável por quaisquer danos, incluindo, mas não se limitando a, danos diretos, indiretos, incidentais ou consequentes decorrentes do uso do site.'
+      },
+      changes: {
+        title: 'Alterações nos Termos',
+        content: 'Victor Aurélio reserva-se o direito de modificar estes Termos a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no site. Seu uso contínuo do site após quaisquer alterações indica sua aceitação dos Termos modificados.'
+      }
+    }
+  },
+  privacy: {
+    title: 'Política de Privacidade',
+    content: 'Esta Política de Privacidade descreve como coletamos, usamos e compartilhamos informações quando você usa nosso site. Coletamos informações para fornecer, melhorar e desenvolver nossos serviços. Usamos cookies para melhorar sua experiência e analisar o tráfego do site. Você pode gerenciar suas preferências de cookies através das configurações do seu navegador.',
+    back: 'Voltar para Início',
+    sections: {
+      collection: {
+        title: 'Coleta de Informações',
+        content: 'Coletamos informações que você fornece diretamente a nós, como quando você nos contata ou preenche formulários em nosso site. Também podemos coletar automaticamente certas informações sobre seu dispositivo, incluindo endereço IP, tipo de navegador e sistema operacional.'
+      },
+      cookies: {
+        title: 'Uso de Cookies',
+        content: 'Cookies são pequenos arquivos armazenados em seu dispositivo que nos ajudam a melhorar a funcionalidade do site e a experiência do usuário. Usamos cookies para lembrar suas preferências, analisar o tráfego do site e personalizar conteúdo. Você pode controlar os cookies através das configurações do seu navegador.'
+      },
+      thirdParty: {
+        title: 'Serviços de Terceiros',
+        content: 'Nosso site pode usar serviços de terceiros, como provedores de análise, que podem coletar informações sobre seu uso do site. Esses terceiros têm suas próprias políticas de privacidade que abordam como eles usam essas informações.'
+      },
+      rights: {
+        title: 'Seus Direitos',
+        content: 'Você tem o direito de acessar, corrigir ou excluir suas informações pessoais que mantemos. Se você tiver alguma dúvida sobre como lidamos com seus dados ou gostaria de exercer esses direitos, entre em contato conosco.'
+      }
+    }
+  },
   infos: {
-    title: 'CTO e Co-fundador da Beyond Co',
+    title: 'COO e Co-fundador da Beyond Co',
     subtitle: `${yearsFromFirstDayToNow} anos de experiência em soluções digitais`,
     location: 'Recife, Brasil',
-    description: `Sou CTO e co-fundador da Beyond Co., empresa na qual tenho liderado o desenvolvimento de soluções inovadoras para clientes em diversos segmentos de mercado. Como arquiteto de nuvem certificado pelo Google, tenho experiência em projetar e implementar arquiteturas escaláveis, seguras e eficientes, utilizando tecnologias como Google Cloud Platform, Amazon Web Services e Microsoft Azure.<br><br>Minha paixão por empreendedorismo começou desde cedo, e desde então tenho trabalhado em projetos que buscam trazer comodidade e eficiência para o dia a dia das pessoas. Como programador desde os 14 anos, busco constantemente desenvolver e entregar software e ferramentas alinhados com essa proposta.<br><br>Adoro desafios! Sempre busco estar envolvido em tópicos inovadores de desenvolvimento de software e hardware, principalmente em problemas do mundo real que podem ser resolvidos com tecnologia. Acredito que a tecnologia tem o poder de transformar a sociedade e tenho como objetivo contribuir para essa transformação.<br><br>Além de minha atuação como CTO, sou estudante de Engenharia da Computação na UFPE e possuo formação técnica em Informática pelo IFAL, concluída em 2015. Acredito na importância de estar sempre aprendendo e atualizando conhecimentos, e por isso busco participar constantemente de cursos, eventos e fóruns de discussão na área de tecnologia.`
+    description: `Sou COO e co-fundador da Beyond Co., empresa na qual tenho liderado o desenvolvimento de soluções inovadoras para clientes em diversos segmentos de mercado. Como arquiteto de nuvem certificado pelo Google, tenho experiência em projetar e implementar arquiteturas escaláveis, seguras e eficientes, utilizando tecnologias como Google Cloud Platform, Amazon Web Services e Microsoft Azure.<br><br>Minha paixão por empreendedorismo começou desde cedo, e desde então tenho trabalhado em projetos que buscam trazer comodidade e eficiência para o dia a dia das pessoas. Como programador desde os 14 anos, busco constantemente desenvolver e entregar software e ferramentas alinhados com essa proposta.<br><br>Adoro desafios! Sempre busco estar envolvido em tópicos inovadores de desenvolvimento de software e hardware, principalmente em problemas do mundo real que podem ser resolvidos com tecnologia. Acredito que a tecnologia tem o poder de transformar a sociedade e tenho como objetivo contribuir para essa transformação.<br><br>Além de minha atuação como COO, sou estudante de Engenharia da Computação na UFPE e possuo formação técnica em Informática pelo IFAL, concluída em 2015. Acredito na importância de estar sempre aprendendo e atualizando conhecimentos, e por isso busco participar constantemente de cursos, eventos e fóruns de discussão na área de tecnologia.`
   },
+  scheduleMeeting: 'Agendar uma reunião',
   actions: {
     open: 'abrir'
   },
@@ -17,10 +106,13 @@ export default {
     sectionTitle: 'Em minha vida'
   },
   skills: {
-    sectionTitle: 'Habilidades e conhecimentos'
+    sectionTitle: 'Habilidades e expertises',
+    subtitle: 'Algumas das ferramentas que possuo experiência em termos de Engenharia de Software'
   },
   projects: {
-    sectionTitle: 'Projetos recentes',
+    sectionTitle: 'Projetos recentes (Não mais)',
+    showMore: 'Ver mais',
+    showLess: 'Ver menos',
     items: [
       {},
       {

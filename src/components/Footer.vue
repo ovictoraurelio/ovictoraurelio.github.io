@@ -1,16 +1,46 @@
-<template lang="pug">
-footer(padless)
-  .divide-y.divide-gray-300.my-4
-    .flex-grow
-    .flex-grow
-  div
-    button.border-gray-500.text-gray.font-bold.p-2.rounded-full.mx-4(v-for='media in medias' :key='media.link' icon @click="$openUrl(media.link)")
-      iconify(style="font-size: 24px" :icon="media.icon")
-  //- .font-light.pt-4
-    | Site currículo minimalista desenvolvido no tempo livre.
-  div.mb-12
-    | {{ new Date().getFullYear() }} &mdash; 
-    strong Victor Aurélio
+<template lang="pug">   
+footer.bg-gray-800.text-white.pt-10.pb-6.mt-12(v-if="footerShouldBeVisible")
+  .container.mx-auto.px-4
+    .grid.grid-cols-1.md_grid-cols-3.gap-8.mb-8
+      // Column 1: About
+      .footer-column
+        h3.text-xl.font-bold.mb-4 {{ $t('footer.about.title') }}
+        p.text-gray-300.mb-4 {{ $t('footer.about.description') }}
+        .flex.items-center.space-x-4
+          button.text-white.hover_text-gray-300.transition-colors(
+            :key='media.link'
+            v-for='media in medias'
+            @click="$openUrl(media.link)"
+          )
+            iconify(style="font-size: 24px" :icon="media.icon")
+      
+      // Column 2: Quick Links
+      .footer-column
+        h3.text-xl.font-bold.mb-4 {{ $t('footer.links.title') }}
+        ul.space-y-2
+          li(v-for="link in links" :key="link.url")
+            a.text-gray-300.hover_text-white.transition-colors.cursor-pointer(@click="$router.push(link.url)") {{ link.text }}
+      
+      // Column 3: Contact
+      .footer-column
+        h3.text-xl.font-bold.mb-4 {{ $t('footer.contact.title') }}
+        .flex.items-center.mb-3
+          iconify.mr-2(icon="mdi:email-outline" style="font-size: 20px")
+          a.text-gray-300.hover_text-white.transition-colors(href="mailto:contact@victoraurelio.com") contact@victoraurelio.com
+        .flex.items-center.mb-3
+          iconify.mr-2(icon="mdi:map-marker-outline" style="font-size: 20px")
+          span.text-gray-300 {{ $t('infos.location') }}
+    
+    // Divider
+    .border-t.border-gray-700.pt-6
+      .flex.flex-col.md_flex-row.justify-between.items-center
+        p.text-gray-400.text-sm.mb-4.md_mb-0
+          | © {{ new Date().getFullYear() }} 
+          strong Victor Aurélio
+          |  — {{ $t('footer.rights') }}
+        p.text-gray-400.text-sm
+          a.text-gray-300.hover_text-white.mr-4.cursor-pointer(@click="$router.push('/terms')") {{ $t('footer.terms') }}
+          a.text-gray-300.hover_text-white.cursor-pointer(@click="$router.push('/privacy')") {{ $t('footer.privacy') }}
 </template>
 
 <script>
@@ -26,8 +56,38 @@ export default {
         },
         { icon: 'mdi-facebook', link: 'https://facebook.com/ovictoraurelio' },
         { icon: 'mdi-instagram', link: 'https://instagram.com/ovictoraurelio' }
+      ],
+      links: [
+        { text: this.$t('footer.links.home'), url: '/' },
+        { text: this.$t('footer.links.calendar'), url: '/calendar' },
+        { text: this.$t('footer.links.contact'), url: '/contact' }
       ]
+    }
+  },
+  computed: {
+    footerShouldBeVisible() {
+      if (!this.$isMobile()) {
+        return true
+      }
+
+      if (this.$route.path !== '/') {
+        return true
+      }
+
+      return false
     }
   }
 }
 </script>
+
+<style scoped>
+.footer-column {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer-column {
+    margin-bottom: 0;
+  }
+}
+</style>

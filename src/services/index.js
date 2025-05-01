@@ -8,7 +8,7 @@ export default {
       color: 'bg-yellow-olsen',
       date: 'Ago de 2018 - atualmente',
       img: 'globe',
-      office: 'CTO & Co-fundador'
+      office: 'COO & Co-fundador'
     },
     {
       locate: {
@@ -32,6 +32,16 @@ export default {
     },
     {
       locate: {
+        name: 'UFPE - Universidade Federal de Pernanbuco',
+        link: 'ufpe.br'
+      },
+      color: 'bg-yellow-olsen',
+      date: 'Maio de 2023 - atualmente',
+      img: 'book',
+      office: 'Estudante de Sistemas da Informação'
+    },
+    {
+      locate: {
         name: 'Monitoria | UFPE'
       },
       color: 'bg-yellow-olsen',
@@ -46,7 +56,7 @@ export default {
         link: 'ufpe.br'
       },
       color: 'bg-yellow-olsen',
-      date: '7 de Março de 2016 - atualmente',
+      date: '7 de Março de 2016 - 2018',
       img: 'book',
       office: 'Estudante de Engenharia da Computação'
     },
