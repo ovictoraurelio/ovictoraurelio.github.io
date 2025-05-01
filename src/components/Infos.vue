@@ -14,7 +14,7 @@
           button.mr-4.px-2.h-8.bg-gray-700.font-medium.text-sm.text-white.rounded(
             v-if="!$isMobile()"
             @click="$router.push('/calendar')"
-            ) Agendar uma reunião
+            ) {{ $t("scheduleMeeting") }}
           button(size="sm" class="my-2 my-sm-0 btn-info" type="submit" @click="alternateLanguage")
             iconify(icon="cil:language")
       .flex
@@ -26,7 +26,7 @@
       .flex
         .flex-col
           span.text-sm.pt-2 {{ $t("infos.location") }}
-  .flex.mt-2(v-if="!hideDescription")
+  .flex.mt-6(v-if="!hideDescription")
     .flex-col
       .text-base.text-justify(v-html='$t("infos.description")')
 </template>
