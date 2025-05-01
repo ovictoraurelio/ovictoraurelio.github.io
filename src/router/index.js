@@ -5,14 +5,22 @@ import { trackPageView } from '../services/tracking'
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    // Comportamento de rolagem padrão
+    return savedPosition || { top: 0 }
+  }
 })
-// Configurar guard de navegação para rastrear visualizações de página
-router.beforeEach((to) => {
-  console.info('Rastreando visualização de página:', to.path)
-  // Enviar notificação de visualização de página apenas quando a navegação estiver concluída
-  trackPageView(to).catch((error) => {
-    console.error('Erro ao enviar notificação de visualização:', error)
-  })
+
+// Adicionar rastreamento de navegação
+router.beforeEach(async (to, from, next) => {
+  try {
+    console.info('Navegando para:', to.path)
+    await trackPageView(to)
+    next()
+  } catch (error) {
+    console.error('Erro no rastreamento:', error)
+    next()
+  }
 })
 
 export default router

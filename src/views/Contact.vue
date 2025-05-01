@@ -1,5 +1,5 @@
 <template lang="pug">
-.contact-page.min-h-screen.flex.flex-col
+.contact-page.height-minus-footer.flex.flex-col
   .container.mx-auto.px-4.py-16.flex-grow
     .max-w-2xl.mx-auto
       h1.text-4xl.font-bold.mb-8.text-center.mt-8 {{ $t('contact.title') }}

@@ -6,6 +6,7 @@ import Contact from '../views/Contact.vue'
 
 export default [
   { path: '/', component: Home },
+  { path: '/home', component: Home },
   { path: '/agenda', component: Calendar },
   { path: '/calendar', component: Calendar },
   { path: '/terms', component: Terms },

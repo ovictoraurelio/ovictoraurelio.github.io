@@ -10,6 +10,7 @@ import en from './locales/en'
 import pt from './locales/pt'
 import { isMobile } from './utils'
 import routes from './router/routes'
+import trackingPlugin from './plugins/tracking'
 
 // Estado global para a aplicação
 const globalState = reactive({
@@ -23,6 +24,9 @@ export const createApp = ViteSSG(
   { routes },
   // function to have custom setups
   ({ app }) => {
+    // Adicionar plugin de rastreamento
+    app.use(trackingPlugin)
+
     // Detectar idioma do navegador ou usar pt-BR como padrão
     const getBrowserLocale = () => {
       const navigatorLocale = navigator.languages !== undefined

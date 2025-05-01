@@ -49,20 +49,34 @@ export function detectBrowser() {
 
 // Função para enviar notificação de acesso ao site
 export async function trackPageView(route) {
+  // Verificar se estamos no navegador
+  if (typeof window === 'undefined') return false
+
   try {
+    // Extrair caminho da rota com fallback
+    const currentPath = route?.path || 
+      route?.fullPath || 
+      route?.name || 
+      window.location.pathname || 
+      'Desconhecida'
+
     const deviceInfo = getDeviceInfo()
 
     const data = {
-      currentPage: route?.path || 'Desconhecida',
-      referrer: document.referrer || 'Acesso direto',
+      currentPage: currentPath,
+      referrer: document.referrer || window.location.href || 'Acesso direto',
       device: `${deviceInfo.device} - ${deviceInfo.browser}`,
       screen: deviceInfo.screen,
-      timestamp: new Date().toISOString()
-      // O IP será coletado pelo servidor n8n
+      timestamp: new Date().toISOString(),
+      routeDetails: route ? JSON.stringify({
+        name: route.name || 'Não nomeada',
+        params: route.params || {},
+        query: route.query || {}
+      }) : 'Sem detalhes'
     }
 
     // Enviar dados para o webhook do n8n
-    await fetch('https://n8n.victoraurelio.com/webhook/webhooks/site-access', {
+    const response = await fetch('https://n8n.victoraurelio.com/webhook/webhooks/site-access', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -70,7 +84,11 @@ export async function trackPageView(route) {
       body: JSON.stringify(data)
     })
 
-    // Não esperamos pela resposta para não atrasar a experiência do usuário
+    // Verificar se a requisição foi bem-sucedida
+    if (!response.ok) {
+      console.warn('Falha ao enviar dados de rastreamento', response.status)
+    }
+
     return true
   } catch (error) {
     console.error('Erro ao rastrear visualização de página:', error)

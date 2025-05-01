@@ -15,13 +15,22 @@ export default {
     Footer,
     CookieConsent
   },
-  created() {
-    trackPageView(this.$route)
+  mounted() {
+    // Rastrear visualização inicial da página
+    if (this.$route) {
+      trackPageView(this.$route).catch((error) => {
+        console.error('Erro no rastreamento inicial:', error)
+      })
+    }
   }
 }
 </script>
 
 <style>
+.height-minus-footer {
+  min-height: calc(100vh - 288px);
+  /* calc(100vh - 10rem)*/
+}
 .app-container {
   min-height: 100vh;
   display: flex;

@@ -1,5 +1,5 @@
 <template lang="pug">
-.terms-page.min-h-screen.flex.flex-col
+.terms-page.height-minus-footer.flex.flex-col
   .container.mx-auto.px-4.py-16.flex-grow
     .max-w-3xl.mx-auto
       h1.text-4xl.font-bold.mb-8.text-center.mt-8 {{ $t('terms.title') }}

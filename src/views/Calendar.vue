@@ -1,5 +1,5 @@
 <template lang="pug">
-.container.mx-auto.px-4
+.container.mx-auto.px-4.height-minus-footer
   // Mobile View
   template(v-if="$isMobile()")
     .flex.flex-col.h-screen.overflow-hidden
