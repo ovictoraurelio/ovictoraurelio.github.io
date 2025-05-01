@@ -8,7 +8,7 @@ export default {
       color: 'bg-yellow-olsen',
       date: 'Ago de 2018 - atualmente',
       img: 'globe',
-      office: 'CTO & Co-fundador'
+      office: 'COO & Co-fundador'
     },
     {
       locate: {
