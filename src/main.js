@@ -17,7 +17,6 @@ export const createApp = ViteSSG(
   { routes },
   // function to have custom setups
   ({ app }) => {
-    
     const i18n = createI18n({
       locale: 'en',
       globalInjection: true,
@@ -27,7 +26,11 @@ export const createApp = ViteSSG(
       }
     })
     app.config.globalProperties.$openUrl = (url) => {
-      window.open(url, '_blank')
+      let urlToBeOpened = url
+      if (typeof url === 'object') {
+        urlToBeOpened = url?.link ?? url?.url
+      }
+      window.open(urlToBeOpened, '_blank')
     }
 
     app.config.globalProperties.$isMobile = isMobile
