@@ -24,7 +24,7 @@ export default {
   footer: {
     about: {
       title: 'Sobre',
-      description: 'Sou COO e co-fundador da Beyond Co., empresa na qual tenho liderado o desenvolvimento de soluções inovadoras para clientes em diversos segmentos de mercado.'
+      description: 'Sou COO e co-fundador da Beyond Co., além de CSO na Absens e Legis, onde lidero o desenvolvimento de soluções inovadoras em software, inteligência artificial e inteligência jurídica.'
     },
     links: {
       title: 'Links Rápidos',
@@ -93,10 +93,10 @@ export default {
     }
   },
   infos: {
-    title: 'COO e Co-fundador da Beyond Co',
+    title: 'COO na Beyond Co | CSO na Legis e Absens',
     subtitle: `${yearsFromFirstDayToNow} anos de experiência em soluções digitais`,
     location: 'Recife, Brasil',
-    description: `Sou COO e co-fundador da Beyond Co., empresa na qual tenho liderado o desenvolvimento de soluções inovadoras para clientes em diversos segmentos de mercado. Como arquiteto de nuvem certificado pelo Google, tenho experiência em projetar e implementar arquiteturas escaláveis, seguras e eficientes, utilizando tecnologias como Google Cloud Platform, Amazon Web Services e Microsoft Azure.<br><br>Minha paixão por empreendedorismo começou desde cedo, e desde então tenho trabalhado em projetos que buscam trazer comodidade e eficiência para o dia a dia das pessoas. Como programador desde os 14 anos, busco constantemente desenvolver e entregar software e ferramentas alinhados com essa proposta.<br><br>Adoro desafios! Sempre busco estar envolvido em tópicos inovadores de desenvolvimento de software e hardware, principalmente em problemas do mundo real que podem ser resolvidos com tecnologia. Acredito que a tecnologia tem o poder de transformar a sociedade e tenho como objetivo contribuir para essa transformação.<br><br>Além de minha atuação como COO, sou estudante de Engenharia da Computação na UFPE e possuo formação técnica em Informática pelo IFAL, concluída em 2015. Acredito na importância de estar sempre aprendendo e atualizando conhecimentos, e por isso busco participar constantemente de cursos, eventos e fóruns de discussão na área de tecnologia.`
+    description: `Sou o COO e cofundador da Beyond Co., onde, há mais de seis anos, venho desenvolvendo soluções inovadoras para clientes dos mais diversos setores. Por meio da união entre inovação estratégica, gestão de pessoas e liderança tecnológica, meu objetivo é impulsionar o crescimento das pessoas que lidero e a evolução dos softwares que produzimos, de modo que sempre entreguemos valor de verdade.<br><br>Além disso, atuo como CSO no Legis e no Absens. No Legis, passei os últimos quatro anos aplicando minhas habilidades para direcionar a empresa e garantir sucesso sustentável no desenvolvimento de software de inteligência jurídica. No Absens, estamos usando Inteligência Artificial para combater o absenteísmo, ajudando a reduzir as filas no SUS em Recife.<br><br>Minha paixão por empreendedorismo e tecnologia começou aos 14 anos, e desde então estou comprometido em resolver problemas do mundo real por meio da inovação. Como Arquiteto de Nuvem Certificado pelo Google, especializo-me em projetar e implementar infraestruturas de nuvem escaláveis, seguras e eficientes, utilizando plataformas como Google Cloud Platform, AWS e Microsoft Azure.<br><br>Adoro encarar novos desafios e estou sempre em busca de oportunidades para ir além no desenvolvimento de software e hardware. Acredito sinceramente que a tecnologia pode transformar a sociedade, e tenho como objetivo contribuir para essa transformação através de soluções inovadoras e eficientes.`
   },
   scheduleMeeting: 'Agendar uma reunião',
   actions: {
