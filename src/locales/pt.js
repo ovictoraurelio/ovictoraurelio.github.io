@@ -17,14 +17,17 @@ export default {
       messagePlaceholder: 'Digite sua mensagem aqui...',
       submit: 'Enviar Mensagem',
       sending: 'Enviando...',
-      successMessage: 'Sua mensagem foi enviada com sucesso! Entrarei em contato em breve.',
-      errorMessage: 'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.'
+      successMessage:
+        'Sua mensagem foi enviada com sucesso! Entrarei em contato em breve.',
+      errorMessage:
+        'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.'
     }
   },
   footer: {
     about: {
       title: 'Sobre',
-      description: 'Sou COO e co-fundador da Beyond Co., além de CSO na Absens e Legis, onde lidero o desenvolvimento de soluções inovadoras em software, inteligência artificial e inteligência jurídica.'
+      description:
+        'Sou COO e co-fundador da Beyond Co., além de CSO na Absens e Legis, onde lidero o desenvolvimento de soluções inovadoras em software, inteligência artificial e inteligência jurídica.'
     },
     links: {
       title: 'Links Rápidos',
@@ -41,54 +44,65 @@ export default {
   },
   cookies: {
     title: 'Consentimento de Cookies',
-    message: 'Este site usa cookies para garantir que você obtenha a melhor experiência em nosso site.',
+    message:
+      'Este site usa cookies para garantir que você obtenha a melhor experiência em nosso site.',
     accept: 'Aceitar',
     learnMore: 'Saiba mais',
     settings: 'Configurações de Cookies'
   },
   terms: {
     title: 'Termos de Serviço',
-    content: 'Estes Termos de Serviço regem o uso do site operado por Victor Aurélio. Ao acessar ou usar nosso site, você concorda em estar vinculado a estes Termos. Podemos atualizar estes Termos de tempos em tempos, e seu uso contínuo do site constitui aceitação de quaisquer alterações.',
+    content:
+      'Estes Termos de Serviço regem o uso do site operado por Victor Aurélio. Ao acessar ou usar nosso site, você concorda em estar vinculado a estes Termos. Podemos atualizar estes Termos de tempos em tempos, e seu uso contínuo do site constitui aceitação de quaisquer alterações.',
     back: 'Voltar para Início',
     sections: {
       use: {
         title: 'Uso Aceitável',
-        content: 'Você concorda em usar este site apenas para fins legais e de uma maneira que não infrinja os direitos de outros ou restrinja seu uso do site. Usos proibidos incluem qualquer atividade ilegal, distribuição de código malicioso ou tentativa de obter acesso não autorizado a sistemas ou dados.'
+        content:
+          'Você concorda em usar este site apenas para fins legais e de uma maneira que não infrinja os direitos de outros ou restrinja seu uso do site. Usos proibidos incluem qualquer atividade ilegal, distribuição de código malicioso ou tentativa de obter acesso não autorizado a sistemas ou dados.'
       },
       content: {
         title: 'Propriedade Intelectual',
-        content: 'Todo o conteúdo neste site, incluindo texto, gráficos, logotipos e software, é propriedade de Victor Aurélio e está protegido por direitos autorais e outras leis de propriedade intelectual. Você não pode reproduzir, distribuir ou criar trabalhos derivados sem permissão explícita.'
+        content:
+          'Todo o conteúdo neste site, incluindo texto, gráficos, logotipos e software, é propriedade de Victor Aurélio e está protegido por direitos autorais e outras leis de propriedade intelectual. Você não pode reproduzir, distribuir ou criar trabalhos derivados sem permissão explícita.'
       },
       liability: {
         title: 'Limitação de Responsabilidade',
-        content: 'O site é fornecido "como está". Victor Aurélio não oferece garantias, expressas ou implícitas, e não será responsável por quaisquer danos, incluindo, mas não se limitando a, danos diretos, indiretos, incidentais ou consequentes decorrentes do uso do site.'
+        content:
+          'O site é fornecido "como está". Victor Aurélio não oferece garantias, expressas ou implícitas, e não será responsável por quaisquer danos, incluindo, mas não se limitando a, danos diretos, indiretos, incidentais ou consequentes decorrentes do uso do site.'
       },
       changes: {
         title: 'Alterações nos Termos',
-        content: 'Victor Aurélio reserva-se o direito de modificar estes Termos a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no site. Seu uso contínuo do site após quaisquer alterações indica sua aceitação dos Termos modificados.'
+        content:
+          'Victor Aurélio reserva-se o direito de modificar estes Termos a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no site. Seu uso contínuo do site após quaisquer alterações indica sua aceitação dos Termos modificados.'
       }
     }
   },
   privacy: {
     title: 'Política de Privacidade',
-    content: 'Esta Política de Privacidade descreve como coletamos, usamos e compartilhamos informações quando você usa nosso site. Coletamos informações para fornecer, melhorar e desenvolver nossos serviços. Usamos cookies para melhorar sua experiência e analisar o tráfego do site. Você pode gerenciar suas preferências de cookies através das configurações do seu navegador.',
+    content:
+      'Esta Política de Privacidade descreve como coletamos, usamos e compartilhamos informações quando você usa nosso site. Coletamos informações para fornecer, melhorar e desenvolver nossos serviços. Usamos cookies para melhorar sua experiência e analisar o tráfego do site. Você pode gerenciar suas preferências de cookies através das configurações do seu navegador.',
     back: 'Voltar para Início',
     sections: {
       collection: {
         title: 'Coleta de Informações',
-        content: 'Coletamos informações que você fornece diretamente a nós, como quando você nos contata ou preenche formulários em nosso site. Também podemos coletar automaticamente certas informações sobre seu dispositivo, incluindo endereço IP, tipo de navegador e sistema operacional.'
+        content:
+          'Coletamos informações que você fornece diretamente a nós, como quando você nos contata ou preenche formulários em nosso site. Também podemos coletar automaticamente certas informações sobre seu dispositivo, incluindo endereço IP, tipo de navegador e sistema operacional.'
       },
       cookies: {
         title: 'Uso de Cookies',
-        content: 'Cookies são pequenos arquivos armazenados em seu dispositivo que nos ajudam a melhorar a funcionalidade do site e a experiência do usuário. Usamos cookies para lembrar suas preferências, analisar o tráfego do site e personalizar conteúdo. Você pode controlar os cookies através das configurações do seu navegador.'
+        content:
+          'Cookies são pequenos arquivos armazenados em seu dispositivo que nos ajudam a melhorar a funcionalidade do site e a experiência do usuário. Usamos cookies para lembrar suas preferências, analisar o tráfego do site e personalizar conteúdo. Você pode controlar os cookies através das configurações do seu navegador.'
       },
       thirdParty: {
         title: 'Serviços de Terceiros',
-        content: 'Nosso site pode usar serviços de terceiros, como provedores de análise, que podem coletar informações sobre seu uso do site. Esses terceiros têm suas próprias políticas de privacidade que abordam como eles usam essas informações.'
+        content:
+          'Nosso site pode usar serviços de terceiros, como provedores de análise, que podem coletar informações sobre seu uso do site. Esses terceiros têm suas próprias políticas de privacidade que abordam como eles usam essas informações.'
       },
       rights: {
         title: 'Seus Direitos',
-        content: 'Você tem o direito de acessar, corrigir ou excluir suas informações pessoais que mantemos. Se você tiver alguma dúvida sobre como lidamos com seus dados ou gostaria de exercer esses direitos, entre em contato conosco.'
+        content:
+          'Você tem o direito de acessar, corrigir ou excluir suas informações pessoais que mantemos. Se você tiver alguma dúvida sobre como lidamos com seus dados ou gostaria de exercer esses direitos, entre em contato conosco.'
       }
     }
   },
@@ -96,7 +110,7 @@ export default {
     title: 'COO na Beyond Co | CSO na Legis e Absens',
     subtitle: `${yearsFromFirstDayToNow} anos de experiência em soluções digitais`,
     location: 'Recife, Brasil',
-    description: `Sou o COO e cofundador da Beyond Co., onde, há mais de seis anos, venho desenvolvendo soluções inovadoras para clientes dos mais diversos setores. Por meio da união entre inovação estratégica, gestão de pessoas e liderança tecnológica, meu objetivo é impulsionar o crescimento das pessoas que lidero e a evolução dos softwares que produzimos, de modo que sempre entreguemos valor de verdade.<br><br>Além disso, atuo como CSO no Legis e no Absens. No Legis, passei os últimos quatro anos aplicando minhas habilidades para direcionar a empresa e garantir sucesso sustentável no desenvolvimento de software de inteligência jurídica. No Absens, estamos usando Inteligência Artificial para combater o absenteísmo, ajudando a reduzir as filas no SUS em Recife.<br><br>Minha paixão por empreendedorismo e tecnologia começou aos 14 anos, e desde então estou comprometido em resolver problemas do mundo real por meio da inovação. Como Arquiteto de Nuvem Certificado pelo Google, especializo-me em projetar e implementar infraestruturas de nuvem escaláveis, seguras e eficientes, utilizando plataformas como Google Cloud Platform, AWS e Microsoft Azure.<br><br>Adoro encarar novos desafios e estou sempre em busca de oportunidades para ir além no desenvolvimento de software e hardware. Acredito sinceramente que a tecnologia pode transformar a sociedade, e tenho como objetivo contribuir para essa transformação através de soluções inovadoras e eficientes.`
+    description: `Sou o COO e cofundador da Beyond Co., onde, há mais de seis anos, venho desenvolvendo soluções inovadoras para clientes dos mais diversos setores. Por meio da união entre inovação estratégica, gestão de pessoas e liderança tecnológica, meu objetivo é impulsionar o crescimento das pessoas que lidero e a evolução dos softwares que produzimos, de modo que sempre entreguemos valor de verdade.<br><br>Além disso, atuo como CSO no Legis e no Absens. No Legis, passei os últimos quatro anos aplicando minhas habilidades para direcionar a empresa e garantir sucesso sustentável no desenvolvimento de software de inteligência jurídica. No Absens, estamos usando Inteligência Artificial para combater o absenteísmo, ajudando a reduzir as filas no SUS.<br><br>Minha paixão por empreendedorismo e tecnologia começou aos 14 anos, e desde então estou comprometido em resolver problemas do mundo real por meio da inovação. Como Arquiteto de Nuvem Certificado pelo Google, especializo-me em projetar e implementar infraestruturas de nuvem escaláveis, seguras e eficientes, utilizando plataformas como Google Cloud Platform, AWS e Microsoft Azure.<br><br>Adoro encarar novos desafios e estou sempre em busca de oportunidades para ir além no desenvolvimento de software e hardware. Acredito sinceramente que a tecnologia pode transformar a sociedade, e tenho como objetivo contribuir para essa transformação através de soluções inovadoras e eficientes.`
   },
   scheduleMeeting: 'Agendar uma reunião',
   actions: {
@@ -107,7 +121,8 @@ export default {
   },
   skills: {
     sectionTitle: 'Habilidades e expertises',
-    subtitle: 'Algumas das ferramentas que possuo experiência em termos de Engenharia de Software'
+    subtitle:
+      'Algumas das ferramentas que possuo experiência em termos de Engenharia de Software'
   },
   projects: {
     sectionTitle: 'Projetos recentes (Não mais)',
