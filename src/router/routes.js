@@ -9,7 +9,12 @@ export default [
   { path: '/home', component: Home },
   { path: '/agenda', component: Calendar },
   { path: '/calendar', component: Calendar },
+  { path: '/calendario', component: Calendar },
   { path: '/terms', component: Terms },
+  { path: '/termos', component: Terms },
   { path: '/privacy', component: Privacy },
-  { path: '/contact', component: Contact }
+  { path: '/privacidade', component: Privacy },
+  { path: '/contact', component: Contact },
+  { path: '/contato', component: Contact },
+  { path: '/mensagem', component: Contact }
 ]

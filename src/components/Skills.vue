@@ -123,7 +123,6 @@ export default {
       // Languages
       { icon: 'logos-c', type: 'Language', text: 'Linguagem C' },
       { icon: 'logos-java', type: 'Language', text: 'Java' },
-      { icon: 'logos-kotlin', type: 'Language', text: 'Kotlin Android' },
       { icon: 'logos-c-plusplus', type: 'Language', text: 'C++' },
       {
         icon: 'file-icons:assembly-generic',

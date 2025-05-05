@@ -54,10 +54,11 @@ export async function trackPageView(route) {
 
   try {
     // Extrair caminho da rota com fallback
-    const currentPath = route?.path || 
-      route?.fullPath || 
-      route?.name || 
-      window.location.pathname || 
+    const currentPath =
+      route?.path ||
+      route?.fullPath ||
+      route?.name ||
+      window.location.pathname ||
       'Desconhecida'
 
     const deviceInfo = getDeviceInfo()
@@ -68,21 +69,31 @@ export async function trackPageView(route) {
       device: `${deviceInfo.device} - ${deviceInfo.browser}`,
       screen: deviceInfo.screen,
       timestamp: new Date().toISOString(),
-      routeDetails: route ? JSON.stringify({
-        name: route.name || 'Não nomeada',
-        params: route.params || {},
-        query: route.query || {}
-      }) : 'Sem detalhes'
+      routeDetails: route
+        ? JSON.stringify({
+            name: route.name || 'Não nomeada',
+            params: route.params || {},
+            query: route.query || {}
+          })
+        : 'Sem detalhes'
+    }
+
+    if (window.location.href.includes('localhost:3000')) {
+      console.log('Localhost detected, skipping tracking')
+      return false
     }
 
     // Enviar dados para o webhook do n8n
-    const response = await fetch('https://n8n.victoraurelio.com/webhook/webhooks/site-access', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
+    const response = await fetch(
+      'https://n8n.victoraurelio.com/webhook/webhooks/site-access',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }
+    )
 
     // Verificar se a requisição foi bem-sucedida
     if (!response.ok) {
