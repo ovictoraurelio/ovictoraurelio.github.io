@@ -1,6 +1,7 @@
 import { ViteSSG } from 'vite-ssg'
 import { createI18n } from 'vue-i18n'
 import { reactive } from 'vue'
+import { createHead } from '@vueuse/head'
 
 import App from './App.vue'
 import 'virtual:windi.css'
@@ -23,15 +24,18 @@ export const createApp = ViteSSG(
   // vue-router options
   { routes },
   // function to have custom setups
-  ({ app }) => {
+  ({ app, head }) => {
+    // Initialize head
+    app.use(createHead())
     // Adicionar plugin de rastreamento
     app.use(trackingPlugin)
 
     // Detectar idioma do navegador ou usar pt-BR como padrão
     const getBrowserLocale = () => {
-      const navigatorLocale = navigator.languages !== undefined
-        ? navigator.languages[0]
-        : navigator.language
+      const navigatorLocale =
+        navigator.languages !== undefined
+          ? navigator.languages[0]
+          : navigator.language
 
       if (!navigatorLocale) {
         return 'pt' // Padrão para português
@@ -41,7 +45,7 @@ export const createApp = ViteSSG(
       if (navigatorLocale.toLowerCase().includes('pt')) {
         return 'pt'
       }
-      
+
       return 'en' // Fallback para inglês
     }
 
@@ -70,39 +74,70 @@ export const createApp = ViteSSG(
     // Função para atualizar meta tags baseadas no idioma
     const updateMetaTags = (locale) => {
       const metaConfig = {
-        'pt': {
-          description: 'Victor Aurélio - COO e Co-fundador da Beyond Co. Experiência em soluções digitais, arquitetura de nuvem e desenvolvimento de software.',
-          keywords: 'Victor Aurélio, Beyond Co, COO, arquiteto de nuvem, desenvolvimento de software, soluções digitais',
+        pt: {
+          description:
+            'Victor Aurélio - COO e Co-fundador da Beyond Co. Experiência em soluções digitais, arquitetura de nuvem e desenvolvimento de software.',
+          keywords:
+            'Victor Aurélio, Beyond Co, COO, arquiteto de nuvem, desenvolvimento de software, soluções digitais',
           ogTitle: 'Victor Aurélio | COO e Co-fundador da Beyond Co',
-          ogDescription: 'Arquiteto de nuvem certificado pelo Google com experiência em projetar e implementar arquiteturas escaláveis, seguras e eficientes.',
+          ogDescription:
+            'Arquiteto de nuvem certificado pelo Google com experiência em projetar e implementar arquiteturas escaláveis, seguras e eficientes.',
           twitterTitle: 'Victor Aurélio | COO e Co-fundador da Beyond Co',
-          twitterDescription: 'Arquiteto de nuvem certificado pelo Google com experiência em projetar e implementar arquiteturas escaláveis, seguras e eficientes.'
+          twitterDescription:
+            'Arquiteto de nuvem certificado pelo Google com experiência em projetar e implementar arquiteturas escaláveis, seguras e eficientes.'
         },
-        'en': {
-          description: 'Victor Aurélio - COO and Co-founder of Beyond Co. Experience in digital solutions, cloud architecture, and software development.',
-          keywords: 'Victor Aurélio, Beyond Co, COO, cloud architect, software development, digital solutions',
+        en: {
+          description:
+            'Victor Aurélio - COO and Co-founder of Beyond Co. Experience in digital solutions, cloud architecture, and software development.',
+          keywords:
+            'Victor Aurélio, Beyond Co, COO, cloud architect, software development, digital solutions',
           ogTitle: 'Victor Aurélio | COO and Co-founder of Beyond Co',
-          ogDescription: 'Google Cloud Certified Architect with experience in designing and implementing scalable, secure, and efficient architectures.',
+          ogDescription:
+            'Google Cloud Certified Architect with experience in designing and implementing scalable, secure, and efficient architectures.',
           twitterTitle: 'Victor Aurélio | COO and Co-founder of Beyond Co',
-          twitterDescription: 'Google Cloud Certified Architect with experience in designing and implementing scalable, secure, and efficient architectures.'
+          twitterDescription:
+            'Google Cloud Certified Architect with experience in designing and implementing scalable, secure, and efficient architectures.'
         }
-      };
+      }
 
-      const config = metaConfig[locale] || metaConfig['pt'];
-
-      document.querySelector('meta[name="description"]').setAttribute('content', config.description);
-      document.querySelector('meta[name="keywords"]').setAttribute('content', config.keywords);
-      document.querySelector('meta[property="og:title"]').setAttribute('content', config.ogTitle);
-      document.querySelector('meta[property="og:description"]').setAttribute('content', config.ogDescription);
-      document.querySelector('meta[property="twitter:title"]').setAttribute('content', config.twitterTitle);
-      document.querySelector('meta[property="twitter:description"]').setAttribute('content', config.twitterDescription);
-    };
+      const config = metaConfig[locale] || metaConfig['pt']
+      
+      // Use head for managing meta tags (works with SSG)
+      head.addHeadObjs({
+        meta: [
+          {
+            name: 'description',
+            content: config.description,
+          },
+          {
+            name: 'keywords',
+            content: config.keywords,
+          },
+          {
+            property: 'og:title',
+            content: config.ogTitle,
+          },
+          {
+            property: 'og:description',
+            content: config.ogDescription,
+          },
+          {
+            property: 'twitter:title',
+            content: config.twitterTitle,
+          },
+          {
+            property: 'twitter:description',
+            content: config.twitterDescription,
+          },
+        ],
+      })
+    }
 
     // Atualizar meta tags quando o idioma mudar
-    i18n.global.onLanguageChanged = updateMetaTags;
+    i18n.global.onLanguageChanged = updateMetaTags
 
     // Atualizar meta tags inicialmente
-    updateMetaTags(i18n.global.locale);
+    updateMetaTags(i18n.global.locale)
 
     app.use(i18n).component('iconify', Icon).config.globalProperties.$isMobile =
       isMobile
