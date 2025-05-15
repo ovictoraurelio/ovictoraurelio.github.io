@@ -33,7 +33,7 @@ div(v-if="footerShouldBeVisible")
     
     // Divider
     .grid.grid-cols-1.md_grid-cols-12.gap-6.mb-8
-      .footer-column.col-start-2.col-span-3.md_col-start-4.md_col-span-6
+      .footer-column.sm_col-start-2.sm_col-span-3.md_col-start-4.md_col-span-6
         .border-t.border-gray-700.pt-6
           .flex.flex-col.md_flex-row.justify-between.items-center
             p.text-gray-400.text-sm.mb-4.md_mb-0

@@ -113,6 +113,7 @@ export default {
       'I am the COO and co-founder of Beyond Co., where for over six years I have been developing innovative solutions for clients across diverse sectors. Through the combination of strategic innovation, people management, and technological leadership, my goal is to drive the growth of the people I lead and the evolution of the software we produce, ensuring we always deliver true value.<br><br>Additionally, I serve as CSO at Legis and Absens. At Legis, I have spent the last four years applying my skills to guide the company and ensure sustainable success in developing legal intelligence software. At Absens, we are using Artificial Intelligence to combat absenteeism, helping to reduce waiting lines in the Brazilian public health system (SUS).<br><br>My passion for entrepreneurship and technology began at the age of 14, and since then I have been committed to solving real-world problems through innovation. As a Google Cloud Certified Architect, I specialize in designing and implementing scalable, secure, and efficient cloud infrastructures, using platforms such as Google Cloud Platform, AWS, and Microsoft Azure.<br><br>I love taking on new challenges and am always looking for opportunities to go beyond in software and hardware development. I sincerely believe that technology can transform society, and I aim to contribute to this transformation through innovative and efficient solutions.'
   },
   scheduleMeeting: 'Schedule meeting',
+  openSite: 'Open site',
   actions: {
     open: 'open'
   },
