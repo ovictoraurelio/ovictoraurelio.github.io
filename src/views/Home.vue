@@ -7,7 +7,7 @@
       | {{ $t("scheduleMeeting") }}
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="showFullSite")
-      | {{ $("openSite") }}
+      | {{ $t("openSite") }}
   .col-start-2.col-span-10.md_col-start-4.md_col-span-6
     button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="$router.push('/contact')")
       | {{ $t("contact.title") }}
