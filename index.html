@@ -36,11 +36,23 @@
 div, span, i, body, .font-roboto {
   font-family: 'DM Sans', sans-serif, Helvetica, Arial;
 }</style>
-    <script type="module" crossorigin src="/assets/app.f16e1511.js"></script>
-    <link rel="stylesheet" href="/assets/app.84f58384.css">
+    <script type="module" crossorigin src="/assets/app.4d4d145a.js"></script>
+    <link rel="stylesheet" href="/assets/app.55bc16e3.css">
   </head>
   <body>
     <div id="app"></div>
+    <!-- Handle SPA routing redirects from 404.html -->
+    <script>
+      (function() {
+        const redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          sessionStorage.removeItem('redirect');
+          if (redirect !== window.location.pathname) {
+            history.replaceState(null, null, redirect);
+          }
+        }
+      })();
+    </script>
     
   </body>
 </html>
