@@ -16,14 +16,17 @@ export default {
       messagePlaceholder: 'Enter your message here...',
       submit: 'Send Message',
       sending: 'Sending...',
-      successMessage: 'Your message has been sent successfully! I will get back to you soon.',
-      errorMessage: 'There was an error sending your message. Please try again later.'
+      successMessage:
+        'Your message has been sent successfully! I will get back to you soon.',
+      errorMessage:
+        'There was an error sending your message. Please try again later.'
     }
   },
   footer: {
     about: {
       title: 'About',
-      description: 'I am the COO and co-founder of Beyond Co., where I lead the development of innovative solutions for clients across various industries.'
+      description:
+        'I am the COO and co-founder of Beyond Co., as well as CSO at Absens and Legis, where I lead the development of innovative solutions in software, artificial intelligence, and legal intelligence.'
     },
     links: {
       title: 'Quick Links',
@@ -40,65 +43,77 @@ export default {
   },
   cookies: {
     title: 'Cookie Consent',
-    message: 'This website uses cookies to ensure you get the best experience on our website.',
+    message:
+      'This website uses cookies to ensure you get the best experience on our website.',
     accept: 'Accept',
     learnMore: 'Learn more',
     settings: 'Cookie Settings'
   },
   terms: {
     title: 'Terms of Service',
-    content: 'These Terms of Service govern your use of the website operated by Victor Aurélio. By accessing or using our website, you agree to be bound by these Terms. We may update these Terms from time to time, and your continued use of the website constitutes acceptance of any changes.',
+    content:
+      'These Terms of Service govern your use of the website operated by Victor Aurélio. By accessing or using our website, you agree to be bound by these Terms. We may update these Terms from time to time, and your continued use of the website constitutes acceptance of any changes.',
     back: 'Back to Home',
     sections: {
       use: {
         title: 'Acceptable Use',
-        content: 'You agree to use this website only for lawful purposes and in a way that does not infringe upon the rights of others or restrict their use of the website. Prohibited uses include any unlawful activity, distributing malicious code, or attempting to gain unauthorized access to systems or data.'
+        content:
+          'You agree to use this website only for lawful purposes and in a way that does not infringe upon the rights of others or restrict their use of the website. Prohibited uses include any unlawful activity, distributing malicious code, or attempting to gain unauthorized access to systems or data.'
       },
       content: {
         title: 'Intellectual Property',
-        content: 'All content on this website, including text, graphics, logos, and software, is the property of Victor Aurélio and is protected by copyright and other intellectual property laws. You may not reproduce, distribute, or create derivative works without explicit permission.'
+        content:
+          'All content on this website, including text, graphics, logos, and software, is the property of Victor Aurélio and is protected by copyright and other intellectual property laws. You may not reproduce, distribute, or create derivative works without explicit permission.'
       },
       liability: {
         title: 'Limitation of Liability',
-        content: 'The website is provided on an "as is" basis. Victor Aurélio makes no warranties, expressed or implied, and shall not be liable for any damages, including but not limited to, direct, indirect, incidental, or consequential damages arising from the use of the website.'
+        content:
+          'The website is provided on an "as is" basis. Victor Aurélio makes no warranties, expressed or implied, and shall not be liable for any damages, including but not limited to, direct, indirect, incidental, or consequential damages arising from the use of the website.'
       },
       changes: {
         title: 'Changes to Terms',
-        content: 'Victor Aurélio reserves the right to modify these Terms at any time. Changes will be effective immediately upon posting on the website. Your continued use of the website after any changes indicates your acceptance of the modified Terms.'
+        content:
+          'Victor Aurélio reserves the right to modify these Terms at any time. Changes will be effective immediately upon posting on the website. Your continued use of the website after any changes indicates your acceptance of the modified Terms.'
       }
     }
   },
   privacy: {
     title: 'Privacy Policy',
-    content: 'This Privacy Policy describes how we collect, use, and share information when you use our website. We collect information to provide, improve, and develop our services. We use cookies to enhance your experience and analyze website traffic. You can manage your cookie preferences through your browser settings.',
+    content:
+      'This Privacy Policy describes how we collect, use, and share information when you use our website. We collect information to provide, improve, and develop our services. We use cookies to enhance your experience and analyze website traffic. You can manage your cookie preferences through your browser settings.',
     back: 'Back to Home',
     sections: {
       collection: {
         title: 'Information Collection',
-        content: 'We collect information that you provide directly to us, such as when you contact us or fill out forms on our website. We may also automatically collect certain information about your device, including IP address, browser type, and operating system.'
+        content:
+          'We collect information that you provide directly to us, such as when you contact us or fill out forms on our website. We may also automatically collect certain information about your device, including IP address, browser type, and operating system.'
       },
       cookies: {
         title: 'Use of Cookies',
-        content: 'Cookies are small files stored on your device that help us improve website functionality and user experience. We use cookies to remember your preferences, analyze website traffic, and personalize content. You can control cookies through your browser settings.'
+        content:
+          'Cookies are small files stored on your device that help us improve website functionality and user experience. We use cookies to remember your preferences, analyze website traffic, and personalize content. You can control cookies through your browser settings.'
       },
       thirdParty: {
         title: 'Third-Party Services',
-        content: 'Our website may use third-party services, such as analytics providers, that may collect information about your use of the website. These third parties have their own privacy policies addressing how they use such information.'
+        content:
+          'Our website may use third-party services, such as analytics providers, that may collect information about your use of the website. These third parties have their own privacy policies addressing how they use such information.'
       },
       rights: {
         title: 'Your Rights',
-        content: 'You have the right to access, correct, or delete your personal information that we hold. If you have any questions about how we handle your data or would like to exercise these rights, please contact us.'
+        content:
+          'You have the right to access, correct, or delete your personal information that we hold. If you have any questions about how we handle your data or would like to exercise these rights, please contact us.'
       }
     }
   },
   infos: {
-    title: 'COO and Co-founder at Beyond Co',
+    title: 'COO at Beyond Co | CSO at Legis and Absens',
     subtitle: `${yearsFromFirstDayToNow} years digital solutions expertises`,
     location: 'Recife, Brazil',
     description:
-      "I am the COO and co-founder of Beyond Co., where I lead the development of innovative solutions for clients across various industries. As a Google Cloud certified cloud architect, I have experience in designing and implementing scalable, secure, and efficient architectures using technologies such as Google Cloud Platform, Amazon Web Services, and Microsoft Azure.<br><br>My passion for entrepreneurship began at an early age, and since then, I have worked on projects that aim to bring convenience and efficiency to people's daily lives. As a programmer since the age of 14, I am constantly striving to develop and deliver software and tools aligned with this goal.<br><br>I love challenges! I always seek to be involved in innovative topics related to software and hardware development, especially in real-world problems that can be solved with technology. I believe that technology has the power to transform society and aim to contribute to this transformation. <br><br>In addition to my role as COO, I am a student of Computer Engineering at UFPE and hold a technical degree in Informatics from IFAL, completed in 2015. I believe in the importance of continuous learning and knowledge updating, which is why I regularly participate in courses, events, and discussion forums in the technology field."
+      'I am the COO and co-founder of Beyond Co., where for over six years I have been developing innovative solutions for clients across diverse sectors. Through the combination of strategic innovation, people management, and technological leadership, my goal is to drive the growth of the people I lead and the evolution of the software we produce, ensuring we always deliver true value.<br><br>Additionally, I serve as CSO at Legis and Absens. At Legis, I have spent the last four years applying my skills to guide the company and ensure sustainable success in developing legal intelligence software. At Absens, we are using Artificial Intelligence to combat absenteeism, helping to reduce waiting lines in the Brazilian public health system (SUS).<br><br>My passion for entrepreneurship and technology began at the age of 14, and since then I have been committed to solving real-world problems through innovation. As a Google Cloud Certified Architect, I specialize in designing and implementing scalable, secure, and efficient cloud infrastructures, using platforms such as Google Cloud Platform, AWS, and Microsoft Azure.<br><br>I love taking on new challenges and am always looking for opportunities to go beyond in software and hardware development. I sincerely believe that technology can transform society, and I aim to contribute to this transformation through innovative and efficient solutions.'
   },
-  scheduleMeeting: "Schedule meeting",
+  scheduleMeeting: 'Schedule meeting',
+  openSite: 'Open site',
   actions: {
     open: 'open'
   },
@@ -107,7 +122,8 @@ export default {
   },
   skills: {
     sectionTitle: 'Skills and expertises',
-    subtitle: 'Some of the tools I have experience with in terms of Software Engineering'
+    subtitle:
+      'Some of the tools I have experience with in terms of Software Engineering'
   },
   projects: {
     sectionTitle: 'Recent projects (Not anymore)',
