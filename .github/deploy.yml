@@ -1,8 +1,8 @@
 name: Deploy to gh-pages
 
 on:
-  merge:
-    branches: [main]
+  pull_request:
+    types: [closed]
   push:
     branches: [main]
 
