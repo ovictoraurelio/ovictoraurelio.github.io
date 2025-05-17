@@ -85,7 +85,7 @@ export async function trackPageView(route) {
 
     // Enviar dados para o webhook do n8n
     const response = await fetch(
-      'https://n8n.victoraurelio.com/webhook/webhooks/site-access',
+      'https://victoraurelio-736449130143.us-central1.run.app/webhooks/site-access',
       {
         method: 'POST',
         headers: {

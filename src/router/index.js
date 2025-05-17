@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from './routes'
-import { trackPageView } from '../services/tracking'
+// import { trackPageView } from '../services/tracking'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -15,7 +15,7 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   try {
     console.info('Navegando para:', to.path)
-    await trackPageView(to)
+    // await trackPageView(to)
     next()
   } catch (error) {
     console.error('Erro no rastreamento:', error)

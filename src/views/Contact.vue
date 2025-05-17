@@ -104,7 +104,7 @@ export default {
         }
 
         const response = await fetch(
-          'https://n8n.victoraurelio.com/webhook/webhooks/contact-message',
+          'https://victoraurelio-736449130143.us-central1.run.app/webhooks/contact-message',
           {
             method: 'POST',
             headers: {
