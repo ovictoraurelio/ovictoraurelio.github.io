@@ -5,7 +5,7 @@ div.flex.w-full.content-center(style="justify-content: center")
     style="width: 140px; height: 140px;"
   )
     img(
-      src='https://firebasestorage.googleapis.com/v0/b/ovictoraurelio.appspot.com/o/VictorAurelioGoogle.jpg?alt=media&token=e55b5657-647e-40ad-8408-a8c062416f65'
+      src='https://firebasestorage.googleapis.com/v0/b/ovictoraurelio.appspot.com/o/VictorPerfilCorporativo2025-Curta.jpeg?alt=media&token=d6678beb-8876-4831-961a-6e813c7ce62f'
       alt='Pic'
       style="width: 100%; height: 100%; object-fit: cover;"
     )
