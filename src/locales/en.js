@@ -26,7 +26,7 @@ export default {
     about: {
       title: 'About',
       description:
-        'I am the COO and co-founder of Beyond Co., as well as CSO at Absens and Legis, where I lead the development of innovative solutions in software, artificial intelligence, and legal intelligence.'
+        "I'm Chief of AI at Extreme Group, co-founder of Beyond Co., and helped build Legis and Absens — solutions in software, artificial intelligence, and legal intelligence."
     },
     links: {
       title: 'Quick Links',
@@ -106,11 +106,11 @@ export default {
     }
   },
   infos: {
-    title: 'COO at Beyond Co | CSO at Legis and Absens',
+    title: 'Chief of AI at Extreme Group',
     subtitle: `${yearsFromFirstDayToNow} years digital solutions expertises`,
     location: 'Recife, Brazil',
     description:
-      'I am the COO and co-founder of Beyond Co., where for over six years I have been developing innovative solutions for clients across diverse sectors. Through the combination of strategic innovation, people management, and technological leadership, my goal is to drive the growth of the people I lead and the evolution of the software we produce, ensuring we always deliver true value.<br><br>Additionally, I serve as CSO at Legis and Absens. At Legis, I have spent the last four years applying my skills to guide the company and ensure sustainable success in developing legal intelligence software. At Absens, we are using Artificial Intelligence to combat absenteeism, helping to reduce waiting lines in the Brazilian public health system (SUS).<br><br>My passion for entrepreneurship and technology began at the age of 14, and since then I have been committed to solving real-world problems through innovation. As a Google Cloud Certified Architect, I specialize in designing and implementing scalable, secure, and efficient cloud infrastructures, using platforms such as Google Cloud Platform, AWS, and Microsoft Azure.<br><br>I love taking on new challenges and am always looking for opportunities to go beyond in software and hardware development. I sincerely believe that technology can transform society, and I aim to contribute to this transformation through innovative and efficient solutions.'
+      "I've been Chief of AI at Extreme Group since December 2025, where I lead the group's artificial intelligence strategy. That role is a direct result of the path I built as a co-founder of Beyond Co., where I structured the onboarding and training of our first employees, built the HR function, the culture program, and each team member's individual development strategy — while also being the lead voice on the technical and architectural decisions behind everything the company builds. At its peak, I led more than 60 people as CTO and COO.<br><br>Beyond was founded to build products, not software-house projects: Legis (today a legal ERP) and Absens both grew out of that philosophy. I was one of Legis's original developers before moving into a strategy and support role for the team that runs it today.<br><br>At Absens, I was the sole developer for a period, building the entire automation layer and the AI model — until we validated the solution with Recife's City Hall: we preserved more than 43,000 appointment slots, cut average wait times by 4 days, with a 96%-accuracy predictive model. The project won Recife's 1st Open Innovation Cycle (among 60+ submissions) and placed 2nd at Connected Smart Cities 2025.<br><br>I'm also a Google-certified Cloud Architect, and my passion for technology began at age 14."
   },
   scheduleMeeting: 'Schedule meeting',
   openSite: 'Open site',
@@ -118,7 +118,9 @@ export default {
     open: 'open'
   },
   life: {
-    sectionTitle: 'Timeline'
+    sectionTitle: 'Timeline',
+    leadershipLabel: 'Executive leadership',
+    trajectoryLabel: 'Journey & education'
   },
   skills: {
     sectionTitle: 'Skills and expertises',
@@ -126,11 +128,20 @@ export default {
       'Some of the tools I have experience with in terms of Software Engineering'
   },
   projects: {
-    sectionTitle: 'Recent projects (Not anymore)',
+    sectionTitle: 'Projects from my journey',
     showMore: 'Show more',
     showLess: 'Show less',
     items: [
       {},
+      {
+        title: 'Absens — reducing no-shows in public healthcare',
+        url: 'https://absens.com.br',
+        subtitle:
+          "AI product built for Recife's City Hall: won the 1st Open Innovation Cycle and preserved 43,000+ appointment slots in the public health system.",
+        date: '2021',
+        content:
+          "<p>Absens was born out of Recife City Hall's 1st Open Innovation Cycle (Emprel + Municipal Health Department), launched in November 2021 to reduce no-shows in public healthcare appointments and exams. I was the solution's sole developer for a period, building the entire automation layer (WhatsApp reminders and rescheduling) and the AI model that calculates each patient's likelihood of attendance.</p><p>During the pilot phase, the solution preserved over 43,000 appointment slots and cut average patient wait time by 4 days, with a 96%-accuracy predictive model. The project won Recife's 1st Open Innovation Cycle (among 60+ submitted solutions) and, more recently, placed 2nd in the Public Sector Solutions category at Connected Smart Cities 2025.</p>"
+      },
       {
         title: 'Nutrição Total',
         url: 'http://septomobile.com.br/nutricaototal/',

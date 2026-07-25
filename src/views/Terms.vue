@@ -3,7 +3,7 @@
   .container.mx-auto.px-4.py-16.flex-grow
     .max-w-3xl.mx-auto
       h1.text-4xl.font-bold.mb-8.text-center.mt-8 {{ $t('terms.title') }}
-      .bg-white.rounded-lg.shadow-md.p-8.mb-8
+      div(class="bg-white/65 backdrop-filter backdrop-blur-xl backdrop-saturate-150 rounded-2xl shadow-glass border border-white/70 p-8 mb-8")
         .prose.max-w-none
           p.mb-6.text-lg {{ $t('terms.content') }}
           
@@ -20,11 +20,16 @@
           p.mb-6 {{ $t('terms.sections.changes.content') }}
       
       .text-center.mb-12
-        button.px-6.py-3.bg-gray-800.text-white.rounded-lg.hover_bg-gray-700.transition-colors.text-lg.font-medium(@click="$router.push('/')") {{ $t('terms.back') }}
+        Button.px-6.py-3.text-lg.font-medium(variant="neutral" @click="$router.push('/')") {{ $t('terms.back') }}
 </template>
 
 <script>
+import Button from '@/components/ui/Button.vue'
+
 export default {
-  name: 'Terms'
+  name: 'Terms',
+  components: {
+    Button
+  }
 }
 </script>

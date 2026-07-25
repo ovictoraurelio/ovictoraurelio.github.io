@@ -1,13 +1,13 @@
 <template lang="pug">
 .container
-  .flex.mb-8
+  .flex.mb-10.md_mb-12
     .flex-col
-      .text-3xl.font-bold.text-gray-800.relative.inline-block.pb-2.after_content.after_absolute.after_bottom-0.after_left-0.after_h-1.after_bg-blue-500 {{$t("projects.sectionTitle")}}
-  
-  .relative.timeline-container.pl-0.pb-8(class="before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:bg-gray-200")
+      .text-3xl.md_text-4xl.font-light.tracking-tight.text-gray-900 {{$t("projects.sectionTitle")}}
+
+  .relative.timeline-container.pl-0.pb-8
     .timeline-item.relative.mb-8(v-for="index in validProjects" :key="index" :class="{'opacity-0 translate-x-8': !isVisible(index)}" ref="projectItems")
       // Content card
-      .timeline-content.bg-white.rounded-lg.shadow-md.p-4.transform.transition-all.duration-300(class="hover:shadow-lg hover:-translate-y-1")
+      .timeline-content(class="bg-white/60 backdrop-filter backdrop-blur-xl backdrop-saturate-150 rounded-2xl shadow-glass border border-white/70 p-6 md_p-8 transform transition-all duration-300 hover_-translate-y-1")
         .flex.flex-col.md_flex-row.justify-between.items-start.md_items-center.mb-2
           .font-bold.text-lg.text-gray-800.cursor-pointer.hover_text-gray-600.transition-colors(@click="$openUrl($t(`projects.items[${index}].url`))") {{ $t(`projects.items[${index}].title`) }}
           .text-xs.font-medium.text-gray-600.py-1.px-2.rounded.mt-2.md_mt-0 {{ $t(`projects.items[${index}].date`) || '' }}
@@ -28,7 +28,7 @@
 export default {
   data() {
     return {
-      len: 9,
+      len: 11,
       expandedItems: new Set(),
       visibleItems: new Set()
     }
@@ -51,6 +51,16 @@ export default {
   },
   mounted() {
     this.setupIntersectionObserver()
+    // Safety net: content must never stay permanently invisible if the
+    // IntersectionObserver never fires (throttled background tab, older
+    // browser, etc.) - the fade-in is a progressive enhancement, not a
+    // requirement to see the content.
+    this.revealTimeout = setTimeout(() => {
+      this.validProjects.forEach((index) => this.visibleItems.add(index))
+    }, 1500)
+  },
+  beforeUnmount() {
+    clearTimeout(this.revealTimeout)
   },
   methods: {
     toggleDescription(index) {
@@ -96,40 +106,46 @@ export default {
 </script>
 
 <style scoped>
+/*
+ * Colors below are the hex values of the "primary" (system blue) token
+ * defined in windi.config.js. This is plain scoped CSS, not a Windi utility
+ * class, so we can't reference the token by name here - we mirror its
+ * values instead (primary-700 / primary-200 / primary-600 / primary-50 / primary-100).
+ */
 .btn {
   padding: 0.25rem 1rem;
   font-size: 0.875rem;
-  color: #6b46c1;
+  color: #0052b3;
   font-weight: 600;
   border-radius: 9999px;
-  border: 1px solid #e9d8fd;
+  border: 1px solid #b8dcff;
   transition: all 0.2s;
 }
 
 .btn:hover {
   color: white;
-  background-color: #6b46c1;
+  background-color: #0052b3;
   border-color: transparent;
 }
 
 .btn:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(107, 70, 193, 0.4);
+  box-shadow: 0 0 0 2px rgba(0, 102, 224, 0.4);
 }
 
 .btn-toggle {
   padding: 0.25rem 1rem;
   font-size: 0.875rem;
-  color: #4a5568;
+  color: #0052b3;
   font-weight: 500;
   border-radius: 9999px;
-  border: 1px solid #e2e8f0;
-  background-color: #f7fafc;
+  border: 1px solid #b8dcff;
+  background-color: #eef6ff;
   transition: all 0.2s;
 }
 
 .btn-toggle:hover {
-  background-color: #edf2f7;
+  background-color: #d9ecff;
 }
 
 .timeline-item {

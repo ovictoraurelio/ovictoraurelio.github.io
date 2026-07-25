@@ -1,15 +1,15 @@
 <template lang="pug">
 .cookie-consent-container(v-if="showConsent")
   .cookie-consent-overlay.fixed.inset-0.bg-black.bg-opacity-50.z-40
-  .cookie-consent-banner.fixed.bottom-0.left-0.right-0.bg-gray-800.text-white.p-6.shadow-lg.z-50.border-t-4.border-blue-500
+  .cookie-consent-banner(class="fixed bottom-0 left-0 right-0 bg-gray-900/80 backdrop-filter backdrop-blur-xl text-white p-6 shadow-glass z-50 border-t border-white/10")
     .container.mx-auto.px-4
       .flex.flex-col.items-center.justify-between
         .flex-grow.mb-6.text-center
           h3.text-xl.font-bold.mb-3 {{ $t('cookies.title') }}
           p.text-base.mb-4 {{ $t('cookies.message') }}
         .flex.flex-wrap.gap-3.justify-center.w-full
-          button.px-6.py-3.bg-blue-500.text-white.rounded-lg.hover_bg-blue-600.transition-colors.text-base.font-medium.shadow-md(@click="acceptCookies") {{ $t('cookies.accept') }}
-          button.px-6.py-3.bg-gray-700.text-white.rounded-lg.hover_bg-gray-600.transition-colors.text-base.font-medium.shadow-md(@click="$router.push('/privacy')") {{ $t('cookies.learnMore') }}
+          button.px-6.py-3.bg-primary-600.text-white.rounded-full.hover_bg-primary-700.transition-colors.text-base.font-medium.shadow-soft.hover_shadow-glass(@click="acceptCookies") {{ $t('cookies.accept') }}
+          button(class="px-6 py-3 bg-white/10 backdrop-filter backdrop-blur-md border border-white/20 text-white rounded-full hover_bg-white/20 transition-colors text-base font-medium" @click="$router.push('/privacy')") {{ $t('cookies.learnMore') }}
 </template>
 
 <script>

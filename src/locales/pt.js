@@ -27,7 +27,7 @@ export default {
     about: {
       title: 'Sobre',
       description:
-        'Sou COO e co-fundador da Beyond Co., além de CSO na Absens e Legis, onde lidero o desenvolvimento de soluções inovadoras em software, inteligência artificial e inteligência jurídica.'
+        'Sou Chief of AI no Extreme Group, cofundador da Beyond Co. e ajudei a construir o Legis e o Absens — soluções em software, inteligência artificial e inteligência jurídica.'
     },
     links: {
       title: 'Links Rápidos',
@@ -107,10 +107,10 @@ export default {
     }
   },
   infos: {
-    title: 'COO na Beyond Co | CSO na Legis e Absens',
+    title: 'Chief of AI no Extreme Group',
     subtitle: `${yearsFromFirstDayToNow} anos de experiência em soluções digitais`,
     location: 'Recife, Brasil',
-    description: `Sou o COO e cofundador da Beyond Co., onde, há mais de seis anos, venho desenvolvendo soluções inovadoras para clientes dos mais diversos setores. Por meio da união entre inovação estratégica, gestão de pessoas e liderança tecnológica, meu objetivo é impulsionar o crescimento das pessoas que lidero e a evolução dos softwares que produzimos, de modo que sempre entreguemos valor de verdade.<br><br>Além disso, atuo como CSO no Legis e no Absens. No Legis, passei os últimos quatro anos aplicando minhas habilidades para direcionar a empresa e garantir sucesso sustentável no desenvolvimento de software de inteligência jurídica. No Absens, estamos usando Inteligência Artificial para combater o absenteísmo, ajudando a reduzir as filas no SUS.<br><br>Minha paixão por empreendedorismo e tecnologia começou aos 14 anos, e desde então estou comprometido em resolver problemas do mundo real por meio da inovação. Como Arquiteto de Nuvem Certificado pelo Google, especializo-me em projetar e implementar infraestruturas de nuvem escaláveis, seguras e eficientes, utilizando plataformas como Google Cloud Platform, AWS e Microsoft Azure.<br><br>Adoro encarar novos desafios e estou sempre em busca de oportunidades para ir além no desenvolvimento de software e hardware. Acredito sinceramente que a tecnologia pode transformar a sociedade, e tenho como objetivo contribuir para essa transformação através de soluções inovadoras e eficientes.`
+    description: `Sou Chief of AI no Extreme Group desde dezembro de 2025, onde lidero a estratégia de inteligência artificial do grupo. Essa posição é fruto direto da trajetória que construí como cofundador da Beyond Co., onde estruturei a formação dos primeiros profissionais, a área de RH, o programa de cultura e a estratégia de desenvolvimento individual do time — e, ao mesmo tempo, fui o principal responsável pelas definições técnicas e arquiteturais das soluções que a empresa constrói. No auge, cheguei a liderar mais de 60 pessoas como CTO e COO.<br><br>A Beyond nasceu para construir produtos, não projetos de software house: o Legis (hoje um ERP jurídico) e o Absens nasceram dessa filosofia. Fui um dos desenvolvedores iniciais do Legis antes de migrar para um papel de estratégia e apoio ao time atual.<br><br>No Absens, fui por um tempo o único desenvolvedor, construindo toda a automação e a camada de inteligência artificial — até validarmos a solução com a Prefeitura do Recife: preservamos mais de 43 mil horários de atendimento, reduzimos em 4 dias o tempo médio de espera, com um modelo preditivo de 96% de acurácia. O projeto venceu o 1º Ciclo de Inovação Aberta do Recife (entre +60 soluções) e ficou em 2º lugar no Connected Smart Cities 2025.<br><br>Sou também Arquiteto de Nuvem Certificado pelo Google, e minha paixão por tecnologia começou aos 14 anos.`
   },
   scheduleMeeting: 'Agendar uma reunião',
   openSite: 'Ver site',
@@ -118,7 +118,9 @@ export default {
     open: 'abrir'
   },
   life: {
-    sectionTitle: 'Em minha vida'
+    sectionTitle: 'Em minha vida',
+    leadershipLabel: 'Liderança executiva',
+    trajectoryLabel: 'Trajetória e formação'
   },
   skills: {
     sectionTitle: 'Habilidades e expertises',
@@ -126,11 +128,20 @@ export default {
       'Algumas das ferramentas que possuo experiência em termos de Engenharia de Software'
   },
   projects: {
-    sectionTitle: 'Projetos recentes (Não mais)',
+    sectionTitle: 'Projetos da minha trajetória',
     showMore: 'Ver mais',
     showLess: 'Ver menos',
     items: [
       {},
+      {
+        title: 'Absens — combate ao absenteísmo na saúde pública',
+        url: 'https://absens.com.br',
+        subtitle:
+          'Produto de IA feito para a Prefeitura do Recife: venceu o 1º Ciclo de Inovação Aberta e preservou mais de 43 mil horários de atendimento na rede pública de saúde.',
+        date: '2021',
+        content:
+          '<p>O Absens nasceu do 1º Ciclo de Inovação Aberta da Prefeitura do Recife (Emprel + Secretaria Municipal de Saúde), em novembro de 2021, para reduzir o absenteísmo em consultas e exames da rede pública de saúde. Fui o único desenvolvedor da solução por um período, construindo toda a camada de automação (lembretes e reagendamento via WhatsApp) e o modelo de inteligência artificial que calcula a probabilidade de comparecimento de cada paciente.</p><p>Na fase piloto, a solução preservou mais de 43 mil horários de atendimento e reduziu em 4 dias, em média, o tempo de espera dos pacientes, com um modelo preditivo de 96% de acurácia. O projeto venceu o 1º Ciclo de Inovação Aberta do Recife (entre mais de 60 soluções inscritas) e, mais recentemente, ficou em 2º lugar na categoria Soluções do Poder Público do Connected Smart Cities 2025.</p>'
+      },
       {
         title: 'Nutrição Total',
         url: 'http://septomobile.com.br/nutricaototal/',

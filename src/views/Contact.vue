@@ -3,55 +3,55 @@
   .container.mx-auto.px-4.py-16.flex-grow
     .max-w-2xl.mx-auto
       h1.text-4xl.font-bold.mb-8.text-center.mt-8 {{ $t('contact.title') }}
-      .bg-white.rounded-lg.shadow-md.p-8.mb-8
+      div(class="bg-white/65 backdrop-filter backdrop-blur-xl backdrop-saturate-150 rounded-3xl shadow-glass border border-white/70 p-8 mb-8")
         form.space-y-6(@submit.prevent="submitForm")
           // Nome
           .form-group
             label.block.text-gray-700.font-medium.mb-2(for="name") {{ $t('contact.form.name') }}
-            input#name.w-full.px-4.py-2.border.border-gray-300.rounded-lg.focus_border-blue-500.focus_ring-1.focus_ring-blue-500.focus_outline-none(
+            input#name.w-full.px-4.py-2.border.border-gray-200.rounded-xl.transition-shadow.focus_border-primary-500.focus_ring-2.focus_ring-primary-200.focus_outline-none(
               type="text"
               v-model="formData.name"
               :placeholder="$t('contact.form.namePlaceholder')"
               required
             )
-          
+
           // Telefone
           .form-group
             label.block.text-gray-700.font-medium.mb-2(for="phone") {{ $t('contact.form.phone') }}
-            input#phone.w-full.px-4.py-2.border.border-gray-300.rounded-lg.focus_border-blue-500.focus_ring-1.focus_ring-blue-500.focus_outline-none(
+            input#phone.w-full.px-4.py-2.border.border-gray-200.rounded-xl.transition-shadow.focus_border-primary-500.focus_ring-2.focus_ring-primary-200.focus_outline-none(
               type="tel"
               v-model="formData.phone"
               :placeholder="$t('contact.form.phonePlaceholder')"
               required
             )
-          
+
           // Email
           .form-group
             label.block.text-gray-700.font-medium.mb-2(for="email") {{ $t('contact.form.email') }}
-            input#email.w-full.px-4.py-2.border.border-gray-300.rounded-lg.focus_border-blue-500.focus_ring-1.focus_ring-blue-500.focus_outline-none(
+            input#email.w-full.px-4.py-2.border.border-gray-200.rounded-xl.transition-shadow.focus_border-primary-500.focus_ring-2.focus_ring-primary-200.focus_outline-none(
               type="email"
               v-model="formData.email"
               :placeholder="$t('contact.form.emailPlaceholder')"
               required
             )
-          
+
           // Mensagem
           .form-group
             label.block.text-gray-700.font-medium.mb-2(for="message") {{ $t('contact.form.message') }}
-            textarea#message.w-full.px-4.py-2.border.border-gray-300.rounded-lg.focus_border-blue-500.focus_ring-1.focus_ring-blue-500.focus_outline-none(class="min-h-[150px]"
+            textarea#message.w-full.px-4.py-2.border.border-gray-200.rounded-xl.transition-shadow.focus_border-primary-500.focus_ring-2.focus_ring-primary-200.focus_outline-none(class="min-h-[150px]"
               v-model="formData.message"
               :placeholder="$t('contact.form.messagePlaceholder')"
               required
             )
-          
+
           // Botão de envio
           .form-group.text-center
-            button.px-6.py-3.bg-blue-600.text-white.rounded-lg.hover_bg-blue-700.transition-colors.text-lg.font-medium.shadow-md.w-full.md_w-auto(
+            Button.px-6.py-3.text-lg.font-medium.w-full.md_w-auto(
+              variant="primary"
               type="submit"
               :disabled="isSubmitting"
-            ) 
-              span(v-if="!isSubmitting") {{ $t('contact.form.submit') }}
-              span(v-else) {{ $t('contact.form.sending') }}
+            )
+              | {{ isSubmitting ? $t('contact.form.sending') : $t('contact.form.submit') }}
         
         // Mensagem de sucesso ou erro
         .mt-6.text-center(v-if="formStatus")
@@ -62,9 +62,13 @@
 
 <script>
 import { detectBrowser, getDeviceInfo } from '../services/tracking'
+import Button from '@/components/ui/Button.vue'
 
 export default {
   name: 'Contact',
+  components: {
+    Button
+  },
   data() {
     return {
       formData: {
@@ -151,10 +155,10 @@ export default {
   margin-bottom: 1.5rem;
 }
 
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 1px #3b82f6;
-}
+/*
+ * Focus styling now lives entirely in the template as Windi utilities
+ * (focus_border-primary-500 focus_ring-2 focus_ring-primary-200) so the
+ * soft ring matches the rest of the "primary" institutional blue scale -
+ * no ad hoc focus CSS needed here anymore.
+ */
 </style>

@@ -4,7 +4,7 @@
   template(v-if="$isMobile()")
     .flex.flex-col.h-screen.overflow-hidden
       .py-2
-        button.h-10.w-full.bg-white.text-black.font-medium.text-sm.border.border-gray-300.rounded-lg.shadow-sm(class="hover:bg-gray-100" @click="selectedLink ? resetSelection() : $router.push('/')")
+        Button.h-10.w-full.font-medium.text-sm(variant="neutral" @click="selectedLink ? resetSelection() : $router.push('/')")
           | {{ selectedLink ? 'Voltar' : 'Voltar ao site' }}
       
       // Content Area
@@ -13,7 +13,7 @@
         template(v-if="!selectedLink")
           .h-full.flex.flex-col.justify-evenly.py-2
             .flex-1.flex.items-center.justify-center.px-4.py-2(v-for="(link, index) in roamLinks" :key="index")
-              button.w-full.h-full.py-8.bg-white.text-black.font-bold.text-2xl.rounded-xl.shadow-lg.transition-all.transform(class="hover:scale-105 hover:shadow-xl" @click="selectLink(link)")
+              button(class="w-full h-full py-8 bg-white/60 backdrop-filter backdrop-blur-xl backdrop-saturate-150 border border-white/70 text-gray-900 font-bold text-2xl rounded-2xl shadow-glass transition-all transform hover:scale-105" @click="selectLink(link)")
                 | {{ link.name }}
         
         // After Link Selection
@@ -25,18 +25,23 @@
   template(v-else)
     .grid.grid-cols-12.gap-6
       .col-span-12
-        button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white(class="hover:bg-gray-900" @click="$router.push('/')")
+        Button.h-10.w-full.font-medium.text-sm(variant="neutral" @click="$router.push('/')")
           | Voltar ao site
-      
-      .col-span-6(v-for="(link, index) in roamLinks" :key="index")
-        .bg-white.shadow-md.rounded-lg.p-4
+
+      .col-span-12.md_col-span-6(v-for="(link, index) in roamLinks" :key="index")
+        div(class="bg-white/60 backdrop-filter backdrop-blur-xl backdrop-saturate-150 border border-white/70 shadow-glass rounded-2xl p-4")
           h2.text-xl.font-semibold.mb-4 {{ link.name }}
           div(:id="link.id" style="min-width: 320px; width: 100%;")
 </template>
 
 <script>
+import Button from '@/components/ui/Button.vue'
+
 export default {
   name: 'Calendar',
+  components: {
+    Button
+  },
   data() {
     return {
       roamScriptLoaded: false,
@@ -95,7 +100,7 @@ export default {
           url,
           parentElement,
           lobbyConfiguration: 'booking_only',
-          accentColor: '#0059DC',
+          accentColor: '#0066e0',
           theme: 'light',
           onSizeChange: (width, height) => {
             parentElement.style.height = `${height}px`

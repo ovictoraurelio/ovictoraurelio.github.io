@@ -3,40 +3,41 @@
   .grid.grid-cols-12.grid-rows-1(v-if="$isMobile()")
     .col-start-4.col-span-6.text-center.content-center.justify-center.justify-items-center
       ImageRounded.justify-self-center(v-if="$isMobile()")
-  .flex
+  .flex.flex-wrap
     .w-50(v-if="!$isMobile()")
       ImageRounded
     .basis-full.flex-col.ml-2
-      .flex
+      .flex.flex-wrap.gap-y-3.justify-between.items-start
         .flex-col
-          span.text-2xl.font-bold Victor Aurélio
-        .flex-grow.text-right
-          button.mr-4.px-2.h-8.bg-gray-700.font-medium.text-sm.text-white.rounded(
+          span.block.text-xs.md_text-sm.uppercase.tracking-widest.text-primary-600.font-semibold.mb-2 {{ $t("infos.title") }}
+          span.block.text-3xl.sm_text-4xl.md_text-5xl.font-light.tracking-tight.text-gray-900 Victor Aurélio
+        .flex-shrink-0.flex.items-center
+          Button.mr-4.px-5.h-8.font-medium.text-sm(
             v-if="!$isMobile()"
+            variant="primary"
             @click="$router.push('/calendar')"
             ) {{ $t("scheduleMeeting") }}
-          button(size="sm" class="my-2 my-sm-0 btn-info" type="submit" @click="alternateLanguage")
+          button.text-gray-400.hover_text-primary-600.transition-colors(size="sm" class="my-2 my-sm-0 btn-info" type="submit" @click="alternateLanguage")
             iconify(icon="cil:language")
-      .flex
-        .flex-col.text-left
-          span.pt-0.pb-0.font-medium {{ $t("infos.title") }}
-      .flex
+      .flex.mt-4
         .flex-col
-          span.text-sm.py-0 {{ $t("infos.subtitle") }}
-      .flex
+          span.text-base.text-gray-600 {{ $t("infos.subtitle") }}
+      .flex.mt-1
         .flex-col
-          span.text-sm.pt-2 {{ $t("infos.location") }}
-  .flex.mt-6(v-if="!hideDescription")
+          span.text-sm.text-gray-400 {{ $t("infos.location") }}
+  .flex.mt-8(v-if="!hideDescription")
     .flex-col
-      .text-base.text-justify(v-html='$t("infos.description")')
+      .text-base.text-gray-700.leading-relaxed.text-justify(v-html='$t("infos.description")')
 </template>
 
 <script>
 import ImageRounded from './ImageRounded.vue'
+import Button from './ui/Button.vue'
 export default {
   name: 'Home',
   components: {
-    ImageRounded
+    ImageRounded,
+    Button
   },
   props: {
     hideDescription: {

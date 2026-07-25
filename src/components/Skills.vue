@@ -1,24 +1,22 @@
 <template lang="pug">
 .container
-  .flex.flex-col
+  .flex.flex-col.mb-10.md_mb-12
     .col-span
-      .text-3xl.font-bold.text-gray-800.relative.inline-block.pb-2.after_content.after_absolute.after_bottom-0.after_left-0.after_h-1.after_bg-blue-500 {{ $t("skills.sectionTitle") }}
-    .col-span.mt-3.text-gray-600.mb-6
+      .text-3xl.md_text-4xl.font-light.tracking-tight.text-gray-900 {{ $t("skills.sectionTitle") }}
+    .col-span.mt-4.text-gray-600
       p.text-lg {{ $t("skills.subtitle") }}
   .grid.grid-cols-12(v-for="(group, index) in groups")
     .col-span-12.text-left
-      .mt-8.text-left.text-lg.font-light.font-sen {{group[0].type}}s
-    .col-span-12.mt-8.pa-0
+      .mt-10.text-xs.uppercase.tracking-widest.text-primary-600.font-semibold {{group[0].type}}s
+    .col-span-12.mt-6.pa-0
       .container
-        .grid.grid-cols-2.sm_grid-cols-4.md_grid-cols-6
-          .mt-4.col-auto.text-center(v-for="(course, index) of group" :key="index")
-            .text-center
-              iconify(style="font-size: 35px;" :icon='course.icon')
-            .text-center
-              .headline {{course.text}}
-            //- .flex
-              .col-span
-                .overline {{course.type}}
+        .grid.grid-cols-2.sm_grid-cols-3.md_grid-cols-4.lg_grid-cols-5.gap-4
+          .col-auto(v-for="(course, index) of group" :key="index")
+            div(class="bg-white/60 backdrop-filter backdrop-blur-xl backdrop-saturate-150 rounded-2xl shadow-glass border border-white/70 p-4 text-center h-full transform transition-all duration-300 hover_-translate-y-1")
+              .text-center.mb-2
+                iconify(style="font-size: 32px;" :icon='course.icon')
+              .text-center
+                div(class="text-sm font-medium text-gray-700 break-words leading-snug") {{course.text}}
 </template>
 
 <script>
@@ -166,4 +164,16 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+/* Some iconify "logo" icons are wide wordmarks (e.g. Firebase, MongoDB) -
+   their SVG width/height attributes preserve the source aspect ratio, which
+   can be 3-4x wider than tall and overflow the narrow skill cards. Cap the
+   rendered width so wordmark icons shrink to fit instead of spilling into
+   neighboring cards. */
+.container :deep(svg) {
+  max-width: 100%;
+  max-height: 32px;
+  width: auto;
+  height: auto;
+}
+</style>
