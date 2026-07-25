@@ -96,7 +96,7 @@ export default {
       color: 'bg-light-gray',
       date: '27/12/2013 - 30/12/2015',
       img: 'building',
-      office: 'Desenvolvedor',
+      office: 'Fundador & CTO — apps com +4 milhões de downloads',
       category: 'trajectory'
     },
     {
