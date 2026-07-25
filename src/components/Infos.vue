@@ -17,8 +17,23 @@
             variant="primary"
             @click="$router.push('/calendar')"
             ) {{ $t("scheduleMeeting") }}
-          button.text-gray-400.hover_text-primary-600.transition-colors(size="sm" class="my-2 my-sm-0 btn-info" type="submit" @click="alternateLanguage")
-            iconify(icon="cil:language")
+          .flex.items-center.gap-1(class="bg-white/50 backdrop-filter backdrop-blur-md backdrop-saturate-150 border border-white/70 rounded-full p-1 shadow-soft")
+            button(
+              class="w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200"
+              :class="$i18n.locale === 'pt' ? 'opacity-100 shadow-soft bg-white/80' : 'opacity-40 hover_opacity-70'"
+              type="button"
+              aria-label="Português"
+              @click="setLanguage('pt')"
+            )
+              iconify(icon="circle-flags:br" style="font-size: 20px;")
+            button(
+              class="w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200"
+              :class="$i18n.locale === 'en' ? 'opacity-100 shadow-soft bg-white/80' : 'opacity-40 hover_opacity-70'"
+              type="button"
+              aria-label="English"
+              @click="setLanguage('en')"
+            )
+              iconify(icon="circle-flags:gb" style="font-size: 20px;")
       .flex.mt-4
         .flex-col
           span.text-base.text-gray-600 {{ $t("infos.subtitle") }}
@@ -52,11 +67,8 @@ export default {
     // }
   },
   methods: {
-    alternateLanguage() {
-      const languages = ['pt', 'en']
-      this.$i18n.locale = languages.filter(
-        (lang) => lang !== this.$i18n.locale
-      )[0]
+    setLanguage(lang) {
+      this.$i18n.locale = lang
     }
   }
 }

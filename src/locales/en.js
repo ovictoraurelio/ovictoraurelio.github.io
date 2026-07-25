@@ -110,7 +110,7 @@ export default {
     subtitle: `${yearsFromFirstDayToNow} years digital solutions expertises`,
     location: 'Recife, Brazil',
     description:
-      "I've been Chief of AI at Extreme Group since December 2025, where I lead the group's artificial intelligence strategy. That role is a direct result of the path I built as a co-founder of Beyond Co., where I structured the onboarding and training of our first employees, built the HR function, the culture program, and each team member's individual development strategy — while also being the lead voice on the technical and architectural decisions behind everything the company builds. At its peak, I led more than 60 people as CTO and COO.<br><br>Beyond was founded to build products, not software-house projects: Legis (today a legal ERP) and Absens both grew out of that philosophy. I was one of Legis's original developers before moving into a strategy and support role for the team that runs it today.<br><br>At Absens, I was the sole developer for a period, building the entire automation layer and the AI model — until we validated the solution with Recife's City Hall: we preserved more than 43,000 appointment slots, cut average wait times by 4 days, with a 96%-accuracy predictive model. The project won Recife's 1st Open Innovation Cycle (among 60+ submissions) and placed 2nd at Connected Smart Cities 2025.<br><br>I'm also a Google-certified Cloud Architect, and my passion for technology began at age 14."
+      "I've been Chief of AI at Extreme Group since December 2025, where I lead the group's artificial intelligence strategy. That role is a direct result of the path I built as a co-founder of Beyond Co., where I structured the onboarding and training of our first employees, built the HR function, the culture program, and each team member's individual development strategy — while also being the lead voice on the technical and architectural decisions behind everything the company builds. I led more than 60 people as CTO and COO.<br><br>Beyond was founded to build products, not software-house projects: Legis (today a legal ERP) and Absens both grew out of that philosophy. I was one of Legis's original developers before moving into a strategy and support role for the team that runs it today.<br><br>At Absens, I was the sole developer for a period, building the entire automation layer and the AI model — until we validated the solution with Recife's City Hall: we preserved more than 43,000 appointment slots, cut average wait times by 4 days, with a 96%-accuracy predictive model. The project won Recife's 1st Open Innovation Cycle (among 60+ submissions) and placed 2nd at Connected Smart Cities 2025.<br><br>I'm also a Google-certified Cloud Architect, and my passion for technology began at age 14."
   },
   scheduleMeeting: 'Schedule meeting',
   openSite: 'Open site',
@@ -146,11 +146,11 @@ export default {
         title: 'Nutrição Total',
         url: 'http://septomobile.com.br/nutricaototal/',
         subtitle:
-          'Platform developed while I was a partner and developer at startup Septo Mobile.',
+          'One of the apps I built as founder and CTO of Septo Mobile — a startup whose apps reached over 4 million downloads combined.',
         img: 'nutricaototal.png',
         date: '',
         content:
-          '<p>Nutrição Total é um sistema que visa facilitar a vida do discente e do setor de nutrição facilitando o agendamento diário nas refeições via web e mobile. Permite também a agilização na fila, Interação do discente no processo de escolha do cardápio por meio de feedbacks e de um sistema de coleta de dados que permite que o setor nutritivo saiba diretamente do discente suas preferências seus gostos e o que não é bem aceito, diminuindo assim o desperdício de alimentos.</p>'
+          '<p><strong>I was the founder and CTO of Septo Mobile</strong>, a startup where I built several apps that together surpassed 4 million downloads.</p><p>Nutrição Total é um sistema que visa facilitar a vida do discente e do setor de nutrição facilitando o agendamento diário nas refeições via web e mobile. Permite também a agilização na fila, Interação do discente no processo de escolha do cardápio por meio de feedbacks e de um sistema de coleta de dados que permite que o setor nutritivo saiba diretamente do discente suas preferências seus gostos e o que não é bem aceito, diminuindo assim o desperdício de alimentos.</p>'
       },
       {
         title: 'Energia Consumida',
