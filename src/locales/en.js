@@ -1,8 +1,12 @@
+import ui from './ui-en'
+
 const firstDayWorkingAsDev = new Date(2012, 3, 1)
 const yearsFromFirstDayToNow =
   new Date().getFullYear() - firstDayWorkingAsDev.getFullYear()
 export default {
+  ui,
   language: 'language',
+  back: 'Back to Home',
   contact: {
     title: 'Contact Me',
     form: {
@@ -135,99 +139,100 @@ export default {
         title: 'Nutrição Total',
         url: 'http://septomobile.com.br/nutricaototal/',
         subtitle:
-          'Platform developed while I was a partner and developer at startup Septo Mobile.',
+          'A meal scheduling platform built while I was a partner and developer at Septo Mobile.',
         img: 'nutricaototal.png',
         date: '',
         content:
-          '<p>Nutrição Total é um sistema que visa facilitar a vida do discente e do setor de nutrição facilitando o agendamento diário nas refeições via web e mobile. Permite também a agilização na fila, Interação do discente no processo de escolha do cardápio por meio de feedbacks e de um sistema de coleta de dados que permite que o setor nutritivo saiba diretamente do discente suas preferências seus gostos e o que não é bem aceito, diminuindo assim o desperdício de alimentos.</p>'
+          '<p>A web and mobile platform for scheduling student meals and helping campus nutrition teams manage their daily operations.</p><p>Students can provide feedback on menus and share their preferences. The platform helps the nutrition team make informed decisions and reduce food waste.</p>'
       },
       {
         title: 'Energia Consumida',
         url: 'http://victoraurelio.com/demonstracao/energiaconsumida',
         subtitle:
-          'Projeto construído como trabalho de mestrado do Professor Mestrando Gregor Gama de Carvalho',
+          'An energy monitoring project developed for Gregor Gama de Carvalho’s master’s research.',
         img: 'energiaconsumida.png',
         date: '',
         content:
-          '<p>A Medição do Consumo de Energia Elétrica é realizada mensalmente, afim de realizar a tarifação de cada consumidor. Um Sistema Online específico permite ao usuário acompanhar o comportamento da construção da conta de energia, possibilitando a identificação de quais os horários no dia e semana, em que o consumo elétrico é maior ou menor.</p><p>Atualmente existem Medidores Eletrônicos que permitem monitorar, armazenar e controlar os dados de consumo. Nesse trabalho, os dados são coletados e transmitidos por um Microcontrolador. Ele está instalado no principal quadro elétrico que energiza o estabelecimento ou residência, sendo conectados 03 sensores específicos aos principais cabos de alimentação elétrica, coletando em tempo real, os valores de corrente elétrica que passam por esses cabos.</p><p>A inovação deste trabalho é o desenvolvimento de uma Rede Neural Artificial, no Software MATLAB O algoritmo é capaz de prever o consumo mensal de energia, desde que seja informado apenas os 03 valores de corrente elétrica que energizam o estabelecimento. A Rede Neural Artificial é utilizada para a modelagem de problemas não lineares, onde equações não conseguem descrever o comportamento do sistema estudado.</p>'
+          '<p>An online system for monitoring electricity consumption and identifying the times of day and week with the highest demand.</p><p>A microcontroller connected to three sensors collects current readings from the main electrical panel in real time.</p><p>A neural network developed in MATLAB uses these readings to estimate monthly consumption, modelling relationships that conventional equations cannot easily describe.</p>'
       },
       {
         title: 'Indica filme',
         url: 'http://filme.thik.co',
-        subtitle:
-          'Um web site que te recomenda um filme novo a cada clique do mouse',
+        subtitle: 'A website that recommends a new movie with each click.',
         img: 'filme.png',
         date: '',
         content:
-          'Um web site que te recomenda um filme novo a cada clique do mouse.'
+          'A simple experiment in movie discovery: click to get a new recommendation.'
       },
       {
         title: '+Sangue',
         url: 'https://play.google.com/store/apps/details?id=maissangue.ifal.edu.br',
         subtitle:
-          'Aplicativo que possibilita agendar doações nos Hemocentros de Alagoas (Hemoal em Maceió e Hemoar Arapiraca)',
+          'An Android app for scheduling blood donations at blood centres in Alagoas.',
         img: 'maissangue.png',
         date: '',
         content:
-          'Aplicativo android desenvolvido em linguagem nativa (java) com web service ruby on rails, disponível na Google Play. Através do aplicativo o cidadão pode ser notificado de novas campanhas, campanhas de baixa no estoque de sangue e compartilhar nas mídias sociais. Equipe: Nywton, Ernande e Victor.'
+          '<p>A native Android application built in Java, with a Ruby on Rails web service. It supports donation appointments at Hemoal in Maceió and Hemoar in Arapiraca.</p><p>Users can receive campaign and blood supply notifications and share them on social media. Developed with Nywton and Ernande.</p>'
       },
       {
         title: 'Neural Network JS',
         url: 'https://github.com/ovictoraurelio/neuralnetworkjs',
         subtitle:
-          'Projeto contruído para simular o método FeedForward de uma rede neural artificial em javascript.',
+          'An open source JavaScript experiment that simulates a neural network’s feedforward process.',
         img: 'github.png',
         date: '',
         content:
-          'Este projeto é open-source e livre atualmente esta disponível no github.'
+          'An open source implementation for exploring how information moves through a neural network, available on GitHub.'
       },
       {
         title: 'Ouvido Absoluto',
         url: 'https://play.google.com/store/apps/details?id=br.com.septo.ouvidoabsoluto',
         subtitle:
-          'Jogo de música voltado para os amantes da música, iniciantes e profissionais.',
+          'A music game for enthusiasts, beginners and professional musicians.',
         img: 'ouvidoabsoluto.png',
         date: '',
         content:
-          'Aplicativo android desenvolvido em html/css com javascript utilizando os frameworks: Bootstrap e Cordova.'
+          'An Android application built with HTML, CSS and JavaScript, using Bootstrap and Cordova.'
       },
       {
         title: 'Boutique App',
         url: 'http://victoraurelio.com/boutique',
         subtitle:
-          'Projeto construido para ajudar a compartilhar e organizar objetos pessoais',
+          'A project exploring how to share and organise personal belongings.',
         img: 'boutique.png',
         date: '',
         content:
-          '<p>Em breve mais informações estarão disponíveis sobre este projeto, atualmente ele está aguardando definições quanto ao seu modelo.</p>'
+          'An early product experiment in sharing and organising personal items. The project was awaiting decisions on its business model.'
       },
       {
         title: 'Boletim Ifal - Paralelo',
         url: 'http://victoraurelio.com/boletim',
         subtitle:
-          'Versão não oficial do boletim do IFAL, para melhor visualizar as informações do mesmo',
+          'An unofficial interface for reading IFAL student grades more clearly.',
         img: 'boletim.png',
         date: '',
         content:
-          '<p>Website paralelo para visualizar as notas do boletim do IFAL, em breve serão implementados recursos que irão fazer você jamais querer usar o antigo website.</p>'
+          'An alternative website for viewing IFAL student grades, designed to make the information easier to read.'
       },
       {
         title: 'ApiObject',
         url: 'https://github.com/ovictoraurelio/apiObject',
-        subtitle: 'A open-source project available on github.',
+        subtitle:
+          'A small open source JavaScript framework for working with objects, JSON and Ajax.',
         img: 'github.png',
         date: '',
         content:
-          'A tiny javascript framework. Focused to make more simple work with javascript, json e ajax. I have developed this project before VueJS, Angular and React as we know.'
+          'A lightweight JavaScript framework created to simplify working with JavaScript objects, JSON and Ajax, before today’s major frontend frameworks became established.'
       },
       {
         title: 'Find my CEP',
         url: 'http://victoraurelio.com/cep',
-        subtitle: 'Useful to find your CEP using geolocation.',
+        subtitle:
+          'A tool for finding a Brazilian postal code using geolocation.',
         img: 'github.png',
         date: '',
         content:
-          'A open-source project available on github. <br> To view source code on github: <a target="_blank" href="https://github.com/ovictoraurelio/my-postal-code">https://github.com/ovictoraurelio/my-postal-code</a>'
+          '<p>An open source experiment in finding a Brazilian postal code from a location.</p><p><a href="https://github.com/ovictoraurelio/my-postal-code" target="_blank" rel="noopener noreferrer">View the source on GitHub</a></p>'
       }
     ]
   }

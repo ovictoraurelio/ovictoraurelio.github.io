@@ -1,64 +1,91 @@
-<template lang="pug">
-.container
-  .grid.grid-cols-12.grid-rows-1(v-if="$isMobile()")
-    .col-start-4.col-span-6.text-center.content-center.justify-center.justify-items-center
-      ImageRounded.justify-self-center(v-if="$isMobile()")
-  .flex
-    .w-50(v-if="!$isMobile()")
-      ImageRounded
-    .basis-full.flex-col.ml-2
-      .flex
-        .flex-col
-          span.text-2xl.font-bold Victor Aurélio
-        .flex-grow.text-right
-          button.mr-4.px-2.h-8.bg-gray-700.font-medium.text-sm.text-white.rounded(
-            v-if="!$isMobile()"
-            @click="$router.push('/calendar')"
-            ) {{ $t("scheduleMeeting") }}
-          button(size="sm" class="my-2 my-sm-0 btn-info" type="submit" @click="alternateLanguage")
-            iconify(icon="cil:language")
-      .flex
-        .flex-col.text-left
-          span.pt-0.pb-0.font-medium {{ $t("infos.title") }}
-      .flex
-        .flex-col
-          span.text-sm.py-0 {{ $t("infos.subtitle") }}
-      .flex
-        .flex-col
-          span.text-sm.pt-2 {{ $t("infos.location") }}
-  .flex.mt-6(v-if="!hideDescription")
-    .flex-col
-      .text-base.text-justify(v-html='$t("infos.description")')
+<template>
+  <section class="hero site-shell" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow">
+        <span class="status-dot"></span>{{ $t('ui.hero.eyebrow') }}
+      </p>
+      <h1 id="hero-title">
+        {{ $t('ui.hero.title') }}<br /><em>{{ $t('ui.hero.emphasis') }}</em>
+      </h1>
+      <p class="hero-description">{{ $t('ui.hero.description') }}</p>
+      <div class="hero-actions">
+        <RouterLink class="button" to="/calendar"
+          >{{ $t('scheduleMeeting') }}<AppIcon name="external"
+        /></RouterLink>
+        <RouterLink class="text-link" to="/#work"
+          >{{ $t('ui.hero.explore') }}<AppIcon name="down"
+        /></RouterLink>
+      </div>
+      <div class="hero-socials">
+        <span>{{ $t('ui.hero.find') }}</span>
+        <a
+          href="https://www.linkedin.com/in/ovictoraurelio/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn<AppIcon name="external"
+        /></a>
+        <a
+          href="https://github.com/ovictoraurelio"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub<AppIcon name="external"
+        /></a>
+      </div>
+    </div>
+    <figure class="hero-portrait">
+      <div class="portrait-frame">
+        <img
+          v-if="!photoFailed"
+          :src="portrait"
+          alt="Victor Aurélio"
+          width="926"
+          height="1000"
+          fetchpriority="high"
+          @error="photoFailed = true" />
+        <div v-else class="portrait-fallback" aria-label="Victor Aurélio">
+          va.
+        </div>
+        <span class="portrait-note">{{ $t('ui.hero.portraitNote') }}</span>
+      </div>
+      <div class="credential">
+        <AppIcon name="cloud" />
+        <div>
+          <span>Google Cloud</span
+          ><strong>{{ $t('ui.hero.certification') }}</strong>
+        </div>
+        <AppIcon name="check" />
+      </div>
+      <figcaption>
+        <span>Victor Aurélio</span><span>{{ $t('infos.location') }}</span>
+      </figcaption>
+    </figure>
+    <div class="hero-strip">
+      <div class="experience-number">
+        <strong>{{ years }}<span>+</span></strong>
+        <p>{{ $t('ui.hero.experience') }}</p>
+      </div>
+      <div class="company-strip">
+        <span>{{ $t('ui.hero.leading') }}</span>
+        <div>
+          <strong class="wordmark-beyond">beyond co.</strong
+          ><strong class="wordmark-legis">Legis</strong
+          ><strong class="wordmark-absens">absens<span>↗</span></strong>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-import ImageRounded from './ImageRounded.vue'
+import AppIcon from './AppIcon.vue'
+const portrait = '/victor-aurelio.jpg'
+
 export default {
-  name: 'Home',
-  components: {
-    ImageRounded
-  },
-  props: {
-    hideDescription: {
-      type: Boolean,
-      default: false
-    }
-  },
-  computed: {
-    // imgStyle() {
-    //   const length = this.$isMobile() ? 80 : 120
-    //   return `width: ${length}px;height: ${length}px;`
-    // }
-  },
-  methods: {
-    alternateLanguage() {
-      const languages = ['pt', 'en']
-      this.$i18n.locale = languages.filter(
-        (lang) => lang !== this.$i18n.locale
-      )[0]
-    }
-  }
+  components: { AppIcon },
+  data: () => ({
+    portrait,
+    photoFailed: false,
+    years: new Date().getFullYear() - 2012
+  })
 }
 </script>
-
-<style scoped></style>

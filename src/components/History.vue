@@ -1,83 +1,70 @@
-<template lang="pug">
-.container
-  .flex.mb-8
-    .flex-col
-      .text-3xl.font-bold.text-gray-800.relative.inline-block.pb-2.after_content.after_absolute.after_bottom-0.after_left-0.after_h-1.after_bg-blue-500 {{$t("life.sectionTitle")}}
-  
-  .relative.timeline-container.pl-0.pb-8(class="before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-0.5 before:bg-gray-200")
-    .timeline-item.relative.mb-8(v-for="(history, index) of histories" :key="index" :class="{'opacity-0 translate-x-8': !isVisible(index)}" ref="timelineItems")
-      // Content card
-      .timeline-content.bg-white.rounded-lg.shadow-md.p-4.transform.transition-all.duration-300(class="hover:shadow-lg hover:-translate-y-1")
-        .flex.flex-col.md_flex-row.justify-between.items-start.md_items-center.mb-2
-          .font-bold.text-lg.text-gray-800.cursor-pointer.hover_text-gray-600.transition-colors(@click="openLink(history)") {{ history.locate.name }}
-          .text-xs.font-medium.text-gray-600.py-1.px-2.rounded.mt-2.md_mt-0 {{ history.date }}
-        
-        .text-gray-600.text-sm.mt-1 {{ history.office }}
+<template>
+  <section
+    id="history"
+    class="section site-shell history-section"
+    aria-labelledby="history-title">
+    <div class="history-heading">
+      <p class="eyebrow">03 / {{ $t('ui.nav.history') }}</p>
+      <h2 id="history-title">{{ $t('ui.history.title') }}</h2>
+      <p>{{ $t('ui.history.intro') }}</p>
+      <span class="history-since"
+        >{{ $t('ui.history.since') }}<AppIcon name="arrow"
+      /></span>
+    </div>
+    <div class="timeline">
+      <article
+        v-for="(history, index) in visibleHistories"
+        :key="index"
+        class="timeline-row">
+        <div class="timeline-meta">
+          <span
+            class="timeline-dot"
+            :class="{ 'is-current': index === 0 }"></span
+          ><span>{{ $t('ui.history.entries.' + index + '.date') }}</span>
+        </div>
+        <h3>
+          <a
+            v-if="getLink(history)"
+            :href="getLink(history)"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ history.locate.name.replace('Pernanbuco', 'Pernambuco')
+            }}<AppIcon name="external" /></a
+          ><span v-else>{{ history.locate.name }}</span>
+        </h3>
+        <p>{{ $t('ui.history.entries.' + index + '.role') }}</p>
+      </article>
+      <button
+        class="text-link disclosure-button"
+        type="button"
+        :aria-expanded="showAll"
+        aria-controls="history"
+        @click="showAll = !showAll">
+        {{ $t(showAll ? 'ui.history.less' : 'ui.history.more')
+        }}<AppIcon :name="showAll ? 'minus' : 'plus'" />
+      </button>
+    </div>
+  </section>
 </template>
 
 <script>
 import data from '@/services'
+import AppIcon from './AppIcon.vue'
 
 export default {
-  data() {
-    return {
-      histories: data.history,
-      visibleItems: new Set()
+  components: { AppIcon },
+  data: () => ({ histories: data.history, showAll: false }),
+  computed: {
+    visibleHistories() {
+      return this.showAll ? this.histories : this.histories.slice(0, 3)
     }
   },
-  mounted() {
-    this.setupIntersectionObserver()
-  },
   methods: {
-    openLink(history) {
-      if (history?.locate?.link) {
-        this.$openUrl(history.locate.link)
-      }
-    },
-    setupIntersectionObserver() {
-      const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2
-      }
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = this.$refs.timelineItems.findIndex(
-              (el) => el === entry.target
-            )
-            if (index !== -1) {
-              this.visibleItems.add(index)
-            }
-          }
-        })
-      }, options)
-
-      this.$nextTick(() => {
-        if (this.$refs.timelineItems) {
-          this.$refs.timelineItems.forEach((item) => {
-            observer.observe(item)
-          })
-        }
-      })
-    },
-    isVisible(index) {
-      return this.visibleItems.has(index)
+    getLink(history) {
+      const link = history.locate.link
+      if (!link || link === 'not_found') return null
+      return /^https?:\/\//.test(link) ? link : 'https://' + link
     }
   }
 }
 </script>
-
-<style scoped>
-.timeline-item {
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .timeline-item {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-</style>

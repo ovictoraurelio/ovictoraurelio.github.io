@@ -1,34 +1,80 @@
-<template lang="pug">
-.grid.grid-cols-12.gap-y-5.mt-4(v-if="$isMobile() && $route.path !== '/home'")
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    Infos(hideDescription)
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="$router.push('/calendar')")
-      | {{ $t("scheduleMeeting") }}
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="showFullSite")
-      | {{ $t("openSite") }}
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="$router.push('/contact')")
-      | {{ $t("contact.title") }}
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="$openUrl(linkedinUrl)")
-      | Linkedin
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="$openUrl(instagramUrl)")
-      | Instagram
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    button.h-10.w-full.bg-gray-800.font-medium.text-sm.text-white.rounded(class="hover:bg-gray-900" @click="$openUrl(githubUrl)")
-      | Github
-.grid.grid-cols-12.gap-y-5.mt-12(v-else)
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    Infos
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    History
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    Projects
-  .col-start-2.col-span-10.md_col-start-4.md_col-span-6
-    Skills
+<template>
+  <div class="home-page">
+    <Infos />
+    <section
+      id="about"
+      class="section site-shell about-section"
+      aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">01 / {{ $t('ui.nav.about') }}</p>
+        <h2 id="about-title">
+          {{ $t('ui.about.title') }}<em>{{ $t('ui.about.emphasis') }}</em>
+        </h2>
+      </div>
+      <div class="about-copy">
+        <p class="lead">{{ $t('ui.about.lead') }}</p>
+        <p>{{ $t('ui.about.description') }}</p>
+        <details class="about-details">
+          <summary>{{ $t('ui.about.more') }}<AppIcon name="plus" /></summary>
+          <div class="long-bio">
+            <p v-for="(paragraph, index) in biography" :key="index">
+              {{ paragraph }}
+            </p>
+          </div>
+        </details>
+        <div class="about-tags">
+          <span>{{ $t('ui.about.tagStrategy') }}</span
+          ><span>{{ $t('ui.about.tagPeople') }}</span
+          ><span>{{ $t('ui.about.tagTechnology') }}</span>
+        </div>
+      </div>
+    </section>
+    <section id="work" class="work-section" aria-labelledby="work-title">
+      <div class="site-shell section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / {{ $t('ui.nav.work') }}</p>
+            <h2 id="work-title">{{ $t('ui.work.title') }}</h2>
+          </div>
+          <p>{{ $t('ui.work.intro') }}</p>
+        </div>
+        <div class="venture-grid">
+          <article
+            v-for="(venture, index) in ventures"
+            :key="venture.id"
+            class="venture-card">
+            <div class="venture-top">
+              <span>0{{ index + 1 }}</span
+              ><AppIcon :name="venture.icon" />
+            </div>
+            <h3 :class="'wordmark-' + venture.id">{{ venture.name }}</h3>
+            <p class="venture-role">
+              {{ $t('ui.work.' + venture.id + '.role') }}
+            </p>
+            <p>{{ $t('ui.work.' + venture.id + '.description') }}</p>
+            <span class="venture-category">{{
+              $t('ui.work.' + venture.id + '.category')
+            }}</span>
+          </article>
+        </div>
+      </div>
+    </section>
+    <History />
+    <Projects />
+    <Skills />
+    <section class="site-shell closing-section" aria-labelledby="closing-title">
+      <div>
+        <p class="eyebrow">{{ $t('ui.closing.eyebrow') }}</p>
+        <h2 id="closing-title">
+          {{ $t('ui.closing.title') }}<em>{{ $t('ui.closing.emphasis') }}</em>
+        </h2>
+        <p>{{ $t('ui.closing.description') }}</p>
+      </div>
+      <RouterLink class="button button-light" to="/calendar"
+        >{{ $t('scheduleMeeting') }}<AppIcon name="external"
+      /></RouterLink>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -36,29 +82,21 @@ import Infos from '@/components/Infos.vue'
 import History from '@/components/History.vue'
 import Projects from '@/components/Projects.vue'
 import Skills from '@/components/Skills.vue'
-import Footer from '@/components/Footer.vue'
+import AppIcon from '@/components/AppIcon.vue'
 
 export default {
   name: 'Home',
-  components: {
-    Infos,
-    History,
-    Projects,
-    Skills,
-    Footer
-  },
-  data() {
-    return {
-      calendarUrl:
-        'https://calendar.google.com/calendar/u/0/appointments/AcZssZ17c0QXkjjkMQg8U6EkdtQeQXFN0Y1_LbmjKtY=',
-      linkedinUrl: 'https://www.linkedin.com/in/ovictoraurelio/',
-      instagramUrl: 'https://instagram.com/ovictoraurelio',
-      githubUrl: 'https://github.com/ovictoraurelio'
-    }
-  },
-  methods: {
-    showFullSite() {
-      this.$router.push('/home')
+  components: { Infos, History, Projects, Skills, AppIcon },
+  data: () => ({
+    ventures: [
+      { id: 'beyond', name: 'beyond co.', icon: 'layers' },
+      { id: 'legis', name: 'Legis', icon: 'code' },
+      { id: 'absens', name: 'absens', icon: 'spark' }
+    ]
+  }),
+  computed: {
+    biography() {
+      return this.$t('infos.description').split(/<br\s*\/?>\s*<br\s*\/?>/i)
     }
   }
 }

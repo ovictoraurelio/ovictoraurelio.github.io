@@ -21,3 +21,10 @@ yarn-error.log*
 *.sw?
 
 old/
+dist/
+test-results/
+playwright-report/
+.vite-ssg-temp/
+
+# Local credentials
+.env

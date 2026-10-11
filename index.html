@@ -1,74 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victor Aurélio | COO e Co-fundador da Beyond Co</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Victor Aurélio | COO e Co-fundador da Beyond Co</title>
+    <!-- Localized Meta tags for SEO -->
+    <meta
+      name="description"
+      content="Victor Aurélio - COO e Co-fundador da Beyond Co. Experiência em soluções digitais, arquitetura de nuvem e desenvolvimento de software." />
+    <meta
+      name="keywords"
+      content="Victor Aurélio, Beyond Co, COO, arquiteto de nuvem, desenvolvimento de software, soluções digitais" />
+    <meta name="author" content="Victor Aurélio" />
+    <meta name="robots" content="index, follow" />
 
-  <!-- Localized Meta tags for SEO -->
-  <meta name="description"
-    content="Victor Aurélio - COO e Co-fundador da Beyond Co. Experiência em soluções digitais, arquitetura de nuvem e desenvolvimento de software.">
-  <meta name="keywords"
-    content="Victor Aurélio, Beyond Co, COO, arquiteto de nuvem, desenvolvimento de software, soluções digitais">
-  <meta name="author" content="Victor Aurélio">
-  <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://victoraurelio.com/" />
+    <meta
+      property="og:title"
+      content="Victor Aurélio | COO e Co-fundador da Beyond Co" />
+    <meta
+      property="og:description"
+      content="Victor Aurélio - COO e Co-fundador da Beyond Co. Experiência em soluções digitais, arquitetura de nuvem e desenvolvimento de software." />
+    <meta
+      property="og:image"
+      content="https://victoraurelio.com/victor-aurelio.jpg" />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://victoraurelio.com/">
-  <meta property="og:title" content="Victor Aurélio | COO e Co-fundador da Beyond Co">
-  <meta property="og:description"
-    content="Victor Aurélio - COO e Co-fundador da Beyond Co. Experiência em soluções digitais, arquitetura de nuvem e desenvolvimento de software.">
-  <meta property="og:image"
-    content="https://firebasestorage.googleapis.com/v0/b/ovictoraurelio.appspot.com/o/VictorPerfilCorporativo2025-Curta.jpeg?alt=media&token=d6678beb-8876-4831-961a-6e813c7ce62f">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://victoraurelio.com/" />
+    <meta
+      property="twitter:title"
+      content="Victor Aurélio | COO e Co-fundador da Beyond Co" />
+    <meta
+      property="twitter:description"
+      content="Victor Aurélio - COO e Co-fundador da Beyond Co. Experiência em soluções digitais, arquitetura de nuvem e desenvolvimento de software." />
+    <meta
+      property="twitter:image"
+      content="https://victoraurelio.com/victor-aurelio.jpg" />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://victoraurelio.com/">
-  <meta property="twitter:title" content="Victor Aurélio | COO e Co-fundador da Beyond Co">
-  <meta property="twitter:description"
-    content="Victor Aurélio - COO e Co-fundador da Beyond Co. Experiência em soluções digitais, arquitetura de nuvem e desenvolvimento de software.">
-  <meta property="twitter:image"
-    content="https://firebasestorage.googleapis.com/v0/b/ovictoraurelio.appspot.com/o/VictorPerfilCorporativo2025-Curta.jpeg?alt=media&token=d6678beb-8876-4831-961a-6e813c7ce62f">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+  </head>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap');
-
-    @font-face {
-      font-family: "DM Sans", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 400;
-      font-style: normal;
-      src: url(https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap);
-    }
-
-    div,
-    span,
-    i,
-    body,
-    .font-roboto {
-      font-family: 'DM Sans', sans-serif, Helvetica, Arial;
-    }
-  </style>
-</head>
-
-<body>
-  <div id="app"></div>
-  <!-- Handle SPA routing redirects from 404.html -->
-  <script>
-    (function () {
-      const redirect = sessionStorage.getItem('redirect');
-      if (redirect) {
-        sessionStorage.removeItem('redirect');
-        if (redirect !== window.location.pathname) {
-          history.replaceState(null, null, redirect);
+  <body>
+    <div id="app"></div>
+    <!-- Handle SPA routing redirects from 404.html -->
+    <script>
+      ;(function () {
+        const redirect = sessionStorage.getItem('redirect')
+        if (redirect) {
+          sessionStorage.removeItem('redirect')
+          if (redirect !== window.location.pathname) {
+            history.replaceState(null, null, redirect)
+          }
         }
-      }
-    })();
-  </script>
-  <script type="module" src="/src/main.js"></script>
-</body>
-
+      })()
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

@@ -1,44 +1,99 @@
-<template lang="pug">
-.container
-  .flex.flex-col
-    .col-span
-      .text-3xl.font-bold.text-gray-800.relative.inline-block.pb-2.after_content.after_absolute.after_bottom-0.after_left-0.after_h-1.after_bg-blue-500 {{ $t("skills.sectionTitle") }}
-    .col-span.mt-3.text-gray-600.mb-6
-      p.text-lg {{ $t("skills.subtitle") }}
-  .grid.grid-cols-12(v-for="(group, index) in groups")
-    .col-span-12.text-left
-      .mt-8.text-left.text-lg.font-light.font-sen {{group[0].type}}s
-    .col-span-12.mt-8.pa-0
-      .container
-        .grid.grid-cols-2.sm_grid-cols-4.md_grid-cols-6
-          .mt-4.col-auto.text-center(v-for="(course, index) of group" :key="index")
-            .text-center
-              iconify(style="font-size: 35px;" :icon='course.icon')
-            .text-center
-              .headline {{course.text}}
-            //- .flex
-              .col-span
-                .overline {{course.type}}
+<template>
+  <section
+    class="section site-shell skills-section"
+    aria-labelledby="skills-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">{{ $t('ui.skills.eyebrow') }}</p>
+        <h2 id="skills-title">{{ $t('ui.skills.title') }}</h2>
+      </div>
+      <p>{{ $t('ui.skills.intro') }}</p>
+    </div>
+    <div class="skill-grid">
+      <article v-for="skill in focusAreas" :key="skill.key" class="skill-card">
+        <AppIcon :name="skill.icon" />
+        <h3>{{ $t('ui.skills.' + skill.key) }}</h3>
+        <p>{{ $t('ui.skills.' + skill.key + 'Description') }}</p>
+        <div class="skill-tags">
+          <span v-for="tag in skill.tags" :key="tag">{{ tag }}</span>
+        </div>
+      </article>
+    </div>
+    <details class="tools-details">
+      <summary>{{ $t('ui.skills.more') }}<AppIcon name="plus" /></summary>
+      <div v-for="(group, type) in groups" :key="type" class="tool-group">
+        <h3>{{ $t('ui.skills.groups.' + type) }}</h3>
+        <div class="skill-tags">
+          <span v-for="course in group" :key="course.text">{{
+            course.text
+          }}</span>
+        </div>
+      </div>
+    </details>
+  </section>
 </template>
-
 <script>
 import groupBy from 'lodash.groupby'
+import AppIcon from './AppIcon.vue'
 export default {
+  components: { AppIcon },
   data: () => ({
     groups: [],
+    focusAreas: [
+      {
+        key: 'leadership',
+        icon: 'layers',
+        tags: ['Design Sprint', 'Agile', 'Notion']
+      },
+      {
+        key: 'cloud',
+        icon: 'cloud',
+        tags: ['Google Cloud', 'Kubernetes', 'Docker']
+      },
+      {
+        key: 'engineering',
+        icon: 'code',
+        tags: ['TypeScript', 'Vue.js', 'PostgreSQL']
+      },
+      {
+        key: 'automation',
+        icon: 'spark',
+        tags: ['n8n', 'Vertex AI', 'Puppeteer']
+      }
+    ],
     courses: [
       // Project Management
       { icon: 'logos-jira', type: 'Project Management', text: 'JIRA' },
       { icon: 'mdi:web', type: 'Project Management', text: 'itsdart.com' },
-      { icon: 'simple-icons:notion', type: 'Project Management', text: 'Notion' },
+      {
+        icon: 'simple-icons:notion',
+        type: 'Project Management',
+        text: 'Notion'
+      },
       { icon: 'mdi:sprint', type: 'Project Management', text: 'Design Sprint' },
-      { icon: 'mdi:scrum', type: 'Project Management', text: 'Agile Practices' },
-      { icon: 'mdi:account-group', type: 'Project Management', text: 'Team Leadership' },
+      {
+        icon: 'mdi:scrum',
+        type: 'Project Management',
+        text: 'Agile Practices'
+      },
+      {
+        icon: 'mdi:account-group',
+        type: 'Project Management',
+        text: 'Team Leadership'
+      },
 
       // Automation and NCLC
       { icon: 'simple-icons:n8n', type: 'Automation and NCLC', text: 'n8n' },
-      { icon: 'mdi:puzzle', type: 'Automation and NCLC', text: 'active pieces' },
-      { icon: 'logos-puppeteer', type: 'Automation and NCLC', text: 'puppeteer' },
+      {
+        icon: 'mdi:puzzle',
+        type: 'Automation and NCLC',
+        text: 'active pieces'
+      },
+      {
+        icon: 'logos-puppeteer',
+        type: 'Automation and NCLC',
+        text: 'puppeteer'
+      },
       { icon: 'logos-postman', type: 'Automation and NCLC', text: 'postman' },
       { icon: 'mdi:robot', type: 'Automation and NCLC', text: 'manus.im' },
       { icon: 'mdi:cloud', type: 'Automation and NCLC', text: 'quoti.cloud' },
@@ -156,8 +211,12 @@ export default {
       { icon: 'logos-mariadb', type: 'Database', text: 'MariaDB' },
       { icon: 'logos-firebase', type: 'Database', text: 'Firestore' },
       { icon: 'logos-mongodb', type: 'Database', text: 'Mongo DB' },
-      { icon: 'vscode-icons:file-type-sql', type: 'Database', text: 'SQL Lite' },
-      { icon: 'logos-redis', type: 'Database', text: 'Redis' },
+      {
+        icon: 'vscode-icons:file-type-sql',
+        type: 'Database',
+        text: 'SQL Lite'
+      },
+      { icon: 'logos-redis', type: 'Database', text: 'Redis' }
     ]
   }),
   created() {
