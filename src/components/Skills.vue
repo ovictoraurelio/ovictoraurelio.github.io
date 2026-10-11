@@ -1,42 +1,99 @@
-<template lang="pug">
-.container
-  .flex.flex-col.mb-10.md_mb-12
-    .col-span
-      .text-3xl.md_text-4xl.font-light.tracking-tight.text-gray-900 {{ $t("skills.sectionTitle") }}
-    .col-span.mt-4.text-gray-600
-      p.text-lg {{ $t("skills.subtitle") }}
-  .grid.grid-cols-12(v-for="(group, index) in groups")
-    .col-span-12.text-left
-      .mt-10.text-xs.uppercase.tracking-widest.text-primary-600.font-semibold {{group[0].type}}s
-    .col-span-12.mt-6.pa-0
-      .container
-        .grid.grid-cols-2.sm_grid-cols-3.md_grid-cols-4.lg_grid-cols-5.gap-4
-          .col-auto(v-for="(course, index) of group" :key="index")
-            div(class="bg-white/60 backdrop-filter backdrop-blur-xl backdrop-saturate-150 rounded-2xl shadow-glass border border-white/70 p-4 text-center h-full transform transition-all duration-300 hover_-translate-y-1")
-              .text-center.mb-2
-                iconify(style="font-size: 32px;" :icon='course.icon')
-              .text-center
-                div(class="text-sm font-medium text-gray-700 break-words leading-snug") {{course.text}}
+<template>
+  <section
+    class="section site-shell skills-section"
+    aria-labelledby="skills-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">{{ $t('ui.skills.eyebrow') }}</p>
+        <h2 id="skills-title">{{ $t('ui.skills.title') }}</h2>
+      </div>
+      <p>{{ $t('ui.skills.intro') }}</p>
+    </div>
+    <div class="skill-grid">
+      <article v-for="skill in focusAreas" :key="skill.key" class="skill-card">
+        <AppIcon :name="skill.icon" />
+        <h3>{{ $t('ui.skills.' + skill.key) }}</h3>
+        <p>{{ $t('ui.skills.' + skill.key + 'Description') }}</p>
+        <div class="skill-tags">
+          <span v-for="tag in skill.tags" :key="tag">{{ tag }}</span>
+        </div>
+      </article>
+    </div>
+    <details class="tools-details">
+      <summary>{{ $t('ui.skills.more') }}<AppIcon name="plus" /></summary>
+      <div v-for="(group, type) in groups" :key="type" class="tool-group">
+        <h3>{{ $t('ui.skills.groups.' + type) }}</h3>
+        <div class="skill-tags">
+          <span v-for="course in group" :key="course.text">{{
+            course.text
+          }}</span>
+        </div>
+      </div>
+    </details>
+  </section>
 </template>
-
 <script>
 import groupBy from 'lodash.groupby'
+import AppIcon from './AppIcon.vue'
 export default {
+  components: { AppIcon },
   data: () => ({
     groups: [],
+    focusAreas: [
+      {
+        key: 'leadership',
+        icon: 'layers',
+        tags: ['Design Sprint', 'Agile', 'Notion']
+      },
+      {
+        key: 'cloud',
+        icon: 'cloud',
+        tags: ['Google Cloud', 'Kubernetes', 'Docker']
+      },
+      {
+        key: 'engineering',
+        icon: 'code',
+        tags: ['TypeScript', 'Vue.js', 'PostgreSQL']
+      },
+      {
+        key: 'automation',
+        icon: 'spark',
+        tags: ['n8n', 'Vertex AI', 'Puppeteer']
+      }
+    ],
     courses: [
       // Project Management
       { icon: 'logos-jira', type: 'Project Management', text: 'JIRA' },
       { icon: 'mdi:web', type: 'Project Management', text: 'itsdart.com' },
-      { icon: 'simple-icons:notion', type: 'Project Management', text: 'Notion' },
+      {
+        icon: 'simple-icons:notion',
+        type: 'Project Management',
+        text: 'Notion'
+      },
       { icon: 'mdi:sprint', type: 'Project Management', text: 'Design Sprint' },
-      { icon: 'mdi:scrum', type: 'Project Management', text: 'Agile Practices' },
-      { icon: 'mdi:account-group', type: 'Project Management', text: 'Team Leadership' },
+      {
+        icon: 'mdi:scrum',
+        type: 'Project Management',
+        text: 'Agile Practices'
+      },
+      {
+        icon: 'mdi:account-group',
+        type: 'Project Management',
+        text: 'Team Leadership'
+      },
 
       // Automation and NCLC
       { icon: 'simple-icons:n8n', type: 'Automation and NCLC', text: 'n8n' },
-      { icon: 'mdi:puzzle', type: 'Automation and NCLC', text: 'active pieces' },
-      { icon: 'logos-puppeteer', type: 'Automation and NCLC', text: 'puppeteer' },
+      {
+        icon: 'mdi:puzzle',
+        type: 'Automation and NCLC',
+        text: 'active pieces'
+      },
+      {
+        icon: 'logos-puppeteer',
+        type: 'Automation and NCLC',
+        text: 'puppeteer'
+      },
       { icon: 'logos-postman', type: 'Automation and NCLC', text: 'postman' },
       { icon: 'mdi:robot', type: 'Automation and NCLC', text: 'manus.im' },
       { icon: 'mdi:cloud', type: 'Automation and NCLC', text: 'quoti.cloud' },
@@ -154,8 +211,12 @@ export default {
       { icon: 'logos-mariadb', type: 'Database', text: 'MariaDB' },
       { icon: 'logos-firebase', type: 'Database', text: 'Firestore' },
       { icon: 'logos-mongodb', type: 'Database', text: 'Mongo DB' },
-      { icon: 'vscode-icons:file-type-sql', type: 'Database', text: 'SQL Lite' },
-      { icon: 'logos-redis', type: 'Database', text: 'Redis' },
+      {
+        icon: 'vscode-icons:file-type-sql',
+        type: 'Database',
+        text: 'SQL Lite'
+      },
+      { icon: 'logos-redis', type: 'Database', text: 'Redis' }
     ]
   }),
   created() {
@@ -164,16 +225,4 @@ export default {
 }
 </script>
 
-<style scoped>
-/* Some iconify "logo" icons are wide wordmarks (e.g. Firebase, MongoDB) -
-   their SVG width/height attributes preserve the source aspect ratio, which
-   can be 3-4x wider than tall and overflow the narrow skill cards. Cap the
-   rendered width so wordmark icons shrink to fit instead of spilling into
-   neighboring cards. */
-.container :deep(svg) {
-  max-width: 100%;
-  max-height: 32px;
-  width: auto;
-  height: auto;
-}
-</style>
+<style></style>

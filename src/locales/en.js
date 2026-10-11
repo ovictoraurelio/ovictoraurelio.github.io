@@ -1,8 +1,12 @@
+import ui from './ui-en'
+
 const firstDayWorkingAsDev = new Date(2012, 3, 1)
 const yearsFromFirstDayToNow =
   new Date().getFullYear() - firstDayWorkingAsDev.getFullYear()
 export default {
+  ui,
   language: 'language',
+  back: 'Back to Home',
   contact: {
     title: 'Contact Me',
     form: {

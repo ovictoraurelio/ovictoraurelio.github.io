@@ -1,58 +1,78 @@
-<template lang="pug">
-.cookie-consent-container(v-if="showConsent")
-  .cookie-consent-overlay.fixed.inset-0.bg-black.bg-opacity-50.z-40
-  .cookie-consent-banner(class="fixed bottom-0 left-0 right-0 bg-gray-900/80 backdrop-filter backdrop-blur-xl text-white p-6 shadow-glass z-50 border-t border-white/10")
-    .container.mx-auto.px-4
-      .flex.flex-col.items-center.justify-between
-        .flex-grow.mb-6.text-center
-          h3.text-xl.font-bold.mb-3 {{ $t('cookies.title') }}
-          p.text-base.mb-4 {{ $t('cookies.message') }}
-        .flex.flex-wrap.gap-3.justify-center.w-full
-          button.px-6.py-3.bg-primary-600.text-white.rounded-full.hover_bg-primary-700.transition-colors.text-base.font-medium.shadow-soft.hover_shadow-glass(@click="acceptCookies") {{ $t('cookies.accept') }}
-          button(class="px-6 py-3 bg-white/10 backdrop-filter backdrop-blur-md border border-white/20 text-white rounded-full hover_bg-white/20 transition-colors text-base font-medium" @click="$router.push('/privacy')") {{ $t('cookies.learnMore') }}
+<template>
+  <aside
+    v-if="showConsent"
+    class="cookie-consent-banner"
+    aria-labelledby="cookies-title">
+    <button
+      class="cookie-close"
+      type="button"
+      :aria-label="$t('ui.cookies.dismiss')"
+      @click="dismissNotice">
+      <AppIcon name="close" />
+    </button>
+    <h2 id="cookies-title">{{ $t('cookies.title') }}</h2>
+    <p>{{ $t('ui.cookies.note') }}</p>
+    <div class="cookie-actions">
+      <button class="button button-small" type="button" @click="acceptCookies">
+        {{ $t('cookies.accept') }}<AppIcon name="check" /></button
+      ><RouterLink class="text-link" to="/privacy">{{
+        $t('cookies.learnMore')
+      }}</RouterLink>
+    </div>
+  </aside>
 </template>
 
 <script>
+import AppIcon from './AppIcon.vue'
+const COOKIE_NAME = 'cookiesAccepted'
+const COOKIE_MAX_AGE_SECONDS = 60 * 60 * 24 * 365
+
 export default {
-  data() {
-    return {
-      showConsent: false
-    }
-  },
+  components: { AppIcon },
+  data: () => ({ showConsent: false }),
   mounted() {
-    // Check if user has already accepted cookies
-    this.showConsent = !this.hasAcceptedCookies()
+    let dismissed = false
+    try {
+      dismissed = sessionStorage.getItem('cookieNoticeDismissed') === 'true'
+    } catch (_error) {
+      /* Storage can be unavailable. */
+    }
+    this.showConsent = !this.hasAcceptedCookies() && !dismissed
   },
   methods: {
+    getCookie(name) {
+      const prefix = name + '='
+      return document.cookie
+        .split(';')
+        .map((item) => item.trim())
+        .find((item) => item.startsWith(prefix))
+        ?.slice(prefix.length)
+    },
+    dismissNotice() {
+      this.showConsent = false
+      try {
+        sessionStorage.setItem('cookieNoticeDismissed', 'true')
+      } catch (_error) {
+        /* Storage can be unavailable. */
+      }
+    },
     acceptCookies() {
-      // Set cookie with expiration of 1 year
       const expiryDate = new Date()
       expiryDate.setFullYear(expiryDate.getFullYear() + 1)
-      
-      document.cookie = `cookiesAccepted=true; expires=${expiryDate.toUTCString()}; path=/; SameSite=Lax`
+      const attributes = [
+        COOKIE_NAME + '=true',
+        'expires=' + expiryDate.toUTCString(),
+        'max-age=' + COOKIE_MAX_AGE_SECONDS,
+        'path=/',
+        'SameSite=Lax'
+      ]
+      if (window.location.protocol === 'https:') attributes.push('Secure')
+      document.cookie = attributes.join('; ')
       this.showConsent = false
     },
     hasAcceptedCookies() {
-      // Check if the cookie exists
-      return document.cookie.split(';').some(cookie => {
-        return cookie.trim().startsWith('cookiesAccepted=')
-      })
+      return this.getCookie(COOKIE_NAME)?.toLowerCase() === 'true'
     }
   }
 }
 </script>
-
-<style scoped>
-.cookie-consent-banner {
-  animation: slideUp 0.5s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-</style>

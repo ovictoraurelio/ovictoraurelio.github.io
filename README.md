@@ -66,8 +66,26 @@ contato e rastreamento de acesso/páginas visitadas).
 
 ## Deploy
 
-O deploy é automatizado via GitHub Actions (`.github/deploy.yml`): a cada push
+O deploy é automatizado via GitHub Actions (`.github/workflows/deploy.yml`): a cada push
 em `main` (ou merge de pull request), o workflow instala as dependências, roda
 `npm run build` e publica o conteúdo de `dist/` no branch `gh-pages`, usado
 pelo GitHub Pages. O domínio customizado é configurado através do arquivo
 `CNAME`, copiado para `dist/` durante o build.
+
+
+## Validação da interface
+
+```sh
+npm run build
+npm run test:e2e
+```
+
+Os testes Playwright verificam navegação, idiomas, preservação do conteúdo,
+responsividade e os fluxos de contato e agenda. Os serviços externos de envio
+e agendamento são simulados, sem enviar mensagens ou marcar reuniões reais.
+
+Para validar o build de produção em uma prévia já ativa:
+
+```sh
+PLAYWRIGHT_BASE_URL=http://127.0.0.1:4174 npm run test:e2e
+```

@@ -1,115 +1,216 @@
-<template lang="pug">
-.container.mx-auto.px-4.height-minus-footer
-  // Mobile View
-  template(v-if="$isMobile()")
-    .flex.flex-col.h-screen.overflow-hidden
-      .py-2
-        Button.h-10.w-full.font-medium.text-sm(variant="neutral" @click="selectedLink ? resetSelection() : $router.push('/')")
-          | {{ selectedLink ? 'Voltar' : 'Voltar ao site' }}
-      
-      // Content Area
-      .flex-grow.overflow-hidden
-        // Before Link Selection
-        template(v-if="!selectedLink")
-          .h-full.flex.flex-col.justify-evenly.py-2
-            .flex-1.flex.items-center.justify-center.px-4.py-2(v-for="(link, index) in roamLinks" :key="index")
-              button(class="w-full h-full py-8 bg-white/60 backdrop-filter backdrop-blur-xl backdrop-saturate-150 border border-white/70 text-gray-900 font-bold text-2xl rounded-2xl shadow-glass transition-all transform hover:scale-105" @click="selectLink(link)")
-                | {{ link.name }}
-        
-        // After Link Selection
-        template(v-else)
-          .h-full.overflow-auto
-            div(:id="selectedLink.id" style="width: 100%; height: 100%")
-  
-  // Desktop View
-  template(v-else)
-    .grid.grid-cols-12.gap-6
-      .col-span-12
-        Button.h-10.w-full.font-medium.text-sm(variant="neutral" @click="$router.push('/')")
-          | Voltar ao site
-
-      .col-span-12.md_col-span-6(v-for="(link, index) in roamLinks" :key="index")
-        div(class="bg-white/60 backdrop-filter backdrop-blur-xl backdrop-saturate-150 border border-white/70 shadow-glass rounded-2xl p-4")
-          h2.text-xl.font-semibold.mb-4 {{ link.name }}
-          div(:id="link.id" style="min-width: 320px; width: 100%;")
+<template>
+  <div class="calendar-page site-shell">
+    <div class="page-intro">
+      <p class="eyebrow">{{ $t('ui.calendar.eyebrow') }}</p>
+      <h1>{{ $t('ui.calendar.title') }}</h1>
+      <p>{{ $t('ui.calendar.description') }}</p>
+    </div>
+    <div class="calendar-layout" :class="{ 'has-selection': selectedLink }">
+      <div
+        class="calendar-options"
+        role="group"
+        :aria-label="$t('ui.calendar.select')">
+        <p class="calendar-step">01 / {{ $t('ui.calendar.step') }}</p>
+        <button
+          v-for="link in roamLinks"
+          :key="link.id"
+          class="duration-button"
+          :class="{ 'is-selected': selectedLink?.id === link.id }"
+          type="button"
+          :aria-label="$t(link.label)"
+          :aria-pressed="selectedLink?.id === link.id"
+          @click="selectLink(link)">
+          <span class="duration-title"
+            ><AppIcon name="clock" />{{ $t(link.label) }}</span
+          ><AppIcon :name="selectedLink?.id === link.id ? 'check' : 'arrow'" />
+          <p>{{ $t(link.description) }}</p>
+        </button>
+        <p class="calendar-note">
+          <AppIcon name="globe" />{{ $t('ui.calendar.note') }}
+        </p>
+        <RouterLink class="calendar-alternative" to="/contact">{{
+          $t('ui.calendar.alternative')
+        }}</RouterLink>
+      </div>
+      <div v-if="selectedLink" class="calendar-panel">
+        <div class="calendar-panel-heading">
+          <h2>
+            {{ $t(selectedLink ? selectedLink.label : 'ui.calendar.select') }}
+          </h2>
+          <button
+            v-if="selectedLink"
+            class="text-link"
+            type="button"
+            @click="resetSelection">
+            {{ $t('ui.calendar.change') }}<AppIcon name="close" />
+          </button>
+        </div>
+        <div v-if="status !== 'ready'" class="calendar-state" role="status">
+          <AppIcon name="clock" />
+          <p>
+            {{
+              $t(
+                status === 'loading'
+                  ? 'ui.calendar.loading'
+                  : status === 'error'
+                  ? 'ui.calendar.unavailable'
+                  : 'ui.calendar.select'
+              )
+            }}
+          </p>
+          <a
+            v-if="status === 'error' && selectedLink"
+            class="button button-outline"
+            :href="selectedLink.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ $t('ui.calendar.open') }}<AppIcon name="external"
+          /></a>
+        </div>
+        <div
+          id="roam-booking"
+          class="calendar-embed"
+          :class="{ 'embed-loading': status !== 'ready' }"
+          :aria-busy="status === 'loading'"></div>
+        <div
+          v-if="selectedLink && status !== 'error'"
+          class="calendar-fallback-link">
+          <a :href="selectedLink.url" target="_blank" rel="noopener noreferrer"
+            >{{ $t('ui.calendar.open') }}<AppIcon name="external"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import Button from '@/components/ui/Button.vue'
+import AppIcon from '../components/AppIcon.vue'
+
+const ROAM_SCRIPT_ID = 'roam-lobby-embed-script'
+const ROAM_SCRIPT_SRC = 'https://ro.am/lobbylinks/embed.js'
+let roamScriptPromise = null
+
+const loadRoamScript = () => {
+  if (window.Roam?.initLobbyEmbed) return Promise.resolve(true)
+  if (roamScriptPromise) return roamScriptPromise
+
+  roamScriptPromise = new Promise((resolve) => {
+    let script = document.getElementById(ROAM_SCRIPT_ID)
+    const isNew = !script
+    if (isNew) {
+      script = document.createElement('script')
+      script.id = ROAM_SCRIPT_ID
+      script.src = ROAM_SCRIPT_SRC
+      script.async = true
+    }
+    const finish = (loaded) => {
+      clearTimeout(timeout)
+      script.removeEventListener('load', onLoad)
+      script.removeEventListener('error', onError)
+      if (!loaded) script.remove()
+      resolve(loaded)
+    }
+    const onLoad = () =>
+      finish(typeof window.Roam?.initLobbyEmbed === 'function')
+    const onError = () => finish(false)
+    const timeout = setTimeout(onError, 8000)
+    script.addEventListener('load', onLoad, { once: true })
+    script.addEventListener('error', onError, { once: true })
+    if (isNew) document.head.appendChild(script)
+  }).then((loaded) => {
+    if (!loaded) roamScriptPromise = null
+    return loaded
+  })
+  return roamScriptPromise
+}
 
 export default {
   name: 'Calendar',
-  components: {
-    Button
-  },
-  data() {
-    return {
-      roamScriptLoaded: false,
-      selectedLink: null,
-      roamLinks: [
-        {
-          id: 'roam-30min',
-          url: 'https://ro.am/ovictoraurelio/',
-          name: '30 minutos'
-        },
-        {
-          id: 'roam-1hora',
-          url: 'https://ro.am/ovictoraurelio/1-hora',
-          name: '1 hora'
-        }
-      ]
-    }
-  },
-  mounted() {
-    this.loadRoamScript()
+  components: { AppIcon },
+  data: () => ({
+    selectedLink: null,
+    status: 'idle',
+    selectionVersion: 0,
+    embedTimeout: null,
+    roamLinks: [
+      {
+        id: 'roam-30min',
+        url: 'https://ro.am/ovictoraurelio/',
+        label: 'ui.calendar.short',
+        description: 'ui.calendar.shortDescription'
+      },
+      {
+        id: 'roam-1hora',
+        url: 'https://ro.am/ovictoraurelio/1-hora',
+        label: 'ui.calendar.long',
+        description: 'ui.calendar.longDescription'
+      }
+    ]
+  }),
+  beforeUnmount() {
+    this.resetSelection()
   },
   methods: {
-    selectLink(link) {
-      this.selectedLink = link
-      this.$nextTick(() => {
-        this.initRoamEmbed({
-          elementId: link.id,
-          url: link.url
-        })
-      })
-    },
     resetSelection() {
+      this.selectionVersion += 1
+      clearTimeout(this.embedTimeout)
+      const parent = document.getElementById('roam-booking')
+      if (parent) {
+        parent.innerHTML = ''
+        parent.style.height = ''
+      }
       this.selectedLink = null
+      this.status = 'idle'
     },
-    loadRoamScript() {
-      const script = document.createElement('script')
-      script.src = 'https://ro.am/lobbylinks/embed.js'
-      script.async = true
-      script.onload = this.initRoamEmbeds
-      script.onerror = this.handleScriptLoadError
-      document.head.appendChild(script)
-    },
-    initRoamEmbeds() {
-      this.roamLinks.forEach(link => {
-        this.initRoamEmbed({
-          elementId: link.id,
-          url: link.url
-        })
-      })
-    },
-    initRoamEmbed({ elementId, url }) {
-      const parentElement = document.getElementById(elementId)
-      if (parentElement && window.Roam) {
-        this.roamScriptLoaded = true
+    async selectLink(link) {
+      this.resetSelection()
+      this.selectedLink = link
+      this.status = 'loading'
+      const version = this.selectionVersion
+      const loaded = await loadRoamScript()
+      if (version !== this.selectionVersion) return
+      if (!loaded) {
+        this.status = 'error'
+        return
+      }
+      await this.$nextTick()
+      const parentElement = document.getElementById('roam-booking')
+      if (!parentElement) return
+      this.embedTimeout = setTimeout(() => {
+        if (version === this.selectionVersion && this.status === 'loading')
+          this.status = 'error'
+      }, 8000)
+      try {
         window.Roam.initLobbyEmbed({
-          url,
+          url: link.url,
           parentElement,
           lobbyConfiguration: 'booking_only',
-          accentColor: '#0066e0',
+          accentColor: '#536346',
           theme: 'light',
-          onSizeChange: (width, height) => {
-            parentElement.style.height = `${height}px`
+          onSizeChange: (_width, height) => {
+            if (version !== this.selectionVersion) return
+            if (Number.isFinite(Number(height)) && Number(height) > 0)
+              parentElement.style.height = Number(height) + 'px'
+            clearTimeout(this.embedTimeout)
+            this.status = 'ready'
           }
         })
+        const iframe = parentElement.querySelector('iframe')
+        if (iframe)
+          iframe.addEventListener(
+            'load',
+            () => {
+              if (version !== this.selectionVersion) return
+              clearTimeout(this.embedTimeout)
+              this.status = 'ready'
+            },
+            { once: true }
+          )
+      } catch (_error) {
+        clearTimeout(this.embedTimeout)
+        this.status = 'error'
       }
-    },
-    handleScriptLoadError() {
-      console.error('Failed to load Roam embed script')
     }
   }
 }
